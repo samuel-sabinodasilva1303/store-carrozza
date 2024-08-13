@@ -1,0 +1,41 @@
+{% set slides = banners.extra21.slides %}
+{% set landscape = banners.extra21 %}
+{% set bannerMobile = false %}
+{% if utils.is_mobile %}
+    {% set bannerMobile = true %} 
+    {% if banners.extra24 %}
+        {% set slides = banners.extra24.slides %}
+        {% set landscape = banners.extra24 %}
+    {% endif %}
+{% endif %}
+
+<section class="banner-home">
+    <ul data-carousel="" class="banner-home__list">
+        
+        {% if slides %}
+
+            {% for slide in slides %}
+                <li class="banner-home__item">
+
+                    {% if slide.link %}<a href="{{ slide.link }}" class="banner-home-home__link" aria-label="{{ slide.label }}" title="{{ slide.label }}"  target="{{ slide.target }}" {% if slide.target == '_blank' %}rel="noopener"{% endif %}>{% endif %}
+                        <img class="banner-home__img{{ bannerMobile ? ' banner-home__img--mobile' }}" src="{{ slide.image }}" alt="{{ slide.label }}" width="{{ slide.width }}" height="{{ slide.height }}" loading="lazy">
+                    {% if slide.link %}</a>{% endif %}
+
+                </li>
+            {% endfor %}
+
+        {% else %}
+
+            <li class="banner-home__item">
+
+                {% if landscape.link %}<a href="{{ landscape.link }}" class="banner-home__link" aria-label="{{ landscape.alt }}" title="{{ landscape.alt }}" target="{{ landscape.target }}" {% if landescape.target == '_blank' %}rel="noopener"{% endif %} >{% endif %}
+                    <img class="banner-home__img {{ bannerMobile ? ' banner-home__img--mobile' }}" src="{{ landscape.src }}" alt="{{ landscape.alt }}" width="{{ landscape.width }}" height="{{ landscape.height }}" loading="lazy">
+                {% if landscape.link %}</a>{% endif %}
+                
+            </li>
+
+        {% endif %}
+
+    </ul>
+
+</section>

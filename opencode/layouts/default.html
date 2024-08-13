@@ -1,0 +1,130 @@
+{% spaceless %}
+    <!DOCTYPE html>
+    <html
+            data-theme="{{ settings.theme_id }}"
+            data-store="{{ store.id }}"
+            class="page-{{ pages.current }}"
+            lang="pt-BR"
+    >
+        <head>
+            <!-- Tray charset -->
+            {{ html.charset() }}
+
+            <!-- Meta tags-->
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="canonical" href="{{ store.url }}">
+
+            <!-- Tray meta tags -->
+            {% if settings.favicon %}
+                <link rel="shortcut icon" href="{{ asset(settings.favicon) }}" type="image/svg+xml" >
+
+                {{ tray.meta|replace({ 'shortcut icon': 'alternate'}) }}
+
+            {% else %}
+
+                {{ tray.meta }}
+
+            {% endif %}
+            <!-- End tray meta tags -->
+
+            <!-- Font -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+            <!-- End Font-->
+
+            {% if pages.current in ['listas_criar','central_listas', 'central_rastrear', 'map'] %}
+
+                {{ tray.styles }}
+
+            {% endif %}
+
+            <!-- Slick Css -->
+            <link type="text/css" rel="stylesheet" href="{{ asset('css/plugins/slick.1.9.0.min.css') }}">
+
+            <!-- Theme Css -->
+            <link rel="stylesheet" href="{{ asset('css/custom.css', {dynamic: true}) }}" type="text/css" />
+
+            <link type="text/css" rel="stylesheet" href="{{ asset('css/theme.min.css')}}" />
+
+            <!-- Tray analytics -->
+            {{ tray.analytics }}
+
+            <!-- Google tag manager header -->
+            {{ googleTagManager.header(pages.current, tagManagerData) }}
+
+        </head>
+
+        <body class="{% if store.internal_status == 'implantacao' %}in_preview{% endif %}">
+            <!-- Sprites Icons -->
+            {% element 'sprites' %}
+            <!-- End Sprites Icons -->
+            <!-- Google tag manager top -->
+            {{ googleTagManager.top(pages.current, tagManagerData) }}
+
+            {% if store.internal_status == 'implantacao' %}
+
+                <div class="tray-advice">
+
+                    {% element 'snippets/messages' %}
+
+                </div>
+
+            {% endif %}
+
+            <!--Header-->
+            {% element 'header' %}
+
+            {% if pages.current == 'home' %}
+
+                <!-- Full banner -->
+                {% element 'snippets/banner-home' %}
+
+             {% endif %}
+
+                <main id="main" class="main">
+                        <!-- Layout -->
+                        {{ content_for_layout }}
+                </main>
+                
+            <!--Overlay-->
+            <div id="overlay"></div>
+            <!-- Tray modal -->
+            {% element 'snippets/modal' %}
+            
+            <!-- Products visited-->
+            {% element 'snippets/products-visited' %}
+
+            <!-- Tagcloud -->
+            {% element 'snippets/tagcloud' %}
+
+            <!--Footer-->
+            {% element 'footer' %}
+
+            <!-- Tray Scripts -->
+            {{ tray.scripts}}
+
+            <!-- Tray Modules -->
+            {{ html.script('dist/application.min.js?' ~ utils.assets_version)}}
+            
+            <!-- Tray pageview -->
+            {% element 'snippets/pageview' %} 
+
+            <!-- Tray chat -->
+            {{ store.chat }}
+            
+            <!-- Slick JS -->
+            <script type="text/javascript" src="{{ asset('js/plugins/slick.1.9.0.min.js') }}"></script>
+
+            <!-- Google tag manager bottom -->
+            {{ googleTagManager.bottom(pages.current,tagManagerData) }}
+
+            <!-- Theme scripts -->
+            <script defer type="text/javascript" charset="ISO-8859-1" src="{{ asset('js/theme.min.js') }}"></script>
+            
+        </body>
+
+    </html>
+    
+{% endspaceless %}

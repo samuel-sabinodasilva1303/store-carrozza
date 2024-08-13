@@ -1,0 +1,46 @@
+.search
+  &__form
+    position relative
+    display flex
+    align-items center
+    padding 0 13px
+
+  &__button
+    background-color secondary
+    border-radius 0 8px 8px 0
+    width 50px
+    height 44px
+    z-index 1
+
+    svg
+      fill #fff
+
+    &:hover
+      opacity 0.6
+
+  &__input[type='text']
+    height 44px
+    min-height 44px
+    max-width 100%
+    width 600px
+    text-indent 13px
+    border 1px solid border-c
+    border-radius 8px 0 0 8px
+    background #fff
+    transition all 333ms linear
+    color tertiary
+    z-index 1
+
+    &::placeholder
+      font-size 15px
+      color #c4c4c4
+
+    &:focus,
+    &:focus-within
+      border-width 2px 1px 2px 2px
+      border-color secondary
+
+  @media mobile
+    margin 0
+    &__form
+      padding 6px 13px

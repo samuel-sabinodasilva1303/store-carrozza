@@ -1,0 +1,39 @@
+.attendance
+  &__item
+    margin-bottom 14px
+
+    &--schedule
+      display flex
+      align-items center
+
+      > svg
+        flex-shrink 0
+        margin-right 14px
+        fill primary
+
+  &__link
+    display flex
+    align-items center
+
+    > svg
+      transition all .3s
+      flex-shrink 0
+      margin-right 14px
+      fill primary
+
+  &__link, &__label
+    font-size 14px
+    line-height 18px
+    color #333
+
+  @media desktop
+    &__label
+      transition all .3s
+
+    &__link
+      &:hover
+        > span
+          color #525252
+
+        > svg
+          fill #525252

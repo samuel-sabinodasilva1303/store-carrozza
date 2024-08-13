@@ -1,0 +1,188 @@
+.gallery
+  min-width 0
+
+  &__content
+    display flex
+
+  &__nav
+    min-width 0
+    flex 0 0 auto
+
+    &:not(.slick-initialized) > figure:not(:nth-child(-n+4))
+      display none
+
+    .slick
+      &-slide
+        img,
+        i
+          transition all 333ms
+          border-radius 8px
+          border 1px solid #f1eff3
+          opacity 15%
+
+      &-current
+        img,
+        i
+          opacity 100%
+
+  &__frame
+    min-width 0
+    position relative
+
+    &:not(.slick-initialized) > a:not(:first-of-type)
+      display none
+
+    .slick
+      &-arrow > svg
+        fill redColor
+
+      &-prev
+        left -15px
+
+      &-next
+        right -15px
+
+  &__figure
+    line-height 0
+    max-width 100%
+
+    > img
+      margin auto
+
+    &--frame
+      > img
+        border 1px solid border-2
+        border-radius 8px
+    &--frame.goOnZoom
+      cursor zoom-in 
+      position: relative;
+      overflow: hidden;
+      > img
+        transition: opacity .5s;
+        display: block;
+        width: calc(100% - 2px);
+        &:hover 
+          opacity 0
+      @media (max-width: 780px) 
+          &:hover
+            opacity 1
+            
+        
+
+    &--nav
+      cursor pointer
+      transition all 333ms
+      margin-block 4px
+
+    &.video
+      & ^[0]__icon-video
+        aspect-ratio 1
+        display grid
+        place-items center
+
+        > svg
+          fill primary
+
+  &__link
+    line-height 0
+    display block
+
+    @media mobile 
+      &:not(.video.slick-active)
+        pointer-events none
+
+    &.video
+      & ^[0]__figure
+        aspect-ratio 1
+        display grid
+        place-items center
+        margin auto
+        border 1px solid border-2
+        border-radius 8px
+
+        > svg
+          fill primary
+
+  @media desktop
+    flex 1 68%
+
+    &__content
+      justify-content flex-start
+      gap 8px
+
+    &__nav
+      margin-top -4px
+      width 87px
+
+      .slick
+        &-arrow
+          right 0
+          left 0
+          margin-inline auto
+          top unset
+          bottom unset
+          transform rotate3d(0, 0, 1, 90deg)
+
+        &-prev
+          display none !important
+
+    &__icon-video
+      max-width 87px
+
+    &__frame
+      flex 1 auto
+
+    &__figure
+      &--nav
+        &:hover
+          img,
+          i
+            border-color primary
+
+  @media mobile
+    width 100%
+
+    &__nav
+      width 100%
+
+      &:not(.slick-initialized)
+        opacity 0
+        visibility hidden
+        display flex
+        justify-content center
+        align-items center
+        gap 15px
+
+      & ^[0]__figure
+        > img
+          width 80px
+
+        svg
+          height auto
+          width
+
+      .slick
+        &-prev
+          left -23px
+          top 2em
+
+        &-next
+          right -23px
+          top 2em
+
+    &__icon-video
+      max-width 80px
+      margin-inline auto
+
+    &__frame
+      width 100%
+      max-height 500px !important
+
+    &__content
+      gap 15px 0
+      flex-wrap wrap-reverse
+
+  @media (max-width: 500px)
+     &__frame
+      max-height 300px !important
+

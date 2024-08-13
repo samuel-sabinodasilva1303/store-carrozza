@@ -1,0 +1,388 @@
+{% if pages.current in ['catalog', 'search'] %} 
+    {# 
+        Filter Options    
+    #}
+
+    <div class="filter _lazy">
+        {% if filter_options %}
+            <form name="form-filter" method="get" class="filter__form">
+                
+                <input type="hidden" name="loja" value="{{ store.id }}">
+
+                {% set type = "" %}
+                
+                {% if search.word %}
+                    <input name="palavra_busca" type="hidden" value="{{ search.word }}">
+                {% endif %}
+
+                {% if category.id %}
+                    <input type="hidden" name="categoria" value="{{ category.id }}">
+                {% endif %}
+            
+                <div class="filter__content">
+
+                    {% if filter_options.availability %}
+
+                        <section data-filter="availability" class="filter__block filter__block--availability">
+                            
+                            <div class="filter__fake-select open">
+                                <h4 class="filter__title">Disponibilidade</h4>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="13" height="7" viewBox="0 0 13 7">
+                                    <path fill="#2b6ff1" d="M0 1C0 .75.08.53.21.35.3.26.4.18.5.1a.88.88 0 011.02.12L6.5 4.67 11.46.4a.9.9 0 01.68-.22.95.95 0 01.62.37 1.01 1.01 0 01.24.75 1.04 1.04 0 01-.37.7L7.07 6.76a.89.89 0 01-.59.23.89.89 0 01-.59-.23L.34 1.82a.99.99 0 01-.26-.37C.02 1.3-.01 1.15 0 .99z"/>
+                                </svg>
+
+                                <ul class="filter__list">
+                                    {% for availability in filter_options.availability %}
+                                    {% set availability_applied = availability.key in filtered_options.availability ? true : false %}
+                                    {% set id = 'avai#' ~ loop.index %}
+
+                                    <li class="filter__item">
+                                        <a class="filter__label" href="{{ item.url }}">
+                                            <input id="{{ id }}" class="filter__input filter__input--availability" type="checkbox"
+                                                name="availability[]" value="{{ availability.key_encoded }}"
+                                                {{ availability_applied ? 'checked' }}>
+                                            <span class="filter__name filter__name--availability">{{ availability.key }}</span>
+                                            <span class="filter__count filter__count--count"> ({{ availability.doc_count }})</span>
+                                        </a>
+                                    </li>
+
+                                    {% endfor %}
+
+                                </ul>
+
+                            </div>
+                        </section>
+
+                    {% endif %}
+
+                    {% if filter_options.brands %}
+
+                        <section data-filter="brand" class="filter__block filter__block--brands">
+                            
+                            <div class="filter__fake-select open">
+                                <h4 class="filter__title">Marcas</h4>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="13" height="7" viewBox="0 0 13 7">
+                                    <path fill="#2b6ff1" d="M0 1C0 .75.08.53.21.35.3.26.4.18.5.1a.88.88 0 011.02.12L6.5 4.67 11.46.4a.9.9 0 01.68-.22.95.95 0 01.62.37 1.01 1.01 0 01.24.75 1.04 1.04 0 01-.37.7L7.07 6.76a.89.89 0 01-.59.23.89.89 0 01-.59-.23L.34 1.82a.99.99 0 01-.26-.37C.02 1.3-.01 1.15 0 .99z"/>
+                                </svg>  
+
+                                <ul class="filter__list">
+                                    {% for brand in filter_options.brands %}
+                                    {% set brands_applied = brand.key in filtered_options.brand ? true : false %}
+                                    {% set id = 'brand#' ~ loop.index %}
+
+                                    <li class="filter__item">
+                                        <a class="filter__label" href="{{ item.url }}">
+                                            <input id="{{ id }}" class="filter__input filter__input--brand" type="checkbox"
+                                                name="brands[]" value="{{ brand.key_encoded }}"
+                                                {{ brands_applied ? 'checked'}}>
+                                            <span class="filter__name filter__name--brand">{{ brand.key }}</span>
+                                            <span class="filter__count filter__count--count"> ({{ brand.doc_count }})</span>
+                                        </a>
+                                    </li>
+
+                                    {% endfor %}
+                                </ul>
+
+                            </div>
+
+                        </section>
+
+                    {% endif %}
+
+                    {% if filter_options.properties %}
+
+                        {% for properties in filter_options.properties %}
+
+                            {% for prop in properties %}
+                                {% if prop.key|lower != "outras opções" %}
+                                     <section data-filter="{{ prop.key }}" class="filter__block filter__block--{{ prop.key|lower }}">
+                                        
+                                        <div class="filter__fake-select open">
+                                            <h4 class="filter__title">{{ prop.key }}</h4>
+
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="13" height="7" viewBox="0 0 13 7">
+                                                <path fill="#2b6ff1" d="M0 1C0 .75.08.53.21.35.3.26.4.18.5.1a.88.88 0 011.02.12L6.5 4.67 11.46.4a.9.9 0 01.68-.22.95.95 0 01.62.37 1.01 1.01 0 01.24.75 1.04 1.04 0 01-.37.7L7.07 6.76a.89.89 0 01-.59.23.89.89 0 01-.59-.23L.34 1.82a.99.99 0 01-.26-.37C.02 1.3-.01 1.15 0 .99z"/>
+                                            </svg>   
+
+                                            <ul class="filter__list">
+                                                {% for item in prop.values %}
+
+                                                    {% set filter_prop = prop.key ~'||'~ item.key %}
+                                                    {% set filter_encode = prop.key_encoded ~'||'~ item.key_encoded %}
+                                                    {% set id = prop.key ~ loop.index %}
+
+                                                    {% if item.entity == 'variants' %}
+
+                                                        {% set prop_applied = filter_prop in filtered_options.variant ? true : false %}
+
+                                                    {% else %}
+
+                                                        {% set prop_applied = filter_prop in filtered_options.properties ? true : false %}
+                                                        
+                                                    {% endif %}
+
+                                                    <li class="filter__item">
+                                                        <a class="filter__label" href="{{ url.item }}">
+                                                            <input id="{{ id }}" class="filter__input filter__input--propertie" type="checkbox"
+                                                                name="{{item.entity}}[]" value="{{ filter_encode }}"
+                                                                {{ prop_applied ? 'checked'}}>
+                                                            <span class="filter__name filter__name--propertie">{{ item.key }}</span>
+                                                            <span class="filter__count filter__count--count"> ({{ item.doc_count }})</span>
+                                                        </a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                           
+                                        </div>
+
+                                    </section> 
+                                {% endif %}
+
+                            {% endfor %}
+
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if filter_options.prices %}
+
+                        <section data-filter="price"  class="filter__block filter__block--prices">
+                            
+                            <div class="filter__fake-select open">
+                                <h4 class="filter__title">Preço</h4>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="13" height="7" viewBox="0 0 13 7">
+                                    <path fill="#2b6ff1" d="M0 1C0 .75.08.53.21.35.3.26.4.18.5.1a.88.88 0 011.02.12L6.5 4.67 11.46.4a.9.9 0 01.68-.22.95.95 0 01.62.37 1.01 1.01 0 01.24.75 1.04 1.04 0 01-.37.7L7.07 6.76a.89.89 0 01-.59.23.89.89 0 01-.59-.23L.34 1.82a.99.99 0 01-.26-.37C.02 1.3-.01 1.15 0 .99z"/>
+                                </svg>
+                                <div class="filter__price">
+
+                                    <div class="filter__price-content">
+
+                                        {% set step = 50 %}
+
+                                        {% set pricesSel = filtered_options.price ? filtered_options.price[0]|split(',') %}
+
+                                        {% set minSel = pricesSel ? settings.currency ~ '&nbsp;' ~ pricesSel[0]|round(0,'floor')|currency : settings.currency ~ '&nbsp;' ~ filter_options.prices.stats.min|round(0,'floor')|currency %}
+
+                                        {% set maxSel = pricesSel ? pricesSel[1]|round(0,'ceil') : filter_options.prices.stats.max|round(0,'ceil') %}
+
+                                        {% set min = filter_options.prices.stats.min|round(0,'floor') %}
+
+                                        {% set max = filter_options.prices.stats.max|round(0, 'ceil') %}
+                                        
+                                        {% set maxSel = (maxSel - min) % step == 0 ? settings.currency ~ '&nbsp;' ~ maxSel|currency : settings.currency ~ '&nbsp;' ~ (min + ((maxSel - min) + (step - (maxSel - min) % step)))|currency %}
+
+                                        {% set max = (max - min) % step == 0 ? settings.currency ~ '&nbsp;' ~ max|currency : settings.currency ~ '&nbsp;' ~ ( min + ((max - min) + (step - (max - min) % step ) )  )|currency %}
+
+                                        {% set min = settings.currency ~ '&nbsp;' ~ min|currency %}
+
+                                        <div class="filter__price-block">
+                                            <span class="filter__price-label">Minimo {{ min }}</span>
+                                            <input disabled type="text" class="filter__price-input" name="min" value="{{ minSel }}" readonly >
+                                        </div>
+
+                                        <div class="filter__price-block">
+                                            <span class="filter__price-label">Maximo {{ max }}</span>
+                                            <input disabled type="text" class="filter__price-input" name="max" value="{{ maxSel }}" readonly >
+                                        </div>
+
+                                        {% set filteredPrices =  filtered_options.price ? filtered_options.price[0] %}
+
+                                        
+                                    </div>
+
+                                    {% element 'snippets/input-range' %}
+                                    
+                                </div>
+
+
+                            </div>
+
+                        </section>
+
+                    {% endif %}
+
+                </div>
+
+                {% if utils.is_mobile %}
+
+                    {% element 'snippets/filtered' %}
+
+                    <div class="filter__actions">
+
+                        <button type="submit" class="filter__btn filter__btn--submit">Filtrar</button>
+
+                        <button class="filter__btn filter__btn--clean" type="button" >Limpar Filtro</button>
+
+                    </div>
+
+                {% endif %}
+                
+            </form>
+
+        {% else %}
+    
+        {#
+            Filters Smart
+        #}
+            <form name="form-filter" method="get" class="filter__form">
+                
+                <input type="hidden" name="loja" value="{{ store.id }}">
+
+                {% set cleanFilter = '' %}    
+                {% if search.word %}
+                {% set cleanFilter = '&palavra_busca=' ~ search.word %}
+                    <input name="palavra_busca" type="hidden" value="{{ search.word }}">
+                {% endif %}
+
+                {% if category.id %}
+                {% set cleanFilter = '&categoria=' ~ category.id %}
+                    <input type="hidden" name="categoria" value="{{ category.id }}">
+                {% endif %}
+
+                <div class="filter__content">
+                    {% for myFilter in filters %}
+                        {% if myFilter.items %}
+                            <section class="filter__block">
+                                <div class="filter__fake-select open">
+                                    <h3 class="filter__title">{{ myFilter.title }}</h3>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="13" height="7" viewBox="0 0 13 7">
+                                        <path fill="#2b6ff1" d="M0 1C0 .75.08.53.21.35.3.26.4.18.5.1a.88.88 0 011.02.12L6.5 4.67 11.46.4a.9.9 0 01.68-.22.95.95 0 01.62.37 1.01 1.01 0 01.24.75 1.04 1.04 0 01-.37.7L7.07 6.76a.89.89 0 01-.59.23.89.89 0 01-.59-.23L.34 1.82a.99.99 0 01-.26-.37C.02 1.3-.01 1.15 0 .99z"/>
+                                    </svg>
+                                    
+                                    <ul class="filter__list">
+                                        {% for item in myFilter.items %}
+                                            {% set type = item.type %}
+                                            <li class="filter__item">
+
+                                                {% if item.type == "link" %}
+                                                    <a class="filter__link" href="{{ item.url }}">
+                                                        <input id="{{ id }}" class="filter__input filter__input--propertie" type="checkbox"
+                                                            name="{{item.entity}}[]" value="{{ filter_encode }}"
+                                                            {{ prop_applied ? 'checked'}}>
+                                                        <span class="filter__name">{{ item.title }}</span>
+                                                        <span class="filter__count">({{ item.count }})</span>
+                                                    </a>
+                                                {% elseif item.type == "checkbox" and item.name == 'range' %}
+                                                    <a class="filter__link" href="{{ item.url }}">
+                                                        <input id="{{ id }}" class="filter__input filter__input--propertie" type="checkbox"
+                                                            name="{{item.entity}}[]" value="{{ filter_encode }}"
+                                                            {{ prop_applied ? 'checked'}}>
+                                                        <span class="filter__name">{{ item.title }}</span>
+                                                        <span class="filter__count">({{ item.count }})</span>
+                                                    </a>
+                                                {% else %}
+                                                    <a class="filter__label" href="{{ item.url }}">
+                                                        <input id="{{ id }}" class="filter__input filter__input--propertie" type="checkbox"
+                                                            name="{{item.entity}}[]" value="{{ filter_encode }}" />
+                                                        <span class="filter__name">{{ item.title }}</span>        
+                                                        <span class="filter__count">({{ item.count }})</span>
+                                                    </a>
+                                                {% endif %}
+                                            </li>
+
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+
+                            </section>
+                        {% elseif myFilter|length %}
+                            {% for var in myFilter %}
+                                <section class="filter__block">
+                                    <div class="filter__fake-select open">
+                                        <h3 class="filter__title">{{ var.title }}</h3>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="13" height="7" viewBox="0 0 13 7">
+                                            <path fill="#2b6ff1" d="M0 1C0 .75.08.53.21.35.3.26.4.18.5.1a.88.88 0 011.02.12L6.5 4.67 11.46.4a.9.9 0 01.68-.22.95.95 0 01.62.37 1.01 1.01 0 01.24.75 1.04 1.04 0 01-.37.7L7.07 6.76a.89.89 0 01-.59.23.89.89 0 01-.59-.23L.34 1.82a.99.99 0 01-.26-.37C.02 1.3-.01 1.15 0 .99z"/>
+                                        </svg>
+
+                                        <ul class="filter__list">
+
+                                            {% for item in var.items if not item.applied %}
+                                                {% set type = item.type %}
+                                                <li class="filter__item">
+                                                    {% if item.type == "link" and not item.applied  %}
+                                                        <a class="filter__link" href="{{ item.url }}">
+                                                            <input id="{{ id }}" class="filter__input filter__input--propertie" type="checkbox"
+                                                            name="{{item.entity}}[]" value="{{ filter_encode }}"
+                                                            {{ prop_applied ? 'checked'}} />
+                                                            <span class="filter__name">{{ item.title }}</span>
+                                                            <span class="filter__count">({{ item.count }})</span>
+                                                        </a>
+                                                    {% endif %}
+
+                                                    {% if item.type == "checkbox" %}
+                                                        <a class="filter__label" href="{{ item.url }}">
+                                                            <input id="{{ id }}" class="filter__input filter__input--propertie" type="checkbox"
+                                                            name="{{item.entity}}[]" value="{{ filter_encode }}"
+                                                            {{ prop_applied ? 'checked'}} />
+
+                                                            <span class="filter__name">{{ item.title }}</span>
+
+                                                            {% set checked = item.applied ? 'checked="checked"' %}
+
+                                                            <span class="filter__count">({{ item.count }})</span>
+                                                        </a>
+                                                    {% endif %}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </section>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </form>
+            
+            <div class="filter__actions">
+                
+                {% if type == "checkbox" %}
+
+                    <button type="submit" class="filter__button filter__button--filter">Filtrar</button>
+
+                {% endif %}
+
+                {% if filters.applied %}
+
+                    <a href="{{ links.search }}{{ cleanFilter }}" class="filter__button filter__button--clean">Limpar filtros</a>
+
+                {% endif %}
+
+                {% if filters.applied %}
+
+                    <div class="filter__applied">
+
+                        <h3 class="filter__applied--title">Filtrados</h3>
+
+                        <ul class="filter__applied--list">
+
+                            {% for applied in filters.applied %}
+
+                                {% for item in applied %}
+
+                                    {% set type = item.type %}
+                                    <li class="filter__applied--item">
+
+                                        <a class="filter__applied--link" href="{{ item.url }}">
+                                        
+                                            <span class="filter__applied--label">{{ item.title }}</span>
+                                        </a>
+
+                                    </li>
+                                    
+                                {% endfor %}
+
+                            {% endfor %}
+
+                        </ul>
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

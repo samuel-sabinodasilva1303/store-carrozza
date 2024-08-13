@@ -1,0 +1,51 @@
+.menu-mobile
+  position fixed
+  top 0
+  background #fff
+  transition all .3s
+  width 100%
+  padding 20px 12px
+  z-index 7
+  height 100%
+  overflow-y auto
+  overflow-x hidden
+
+  &__header
+    border-bottom 1px solid #ededed
+
+  &[aria-hidden='true']
+    left -100%
+    border 1px solid salmon
+
+  &[aria-hidden='false']
+    left 0
+
+  &__close
+    background rgba(0, 0, 0, 0)
+    width 48px
+    height 48px
+    position absolute
+    top 0
+    right 0
+    z-index 1
+
+    &:after, &:before
+      content ''
+      position absolute
+      height 2px
+      width 28px
+      background secondary
+      display block
+      border-radius 1px
+      left 0
+      right 0
+      margin auto
+
+    &:after
+      transform rotate3d(0, 0, 1, 45deg)
+
+    &:before
+      transform rotate3d(0, 0, -1, 45deg)
+
+  @media desktop
+    display none

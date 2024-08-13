@@ -1,0 +1,14 @@
+{% if settings.floatWhatsappShow and settings.whatsapp %}
+
+    {% set formatedNumber = settings.whatsapp|replace({'(':'', ')':'', '-':'', '+':'', ' ':'' }) %}
+
+    <a href="https://wa.me/55{{ formatedNumber }}" rel="noopener" target="_blank" aria-label="Link para o whatsapp" title="Whatsapp" class="floating-whatsapp__link">
+    
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" widht="62" height="62" viewBox="0 0 62 62">
+            <path fill="#25D366" stroke="#fff" stroke-width="5" d="M4 58l12-3.3c4.3 2.7 9.5 4.3 15 4.3 15.5 0 28-12.5 28-28S46.5 3 31 3 3 15.5 3 31c0 5.5 1.6 10.7 4.3 15L4 58z"/>
+            <path fill="#fff" d="M44.9 38.6c-1.9 4-5.4 4.5-5.4 4.5-3 .6-6.8-.7-9.8-2.1-4.3-2-8-5.2-10.5-9.3-1.1-1.9-2.1-4.1-2.2-6.2 0 0-.4-3.5 3-6.3.3-.2.6-.3 1-.3h1.5c.6 0 1.2.4 1.4 1l2.3 5.6c.2.6.1 1.2-.3 1.7l-1.5 1.6c-.5.5-.5 1.2-.2 1.8.1.2.3.5.6.8a17.34 17.34 0 007.9 5.8c.7.2 1.3-.1 1.7-.6l1.2-1.8c.3-.5.9-.8 1.5-.7l6 .9c.6.1 1.1.6 1.3 1.2l.4 1.5c.2.2.2.6.1.9z"/>
+        </svg>
+
+    </a>
+
+{% endif %}

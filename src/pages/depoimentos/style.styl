@@ -1,0 +1,160 @@
+.page-depoimentos
+  .main__container
+    input
+      &[type='text'], &[type='email']
+        display block
+        width 100%
+        padding 0 7px
+        border 1px solid #ededed
+        border-radius 4px
+
+        &::placeholder
+          opacity .5
+
+      &[type='radio']
+        display inline-block
+        vertical-align text-bottom
+        cursor pointer
+
+    textarea
+      display block
+      width 100%
+      resize none
+      height 100px
+      padding 7px
+      border 1px solid #ededed
+      border-radius 4px
+
+      &::placeholder
+        opacity .5
+
+    > .board
+      width 850px
+      max-width 100%
+      margin 0 auto 45px auto
+
+      > h2.color
+        text-align center
+        margin 25px 0
+        color #525252
+
+      ul.editDep
+        padding 25px 15px
+        background #f9f9f9
+        border-radius 4px
+
+        > li:not(:first-child)
+          margin-top 15px
+
+        > li > h3
+          font-weight 400
+          color #333
+          font-size 16px
+          position relative
+          bottom -18px
+
+        > li > ul > li
+          &:first-child
+            display none
+
+          &:nth-child(2)
+            font-size 13px
+            margin 3px 0 5px 0
+            text-align right
+
+            > strong
+              display none
+
+          &.dep
+            display block
+            padding 7px
+            background #fff
+            border-radius 4px
+
+            > strong
+              display none
+
+    > h2.color
+      text-align center
+      margin 25px 0
+
+    > .container3
+      width 552px
+      max-width 100%
+      margin 0 auto
+
+      h1.color
+        font-size 30px
+        line-height 36px
+        color #000
+        text-align center
+        margin 35px 0
+
+      > .container2
+        .board > .left
+          font-size 13px
+          text-align center
+
+      #comentario_cliente
+        form
+          padding 25px 15px
+          border 1px solid #ededed
+          background #f7f7f7
+          border-radius 4px
+
+          #aviso_depoimento
+            text-align center
+            margin-bottom 20px
+
+            .blocoAlerta
+              font-size 13px
+              color #F0506E
+
+          > a
+            width 225px
+            height 42px
+            line-height 41px
+            background #525252
+            text-align center
+            color tertiary
+            font-size 16px
+            border-radius 21px
+            font-weight 700
+            transition all .3s
+            border 1px solid primary
+            display block
+            margin 0 auto
+
+            &:after
+              content 'Enviar'
+              display inline-block
+
+            > img
+              opacity 0
+              display none
+
+        label
+          font-size 14px
+
+          > h3
+            font-size 15px
+            margin-bottom 5px
+
+          > h5
+            font-weight 400
+
+        .nota_dep
+          font-weight 700
+          margin-bottom 20px
+          font-size 15px
+
+          > label
+            font-weight 400
+            margin-top 10px
+            display block
+
+  @media desktop
+    .main__container > .container3 #comentario_cliente form> a:hover
+      border-color #525252
+      background rgba(0, 0, 0, 0)
+      color #525252

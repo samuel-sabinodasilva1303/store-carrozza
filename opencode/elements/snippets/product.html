@@ -1,0 +1,46 @@
+<div itemid="{{ product.id }}" class="product">
+
+    <div class="product__content">
+        
+        {% element 'snippets/schema' {'product': product} %}
+
+        <a href="{{ product.link }}" aria-label="Link para pagina do produto {{ product.name }}"  data-tray-tst="vitrine_produto_link_imagem" class="product__link product__link--image">
+            <figure class="product__image">
+
+                {% if product.images %}
+                    <img src="{{ product.images[0].full }}" width="234" height="234" alt="{{ product.name }}" loading="lazy" >
+
+                {% else %}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#71ade0" width="200" viewBox="0 0 465 371">
+                        <path d="M186.57 191.88a67.56 67.56 0 10-67.56-67.56 67.64 67.64 0 0067.56 67.56zm0-115.17a47.6 47.6 0 110 95.2 47.6 47.6 0 010-95.2z"/>
+                        <path d="M415.1.87H49.9A49.95 49.95 0 000 50.77V320.2a49.95 49.95 0 0049.9 49.9h365.2a49.95 49.95 0 0049.9-49.9V50.76A49.95 49.95 0 00415.1.86zM49.9 20.83h365.2a29.97 29.97 0 0129.94 29.93v196.75l-59.7-84.6a49.9 49.9 0 00-81.02-.7l-67.96 92.78a29.87 29.87 0 01-40.8 7.18l-50.81-34a49.8 49.8 0 00-55.23-.18l-69.56 46.32V50.76A29.97 29.97 0 0149.9 20.83zm365.2 329.31H49.9a29.97 29.97 0 01-29.94-29.94v-21.9l80.57-53.66a29.88 29.88 0 0133.11.12l50.8 34a49.78 49.78 0 0068.01-11.98l67.96-92.79a29.92 29.92 0 0148.61.43l76.01 107.7v38.08a29.97 29.97 0 01-29.92 29.94z"/>
+                    </svg>
+                {% endif %}
+
+            </figure>
+        </a>
+
+        <h3 class="product__name">
+            <a href="{{ product.link }}" class="product__link">
+                {{ product.name }}
+            </a>
+        </h3>
+
+        <div data-module="pricing" data-snippet="snippets/product-payment" data-product-id="{{ product.id }}" class="product__price">
+            <div class="pricing">
+                Carregando...
+            </div>
+        </div> 
+
+        <div class="product__buttons">  
+
+            {% if product.available and product.stock > 0 %}
+            
+                <button class="product__button" type="button" onclick="window.location.href='{{ product.link }}'">Comprar</button>
+            {% endif %}
+
+        </div> 
+
+    </div>
+
+</div>

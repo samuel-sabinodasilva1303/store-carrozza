@@ -1,0 +1,29 @@
+<section class="newsletter" data-tray-tst="newsletter_box">
+    <div class="newsletter__flex">
+        <div class="newsletter__container">
+            <h2 class="newsletter__title">
+                Fique por dentro das novidades e promo��es
+            </h2>
+            <form action="{{ links.newsletter }}&v=js" method="POST" name="newsletter" data-tray-tst="newsletter_form" class="newsletter__form">
+                <input type="email" name="email" placeholder="seuemail@email.com" data-tray-tst="newsletter_email" class="newsletter__input" required>
+                <button type="submit" data-tray-tst="newsletter_cadastrar" class="newsletter__button" >Cadastrar</button>
+            </form>
+        </div>
+        <div class="newsletter__image" >
+            <div class='holder_nl_direita'>
+               <div class="holder_text">
+                    <h2 class='frase_1'>Aten��o Pessoa Jur�dica</h2>
+                    <div class='frase_2'></div>
+                    <h3 class='frase_3'>POSSUI CNPJ?</h3>
+                    <h3>TEMOS CONDI&Ccedil;&Otilde;ES ESPECIAIS</h3>
+                    <h3>PARA SUA EMPRESA.</h3>
+                    <a href="https://www. .com.br/centralpj" target="_blank"><button class="know-more-jur">SAIBA MAIS</button></a>
+               </div>
+               <div class="holder_image">
+                    <img src="{{ asset('/img/newsletterHomem.png') }}" class="pessoa_news"></img>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="newsletter__tips">Ao clicar em "Cadastrar" voc� aceita os <a href="/termos-de-uso" class="newsletter__link">termos de uso d ta.</a>.</p>
+</section>

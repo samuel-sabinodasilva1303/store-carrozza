@@ -1,0 +1,35 @@
+
+
+{% if products|length > 0 %}
+    {% if pages.current in ['catalog','search'] %}{% set page = pages.current %}{% endif %}
+    {% if  carousel %}{% set carousel = 'true' %}{% else %}{% set carousel = 'false' %}{% endif %}
+
+    <div data-carousel="{{ carousel }}" class="showcase{% if page %} showcase--{{ page }}{% endif %}">
+
+        {% if title or subtitle %}
+
+            <div class="showcase__header">
+
+                {% if title %}
+                    <h2 class="showcase__title">{{ title }}</h2>
+                {% endif %}
+
+                {% if subtitle %}
+                    <span class="showcase__subtitle">{{ subtitle }}</span>
+                {% endif %}
+
+            </div>
+
+        {% endif %}
+
+        <div class="showcase__list{% if page %} showcase__list--{{ page }}{% endif %}">
+
+            {% for product in products %}
+                <div class="showcase__item">
+                    {% element 'snippets/product' {'product': product} %}
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+{% endif %}

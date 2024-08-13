@@ -1,0 +1,64 @@
+{% if productTabs %}
+    <section class="product-tabs">
+        <div class="product-tabs__menu">
+            <ul class="product-tabs__list">
+                <li class="product-tabs__item--dash"></li>
+                {% for key, tab in productTabs if 'custom' not in key %}
+                    <li id="{{ tab.id }}" class="product-tabs__item{% if loop.index == 1 %} show{% endif %}">
+                        <a href="#" {% if tab.url %}data-url="{{ tab.url }}"{% endif %} data-content-id="{{ tab.container_id }}" class="product-tabs__link"> 
+                            <span>{{ tab.description }}</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="12" height="7" viewBox="0 0 12 7"><path fill="" fill-rule="evenodd" d="M5.47.47a.75.75 0 0 1 1.06 0l5 5a.75.75 0 0 1-1.06 1.06L6 2.06 1.53 6.53A.75.75 0 0 1 .47 5.47l5-5Z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </li>
+                {% endfor %}
+    
+            </ul>
+        </div>
+
+        <div class="product-tabs__container">
+
+            {% for key, tab in productTabs if  'AdditionalTab' not in key and 'custom' not in key %}
+
+                <div id="{{ tab.container_id|replace({'#':''}) }}" class="product-tabs__content">
+                    {% if key == "description" %}
+
+                        {{ product.description ? product.description : product.description_small }}
+
+                    {% elseif key == "included_items" %}
+                    
+                        {{ product.included_items }}
+
+                    {% elseif key == "properties" %}
+                
+                        {% element 'product/properties' %}
+
+                    {% elseif key == "warranty" %}
+                
+
+                    {% elseif key == "payment_methods" %}
+
+
+                    {% elseif key == "comments" %}
+
+
+                    {% endif %}
+
+                </div>
+
+                {% if key == "description" %}
+
+                    {% if productTabs.custom.content %}
+                        {{ productTabs.custom.content|replace({'prodBox': 'product-tabs__content', 'style="display: none"':'','style="display: "':''}) }}
+                    {% endif %}
+
+                {% endif %}
+
+            {% endfor %}
+
+           
+    
+        </div>
+
+    </section>
+    
+{% endif %}

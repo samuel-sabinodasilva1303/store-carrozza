@@ -1,0 +1,812 @@
+.page-comparador
+  .main__container > .board
+    width 100%
+    min-height 90rem
+    padding-top 30px
+
+  .board
+    > h1.color
+      font-family: 'Public Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 130%;
+      color: #292F3E;
+
+    > .comparatorTabs, > .left
+      display none
+
+    > .comparatorTabs, > .right
+      display none
+
+    > .comparator
+      width 100%
+      height 100%
+      display flex
+      padding-top 24px
+      position relative
+      align-items flex-end
+
+      > ul
+        width 100%
+        height 100%
+        display flex
+        margin-bottom 50px
+        align-items center
+
+        > li.Labels
+          display none
+
+        > li
+          border 1px solid #D6DBE3
+          margin 0.4rem 0.2rem 
+          background white
+          width 408px
+          height 158px
+          border-radius 5px
+          position relative
+          display flex
+          margin-bottom 50px
+
+          > ul
+            width 100%
+            height 100%
+            padding 10px
+            display flex
+            position relative
+            justify-content center
+            align-items center
+            
+            .comparsionFoto
+              display flex
+              position absolute
+              width 95%
+              height 92%
+              flex-direction column
+              justify-content center
+             
+              > a
+                width 97%
+                height 97%
+                display flex
+                font-family 'Public Sans'
+                font-style normal
+                font-weight 500
+                font-size 12px
+                line-height 130%
+                color #515970
+                position absolute
+                top 0
+                left 0
+
+                img
+                  width 11em
+                  object-fit contain
+                  margin-right 0.3rem
+
+              > div
+                position absolute
+                width 100%
+                height 100%
+
+                > a
+                  display flex
+                  margin 0
+                  img
+                    display none
+                  
+                  &:after
+                    content "Comprar"
+                    display flex
+                    flex-direction row
+                    justify-content center
+                    padding 10px 25px
+                    position absolute
+                    width: 131px;
+                    height: 38px;
+                    left: calc(97% - 62%);
+                    top 110px
+                    background #000000
+                    border-radius 8px
+                    color #fff
+                    font-family 'Public Sans'
+                    font-style normal
+                    font-weight 700
+                    font-size 14px
+                    line-height 130%
+                    align-items center
+                    margin: -13px 2px;
+
+              .closeComp
+                display flex
+                width 24px
+                height 24px
+                position absolute
+                transform: translate(1520%,20%);
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjczNzkgMTguNDY4Nkg4LjA0Mzk3QzcuODgyIDE4LjQ2NDggNy43MjIzOCAxOC40MjkxIDcuNTc0MjIgMTguMzYzNkM3LjQyNjA1IDE4LjI5OCA3LjI5MjI2IDE4LjIwNCA3LjE4MDQ3IDE4LjA4NjdDNy4wNjg2OCAxNy45Njk0IDYuOTgxMDkgMTcuODMxMyA2LjkyMjcxIDE3LjY4MDJDNi44NjQzMiAxNy41MjkgNi44MzYyOSAxNy4zNjc5IDYuODQwMiAxNy4yMDU5VjguODg0ODNINy42ODJWMTcuMjA1OUM3LjY3Nzk4IDE3LjI1NzQgNy42ODQxNyAxNy4zMDkxIDcuNzAwMjEgMTcuMzU4MUM3LjcxNjI1IDE3LjQwNzIgNy43NDE4MiAxNy40NTI1IDcuNzc1NDYgMTcuNDkxN0M3LjgwOTEgMTcuNTMwOCA3Ljg1MDE0IDE3LjU2MjggNy44OTYyMiAxNy41ODZDNy45NDIzIDE3LjYwOTIgNy45OTI1MSAxNy42MjMxIDguMDQzOTcgMTcuNjI2OEgxNS43Mzc5QzE1Ljc4OTQgMTcuNjIzMSAxNS44Mzk2IDE3LjYwOTIgMTUuODg1NyAxNy41ODZDMTUuOTMxOCAxNy41NjI4IDE1Ljk3MjggMTcuNTMwOCAxNi4wMDY0IDE3LjQ5MTdDMTYuMDQwMSAxNy40NTI1IDE2LjA2NTcgMTcuNDA3MiAxNi4wODE3IDE3LjM1ODFDMTYuMDk3NyAxNy4zMDkxIDE2LjEwMzkgMTcuMjU3NCAxNi4wOTk5IDE3LjIwNTlWOC44ODQ4M0gxNi45NDE3VjE3LjIwNTlDMTYuOTQ1NiAxNy4zNjc5IDE2LjkxNzYgMTcuNTI5IDE2Ljg1OTIgMTcuNjgwMkMxNi44MDA4IDE3LjgzMTMgMTYuNzEzMiAxNy45Njk0IDE2LjYwMTQgMTguMDg2N0MxNi40ODk3IDE4LjIwNCAxNi4zNTU5IDE4LjI5OCAxNi4yMDc3IDE4LjM2MzZDMTYuMDU5NSAxOC40MjkxIDE1Ljg5OTkgMTguNDY0OCAxNS43Mzc5IDE4LjQ2ODZaIiBmaWxsPSIjQTZCMkQxIi8+CjxwYXRoIGQ9Ik0xNS43Mzc5IDE4LjQ2ODZIOC4wNDM5N0M3Ljg4MiAxOC40NjQ4IDcuNzIyMzggMTguNDI5MSA3LjU3NDIyIDE4LjM2MzZDNy40MjYwNSAxOC4yOTggNy4yOTIyNiAxOC4yMDQgNy4xODA0NyAxOC4wODY3QzcuMDY4NjggMTcuOTY5NCA2Ljk4MTA5IDE3LjgzMTMgNi45MjI3MSAxNy42ODAyQzYuODY0MzIgMTcuNTI5IDYuODM2MjkgMTcuMzY3OSA2Ljg0MDIgMTcuMjA1OVY4Ljg4NDgzSDcuNjgyVjE3LjIwNTlDNy42Nzc5OCAxNy4yNTc0IDcuNjg0MTcgMTcuMzA5MSA3LjcwMDIxIDE3LjM1ODFDNy43MTYyNSAxNy40MDcyIDcuNzQxODIgMTcuNDUyNSA3Ljc3NTQ2IDE3LjQ5MTdDNy44MDkxIDE3LjUzMDggNy44NTAxNCAxNy41NjI4IDcuODk2MjIgMTcuNTg2QzcuOTQyMyAxNy42MDkyIDcuOTkyNTEgMTcuNjIzMSA4LjA0Mzk3IDE3LjYyNjhIMTUuNzM3OUMxNS43ODk0IDE3LjYyMzEgMTUuODM5NiAxNy42MDkyIDE1Ljg4NTcgMTcuNTg2QzE1LjkzMTggMTcuNTYyOCAxNS45NzI4IDE3LjUzMDggMTYuMDA2NCAxNy40OTE3QzE2LjA0MDEgMTcuNDUyNSAxNi4wNjU3IDE3LjQwNzIgMTYuMDgxNyAxNy4zNTgxQzE2LjA5NzcgMTcuMzA5MSAxNi4xMDM5IDE3LjI1NzQgMTYuMDk5OSAxNy4yMDU5VjguODg0ODNIMTYuOTQxN1YxNy4yMDU5QzE2Ljk0NTYgMTcuMzY3OSAxNi45MTc2IDE3LjUyOSAxNi44NTkyIDE3LjY4MDJDMTYuODAwOCAxNy44MzEzIDE2LjcxMzIgMTcuOTY5NCAxNi42MDE0IDE4LjA4NjdDMTYuNDg5NyAxOC4yMDQgMTYuMzU1OSAxOC4yOTggMTYuMjA3NyAxOC4zNjM2QzE2LjA1OTUgMTguNDI5MSAxNS44OTk5IDE4LjQ2NDggMTUuNzM3OSAxOC40Njg2WiIgZmlsbD0iYmxhY2siIGZpbGwtb3BhY2l0eT0iMC4yIi8+CjxwYXRoIGQ9Ik02IDcuOTQ2MjhIMTcuNzU0NVY3LjEwNDQ5SDZWNy45NDYyOFoiIGZpbGw9IiNBNkIyRDEiLz4KPHBhdGggZD0iTTYgNy45NDYyOEgxNy43NTQ1VjcuMTA0NDlINlY3Ljk0NjI4WiIgZmlsbD0iYmxhY2siIGZpbGwtb3BhY2l0eT0iMC4yIi8+CjxwYXRoIGQ9Ik0xMy4xNTYyIDkuNjI5ODhIMTMuOTk4VjE1Ljk0MzNIMTMuMTU2MlY5LjYyOTg4WiIgZmlsbD0iI0E2QjJEMSIvPgo8cGF0aCBkPSJNMTMuMTU2MiA5LjYyOTg4SDEzLjk5OFYxNS45NDMzSDEzLjE1NjJWOS42Mjk4OFoiIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8cGF0aCBkPSJNOS43ODgwOSA5LjYyOTg4SDEwLjYyOTlWMTUuOTQzM0g5Ljc4ODA5VjkuNjI5ODhaIiBmaWxsPSIjQTZCMkQxIi8+CjxwYXRoIGQ9Ik05Ljc4ODA5IDkuNjI5ODhIMTAuNjI5OVYxNS45NDMzSDkuNzg4MDlWOS42Mjk4OFoiIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8cGF0aCBkPSJNMTMuOTk3IDYuNjI0NjZIMTMuMTk3M1Y1Ljg0MTc5SDEwLjU4NzhWNi42MjQ2Nkg5Ljc4ODA5VjUuODQxNzlDOS43ODc4MiA1LjYyNTY0IDkuODcwNyA1LjQxNzY3IDEwLjAxOTYgNS4yNjA5NkMxMC4xNjg1IDUuMTA0MjQgMTAuMzcxOSA1LjAxMDgxIDEwLjU4NzggNUgxMy4xOTczQzEzLjQxMzIgNS4wMTA4MSAxMy42MTY3IDUuMTA0MjQgMTMuNzY1NiA1LjI2MDk2QzEzLjkxNDQgNS40MTc2NyAxMy45OTczIDUuNjI1NjQgMTMuOTk3IDUuODQxNzlWNi42MjQ2NloiIGZpbGw9IiNBNkIyRDEiLz4KPHBhdGggZD0iTTEzLjk5NyA2LjYyNDY2SDEzLjE5NzNWNS44NDE3OUgxMC41ODc4VjYuNjI0NjZIOS43ODgwOVY1Ljg0MTc5QzkuNzg3ODIgNS42MjU2NCA5Ljg3MDcgNS40MTc2NyAxMC4wMTk2IDUuMjYwOTZDMTAuMTY4NSA1LjEwNDI0IDEwLjM3MTkgNS4wMTA4MSAxMC41ODc4IDVIMTMuMTk3M0MxMy40MTMyIDUuMDEwODEgMTMuNjE2NyA1LjEwNDI0IDEzLjc2NTYgNS4yNjA5NkMxMy45MTQ0IDUuNDE3NjcgMTMuOTk3MyA1LjYyNTY0IDEzLjk5NyA1Ljg0MTc5VjYuNjI0NjZaIiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwLjIiLz4KPC9zdmc+Cg==")
+                background-size cover
+                color transparent
+
+            .comparsionInfoPreco
+              width 103%
+              height 3rem
+              position absolute
+              left 0
+              order 1
+              top 19rem 
+              background-color #E9EDF8
+              padding 10px 10px 0px 20px
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 130%;
+              color: #515970;
+              word-wrap: break-word;
+   
+              br
+                display none
+             
+              &:before
+                content "Preço"
+                position absolute
+                width 103%
+                height 3rem
+                bottom 3rem
+                left 0
+                display flex
+                align-items center
+                padding 0px 10px 0px 20px
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: #292F3E
+                word-wrap: break-word;
+
+              .operadora
+                display none
+
+              .txt-forma-pagamento
+                display none
+
+            .comparsionRate
+              width 103%
+              height 3rem
+              position absolute
+              left 0
+              order 2
+              top 25rem 
+              display flex
+              background-color #E9EDF8
+              align-items center
+              padding 0px 10px 0px 20px
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 130%;
+              color: #515970;
+              word-wrap: break-word;
+
+              &:before
+                content "Avaliação"
+                position absolute
+                width 103%
+                height 3rem
+                bottom 3rem
+                left 0
+                display flex
+                align-items center
+                padding 0px 10px 0px 20px
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: #292F3E
+                word-wrap: break-word;
+                
+              .ranking
+                display none
+                
+            .comparsionDescricao
+              width 103%
+              height 3rem
+              position absolute
+              left 0
+              order 11
+              top 79rem 
+              display flex
+              background-color #E9EDF8
+              align-items center
+              padding 0px 10px 0px 20px
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 130%;
+              color: #515970;
+              word-wrap: break-word;
+
+              &:before
+                content "Descrição"
+                position absolute
+                width 103%
+                height 3rem
+                bottom 3rem
+                left 0
+                display flex
+                align-items center
+                padding 0px 10px 0px 20px
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: #292F3E;
+                word-wrap: break-word;
+                
+            .displayMarca
+              width 103%
+              height 3rem
+              position absolute
+              left 0
+              order 7
+              display flex
+              top 55rem 
+              background-color #E9EDF8
+              align-items center
+              padding 0px 10px 0px 20px
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 130%;
+              color: #515970;
+              word-wrap: break-word;
+
+              &:before
+                content "Marca"
+                position absolute
+                width 103%
+                height 3rem
+                bottom 3rem
+                left 0
+                display flex
+                align-items center
+                padding 0px 10px 0px 20px
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: #292F3E;
+                word-wrap: break-word;
+
+            .displayModelo
+              width 103%
+              height 3rem
+              position absolute
+              left 0
+              order 8
+              top 61rem 
+              display flex
+              background-color #E9EDF8
+              align-items center
+              padding 0px 10px 0px 20px
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 130%;
+              color: #515970;
+              word-wrap: break-word;
+
+              &:before
+                content "Modelo"
+                position absolute
+                width 103%
+                height 3rem
+                bottom 3rem
+                left 0
+                display flex
+                align-items center
+                padding 0px 10px 0px 20px
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: #292F3E;
+                word-wrap: break-word;
+
+            .displayGarantia
+              width 103%
+              height 3rem
+              position absolute
+              left 0
+              order 9
+              top 67rem 
+              display flex
+              background-color #E9EDF8
+              align-items center
+              padding 0px 10px 0px 20px
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 130%;
+              color: #515970;
+              word-wrap: break-word;
+
+              &:before
+                content "Garantia"
+                position absolute
+                width 103%
+                height 3rem
+                bottom 3rem
+                left 0
+                display flex
+                align-items center
+                padding 0px 10px 0px 20px
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: #292F3E;
+                word-wrap: break-word;
+                
+            .displayDisponibilidade
+              width 103%
+              height 3rem
+              position absolute
+              left 0
+              order 10
+              top 73rem 
+              display flex
+              background-color #E9EDF8
+              align-items center
+              padding 0px 10px 0px 20px
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 130%;
+              color: #515970
+              word-wrap: break-word;
+
+              &:before
+                content "Disponibilidade"
+                position absolute
+                width 103%
+                height 3rem
+                bottom 3rem
+                left 0
+                display flex
+                align-items center
+                padding 0px 10px 0px 20px
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: #292F3E;
+                word-wrap: break-word;
+                
+            > li:nth-child(9)
+              width 103%
+              height 3rem
+              position absolute
+              left 0
+              order 3
+              display flex
+              top 31rem 
+              background-color #E9EDF8
+              align-items center
+              padding 0px 10px 0px 20px
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 130%;
+              color: #515970;
+              word-wrap: break-word;
+
+              &:before
+                content "Peso"
+                position absolute
+                width 103%
+                height 3rem
+                bottom 3rem
+                left 0
+                display flex
+                align-items center
+                padding 0px 10px 0px 20px
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: #292F3E;
+                word-wrap: break-word;
+                                
+            > li:nth-child(10)
+              width 103%
+              height 3rem
+              position absolute
+              left 0
+              display flex
+              order 4
+              top 37rem 
+              background-color #E9EDF8
+              align-items center
+              padding 0px 10px 0px 20px
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 130%;
+              color: #515970;
+              word-wrap: break-word;
+
+              &:before
+                content "Medida"
+                position absolute
+                width 103%
+                height 3rem
+                bottom 3rem
+                left 0
+                display flex
+                align-items center
+                padding 0px 10px 0px 20px
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: #292F3E;
+                word-wrap: break-word;
+                
+                
+            > li:nth-child(11)
+              width 103%
+              height 3rem
+              position absolute
+              left 0
+              display flex
+              order 5
+              top 43rem 
+              background-color #E9EDF8
+              align-items center
+              padding 0px 10px 0px 20px
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 130%;
+              color: #515970;
+              word-wrap: break-word;        
+
+              &:before
+                content "Largura"
+                position absolute
+                width 103%
+                height 3rem
+                bottom 3rem
+                left 0
+                display flex
+                align-items center
+                padding 0px 10px 0px 20px
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: #292F3E;
+                word-wrap: break-word;
+                
+                
+            > li:nth-child(12)
+              width 103%
+              height 3rem
+              position absolute
+              left 0
+              order 6
+              top 49rem 
+              background-color #E9EDF8
+              padding 0px 10px 0px 20px
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              display flex
+              align-items center
+              font-size: 14px;
+              line-height: 130%;
+              color: #515970;
+              word-wrap: break-word;
+
+              &:before
+                content "Voltagem"
+                position absolute
+                width 103%
+                height 3rem
+                bottom 3rem
+                left 0
+                display flex
+                align-items center
+                padding 0px 10px 0px 20px
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: #292F3E;
+                word-wrap: break-word;
+                
+                
+          &:hover
+            box-shadow: 0px 4px 20px -10px rgba(0, 0, 0, 0.25);
+
+          &:after,
+          &:before
+            content ""
+            position absolute
+            width 1px
+            height 66rem
+            background #D6DBE3
+            display flex
+            top 16rem
+
+      &:after
+        content "Características Técnicas"
+        position absolute
+        width 100%
+        height 50px
+        background #ffffff
+        display flex
+        font-family 'Public Sans'
+        font-style normal
+        font-weight 700
+        font-size 18px
+        align-items center
+        line-height 130%
+        color #FFFFFF
+        padding 14px 30px 14px 30px 
+        padding-left 30px
+
+@media screen and (max-width: 1170px)
+  .page-comparador .board>.comparator>ul>li>ul .comparsionInfoPreco
+    height 4rem
+  .page-comparador .board>.comparator>ul>li>ul .comparsionInfoPreco:before
+    bottom 4rem
+  .page-comparador .board>.comparator>ul>li>ul .comparsionRate:before 
+    bottom 2.7rem
+@media screen and (max-width: 991px)
+  .board >.comparator > ul > li
+    min-height 215px !important
+  .page-comparador .board>.comparator
+    width 100%
+    height 100%
+  .page-comparador .board>.comparator:after
+    height 45px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionFoto>a 
+    flex-direction column
+    text-align center
+    justify-content center
+    align-items  center
+    width 100%
+    margin 0
+    height 60%
+  .page-comparador .board>.comparator>ul>li>ul .comparsionFoto>a  img
+    margin-right 0
+    padding-top 12.5%
+    max-width 7em
+  .page-comparador .board>.comparator>ul>li>ul .comparsionFoto>div>a:after
+    width 50%
+    left 29%
+    top 87%
+  .page-comparador .board>.comparator>ul>li>ul .comparsionFoto .closeComp
+    transform: translate(40%, -40%);
+  .page-comparador .board>.comparator>ul>li>ul .comparsionInfoPreco 
+    font-size 12px
+    padding 10px 0 0 10px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionRate
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionDescricao
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul .displayMarca
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul .displayModelo
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul .displayGarantia
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul .displayDisponibilidade
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(9)
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(10)
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(11)
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(12)
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li
+    margin-bottom 0px
+@media screen and (max-width: 700px)
+  .page-comparador .board>.comparator>ul>li>ul .comparsionFoto>div>a:after
+    font-size 11px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionFoto>div>a:after
+    width 70%
+    top 87%
+    left 14%
+  .page-comparador .board>.comparator>ul>li>ul .comparsionInfoPreco 
+    padding 5px 5px 0px 10px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionInfoPreco:before
+    font-size 12px
+    padding: 0 5px 0 10px;
+  .page-comparador .board>.comparator>ul>li>ul .comparsionRate
+    padding 0px 5px 0px 10px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionRate:before
+    font-size 12px
+    padding 0px 5px 0px 10px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionDescricao
+    padding 0px 5px 0px 10px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionDescricao:before
+    padding 0px 5px 0px 10px
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul .displayMarca
+    padding 0px 5px 0px 10px
+  .page-comparador .board>.comparator>ul>li>ul .displayMarca:before
+    padding 0px 5px 0px 10px
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul .displayModelo
+    padding 0px 5px 0px 10px
+  .page-comparador .board>.comparator>ul>li>ul .displayModelo:before
+    padding 0px 5px 0px 10px
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul .displayGarantia
+    padding 0px 5px 0px 10px
+  .page-comparador .board>.comparator>ul>li>ul .displayGarantia:before
+    padding 0px 5px 0px 10px
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul .displayDisponibilidade
+    padding 0px 5px 0px 10px
+  .page-comparador .board>.comparator>ul>li>ul .displayDisponibilidade:before
+    padding 0px 5px 0px 10px
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(9)
+    padding 0px 5px 0px 10px
+ .page-comparador .board>.comparator>ul>li>ul > li:nth-child(9):before
+    padding 0px 5px 0px 10px
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(10)
+    padding 0px 5px 0px 10px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(10):before
+    padding 0px 5px 0px 10px
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(11)
+    padding 0px 5px 0px 10px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(11):before
+    padding 0px 5px 0px 10px
+    font-size 12px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(12)
+    padding 0px 5px 0px 10px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(12):before
+    padding 0px 5px 0px 10px
+    font-size 12px
+@media screen and (max-width: 600px)
+  .page-comparador .board>.comparator>ul>li>ul .comparsionInfoPreco .txt-corparcelas
+    display none
+  .page-comparador .board>.comparator>ul>li>ul .comparsionInfoPreco .preco-de
+    display none
+  .page-comparador .board>.comparator>ul>li>ul .comparsionInfoPreco .txt-cadaparcelas
+    display none
+@media screen and (max-width: 500px)
+  .page-comparador .board>.comparator>ul>li>ul .displayGarantia
+    height: 4rem;
+  .page-comparador .board>.comparator>ul>li>ul .displayGarantia:before, .displayDisponibilidade:before 
+    bottom: 4rem;
+  .page-comparador .board>.comparator>ul>li>ul .displayDisponibilidade:before 
+    bottom: 2.5rem;
+@media screen and (max-width: 450px)
+  .page-comparador .board>.comparator>ul>li>ul .comparsionFoto>div>a:after
+    height auto
+  .board >.comparator > ul > li
+    min-height 220px !important
+  .page-comparador .board>.comparator>ul>li>ul .comparsionFoto>div>a:after
+    font-size 10px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionFoto .closeComp
+    transform: translate(40%, -48%);
+  .page-comparador .board>.comparator>ul>li>ul .comparsionInfoPreco 
+    font-size 10px
+    text-align center
+    padding 10px 0px 0px 5px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionRate
+    font-size 10px
+    text-align center
+    padding 0px 0px 0px 5px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionDescricao
+    font-size 10px
+    text-align center
+    padding 0px 0px 0px 5px
+  .page-comparador .board>.comparator>ul>li>ul .displayMarca
+    font-size 10px
+    text-align center
+    padding 0px 0px 0px 5px
+  .page-comparador .board>.comparator>ul>li>ul .displayModelo
+    font-size 10px
+    text-align center
+    padding 0px 0px 0px 5px
+  .page-comparador .board>.comparator>ul>li>ul .displayGarantia
+    font-size 10px
+    text-align center
+    padding 0px 0px 0px 5px
+  .page-comparador .board>.comparator>ul>li>ul .displayDisponibilidade
+    font-size 10px
+    text-align center
+    padding 0px 0px 0px 5px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(9)
+    font-size 10px
+    text-align center
+    padding 0px 0px 0px 5px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(10)
+    font-size 10px
+    text-align center
+    padding 0px 0px 0px 5px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(11)
+    font-size 10px
+    text-align center
+    padding 0px 0px 0px 5px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(12)
+    font-size 10px
+    text-align center
+    padding 0px 0px 0px 5px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionInfoPreco:before 
+    padding 0px
+    font-size 10px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionRate:before
+    padding 0px
+    font-size 10px
+  .page-comparador .board>.comparator>ul>li>ul .comparsionDescricao:before
+    padding 0px 
+    font-size 10px
+  .page-comparador .board>.comparator>ul>li>ul .displayMarca:before
+    padding 0px
+    font-size 10px
+  .page-comparador .board>.comparator>ul>li>ul .displayModelo:before
+    padding 0px
+    font-size 10px
+  .page-comparador .board>.comparator>ul>li>ul .displayGarantia:before
+    padding 0px
+    font-size 10px
+  .page-comparador .board>.comparator>ul>li>ul .displayDisponibilidade:before
+    padding 0px
+    font-size 10px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(9):before
+    padding 0px 
+    font-size 10px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(10):before
+    padding 0px
+    font-size 10px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(11):before
+    padding 0px
+    font-size 10px
+  .page-comparador .board>.comparator>ul>li>ul > li:nth-child(12):before
+    padding 0px
+    font-size 10px
+  .page-comparador .board>.comparator:after
+    height 40px
+  .board>.comparator>ul>li
+    min-height: 215px!important;
+
+@media screen and (max-width: 400px)
+  .page-comparador .board>.comparator>ul>li>ul .comparsionFoto>a 
+    top 0.8rem
+@media screen and (max-width: 300px)
+  .board >.comparator > ul > li
+    min-height 220px !important
+
+  

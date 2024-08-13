@@ -1,0 +1,22 @@
+{% if product.related_products %}
+
+    <section class="products-related">
+        <h3 class="products-related__title">Produtos Relacionados</h3>
+        
+        <div data-carrosel="true" class="showcase__list showcase__list--related">
+
+            {% for product_related in product.related_products %}
+
+                <div class="showcase__item">
+
+                    {% element 'snippets/product' {'product': product_related } %}
+
+                </div>
+
+            {% endfor %}
+            
+        </div>
+
+    </section>
+
+{% endif %}

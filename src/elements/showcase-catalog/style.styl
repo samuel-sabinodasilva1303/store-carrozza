@@ -1,0 +1,24 @@
+.showcase-catalog
+
+  &__list
+    display grid
+    gap 31px 11px
+
+  &__item
+    min-width 0
+    margin-top 1em
+    .product
+      &:hover
+        margin-bottom -112px
+
+  @media desktop
+    &__list
+      grid-template-columns repeat(4, 1fr)
+
+  @media screen and (max-width 1100px)
+    &__list
+      grid-template-columns repeat(3, 1fr)
+
+  @media screen and (max-width 600px)
+    &__list
+      grid-template-columns repeat(2, 1fr)

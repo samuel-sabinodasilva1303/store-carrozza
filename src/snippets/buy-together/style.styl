@@ -1,0 +1,280 @@
+.buy-together
+  padding 60px 0 44px
+  transition all 333ms ease-in
+
+  &._lazy
+    opacity 0
+    visibility hidden
+
+  &__product-name
+      color #3f3f3f
+      font-size 12px
+      font-style normal
+      font-weight 500
+      line-height 130%
+
+  #ProdBlockCompreJunto #ProdAbas .aberta a
+    font-weight bold
+    font-size 18px
+    line-height 23px
+    color gray-c
+    pointer-events none
+    display block
+    margin-bottom 30px
+
+  .prodBox .compreJunto > li
+    &:not(:first-child)
+      margin-top 60px
+
+  .prodBox .compreJunto > li form
+    display flex
+    justify-content center
+    align-items center
+
+    .equal.sep
+      align-self center
+      margin 0 30px
+      min-width 0
+      flex 0 0 auto
+
+      .stroke
+        stroke primary
+
+      .fill
+        fill primary
+
+    .fotosCompreJunto
+      display flex
+      min-width 0
+      flex 0 1 auto
+      align-items center
+      justify-content space-between
+      gap 28px
+
+      .plus.color
+        width 24px
+        height 24px
+        display grid
+        place-items center
+
+        @media desktop
+          flex 0 0 auto
+      .plus.color.to
+        display none
+      &.large
+        overflow-x auto
+        padding-bottom 15px
+
+      .produto
+        align-self stretch
+        max-width 225px
+        flex 1 0 auto
+        display grid
+        border-radius 5px
+        border 1px solid border-2
+        padding 8px 15px
+        place-content flex-start
+        gap 8px
+
+        > span:not([class])
+          line-height 0
+
+        .unidades_topo
+          order -1
+          font-size 10px
+          line-height 13px
+          text-align center
+          color #858EA7
+
+          & + span
+            order -2
+
+        img
+          display flex
+          height auto
+          align-items center
+          justify-content center
+          margin 0 auto
+        
+        .buyTogether-text
+          color #A6B2D1
+          font-size 12px
+          text-align center
+          font-style normal
+          font-weight 500
+          line-height 130%
+
+        .varTit
+          font-size 12px
+          line-height 18px
+          font-weight 400
+          margin-bottom 3px
+
+          &:not(.onVar)
+            display none
+
+        select.select
+          appearance none
+          width 100%
+          max-width 160px
+          height 38px
+          font-size 13px
+          border 1px solid border-2
+          border-radius 8px
+          min-height 38px
+          color tertiary
+          padding-inline 16px
+          background-color #fff
+          background-image arrow-down
+          background-size auto
+          background-repeat no-repeat
+          background-position calc(100% - 14px) center
+          margin-bottom 20px
+
+    .precoCompreJunto
+      min-width 0
+
+      > div.blocoAlerta
+        font-size 14px
+        line-height 15px
+        color #f0506e
+        height 0
+        position relative
+        bottom -5px
+
+      > div:first-child
+        font-size 0
+        font-weight 700
+        color #000
+        line-height 5px
+        width 400px
+
+        > strong
+          font-size 24px
+          line-height 31px
+          font-weight bold
+          color gray-c
+
+        .unidades_valor,
+        > span,
+        > br,
+        > a
+          display none
+
+        > span
+          font-size 14px
+          line-height 21px
+          font-weight 400
+          color secondary
+
+          &:first-of-type
+            display none
+
+        > a
+          font-size 14px
+          line-height 21px
+          font-weight 400
+          color secondary
+
+      .precosCompreJunto
+        margin-top 20px
+
+        .comprejuto_preco
+          white-space nowrap
+
+          > span
+            font-size 12px
+            line-height 15px
+            color tertiary
+
+          > strong
+            font-weight normal
+            color gray-c
+            font-size 15px
+            line-height 18px
+
+        .comprejunto_preco2
+          white-space nowrap
+          font-size 24px
+          line-height 31px
+
+          > span
+            color tertiary
+
+          > strong
+            color gray-c
+
+        .comprejunto_economize
+          font-size 14px
+          line-height 18px
+          color gray-c
+
+          > span
+            font-weight bold
+            color #000
+            color gray-c
+
+        .comprejunto_botao
+          margin-top 40px
+
+          @media mobile
+            text-align center
+
+          > button
+            width 161px
+            height 38px
+            border 1px solid #2ABC27
+            background-color #2ABC27
+            font-weight 700
+            font-size 14px
+            color #fff
+            border-radius 8px
+            transition all 0.3s
+            display flex
+            align-items center
+            justify-content center
+            position relative
+
+            > img
+              display none
+
+            span
+              font-size 0
+
+            &:before
+              position absolute
+              content 'Compre junto'
+              font-size 14px
+              display inline-block
+
+            @media desktop
+              &:hover
+                background #fff
+                color #2abc27
+
+      @media desktop
+        max-width 200px
+        flex 1 0 auto
+
+  @media mobile
+    .prodBox .compreJunto > li form
+      flex-wrap wrap
+
+      .fotosCompreJunto
+        flex 100%
+        flex-wrap wrap
+        justify-content center
+        gap 20px 10px
+
+        > div
+          &:nth-child(odd)
+            flex 1
+
+          &:nth-child(4n)
+            flex 100%
+            text-align center
+
+      .equal.sep
+        flex 100%
+        margin 20px 0
+        text-align center

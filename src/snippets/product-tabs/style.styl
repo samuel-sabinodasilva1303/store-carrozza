@@ -1,0 +1,249 @@
+.product-tabs
+  overflow hidden
+
+  &__link
+    font-weight bold
+    font-size 18px
+    line-height 23px
+    color gray-c
+    display block
+    padding-block 15px
+
+    svg
+      fill gray-c
+      transition all 0.3s
+      transform rotate3d(1, 0, 0, 180deg)
+
+  &__content
+    & *
+      margin revert
+      line-height 130%
+      color #292F3E
+
+    &#formasPagto
+      #linkPagParcelado
+        font-size 13px
+        text-decoration underline
+        display none
+ 
+      #atualizaFormas
+        > p
+          display none
+
+        .Forma1 > li
+          margin-bottom 20px
+
+          > a
+            display inline-block
+            margin-bottom 15px
+            cursor pointer
+
+        table
+          .item-parcela
+            font-size 13px
+            display flex
+            text-indent 20px
+            padding-block 15px
+            color #A6B2D1
+            text-align right
+            font-size 14px
+            font-style normal
+            font-weight 500
+            line-height 130%/* 18.2px */
+            > b 
+              color #292F3E
+              font-size 14px
+              font-style normal
+              font-weight 700
+              line-height 130% /* 18.2px */
+
+            strong,
+            b
+              color #333
+
+          img
+            max-width 42px
+            max-height 42px
+
+        .Forma2
+          display none
+          align-items flex-start
+          margin-bottom 30px
+
+          > li > ul > li > a
+            display block
+
+            > img
+              max-width 50px
+              max-height 40px
+
+          .caixa-forma-credit,
+          .caixa-forma-order
+            flex 1
+
+            > h3
+              font-size 13px
+              color #000
+
+            > ul
+              display grid
+              grid-template-columns repeat(auto-fill, minmax(50px, 50px))
+              grid-gap 8px
+              place-content center
+
+              > li
+                place-self center
+
+        .Forma3
+          border-collapse separate
+          border-spacing 0 15px
+          font-size 13px
+
+          .color
+            padding 5px
+            display inline-block
+
+  @media desktop
+    border 1px solid border-2
+    border-radius 8px
+    background-color #fff
+
+    &__menu
+      min-width 0
+      flex 0 267px
+
+    &__list
+      position relative
+      border-bottom 1px solid border-2
+      display flex
+      align-items center
+      justify-content space-around
+      padding-inline 8%
+      gap 10px
+
+    &__item
+      transition all 0.3s
+
+      &--dash
+        position absolute
+        bottom -2px
+        height 4px
+        border-radius 2px
+        width var(--dash-width)
+        background-color primary
+        left var(--dash-left)
+        z-index 1
+        transition all 333ms
+
+    &__link
+      > svg
+        display none
+
+    &__container
+      min-width 0
+      flex 1
+      padding 36px 8%
+      position relative
+
+    &__content
+      transition all 0.3s
+
+      &:not(.show)
+        visibility hidden
+        opacity 0
+        height 0
+        position absolute
+
+      &.show
+        visibility visible
+        opacity 1
+        height auto
+        color #515970
+
+    &__comments-btn
+      &:hover
+        background tertiary
+        color primary
+
+  @media mobile
+    &__menu
+      flex 100%
+
+    &__item
+      border 1px solid border-2
+      border-radius 8px
+      background-color #fff
+      padding 15px 10px 0
+
+      &:not(:last-child)
+        margin-bottom 10px
+
+    &__link
+      padding 0 0 15px
+      display flex
+      align-items center
+      justify-content space-between
+      position relative
+
+      &:before
+        content ''
+        display block
+        position absolute
+        bottom 0
+        height 2px
+        border-radius 1px
+        background-color primary
+        width 0
+        transition all 333ms linear
+        visibility hidden
+        opacity 0
+
+      ^[0]__item.show &
+        color primary
+
+        &:before
+          width 100%
+          opacity 1
+          visibility visible
+
+        svg
+          fill primary
+          transform rotate3d(0, 0, 1, 0)
+
+    &__content
+      display none
+      padding-block 20px
+
+      &#formasPagto
+        #atualizaFormas
+          .Forma1
+            table
+              tr > td:last-of-type
+                display none
+
+              .item-parcela
+                font-size 0
+                @media mobile
+                  display flex
+                  flex-direction column
+                  align-items start
+
+                > b,
+                > strong
+                  font-size 13px
+
+              img
+                margin 5px
+
+          .Forma3
+            tr > td
+              width calc((100% / 3))
+
+              &:last-of-type
+                display none
+
+      &#coments
+        #comentario_cliente
+          label >
+            input[type='text']
+              width 100%

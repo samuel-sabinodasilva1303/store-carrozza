@@ -1,0 +1,42 @@
+.categories
+  transition all .3s ease
+  position absolute
+  visibility hidden
+  opacity 0
+  top 100%
+  right 15px
+  padding 24px
+  box-shadow 0 4px 14px rgba(0, 0, 0, .15)
+  background #fff
+
+  &__title
+    font-weight 400
+    font-size 24px
+    line-height 36px
+    color #525252
+    padding-bottom 14px
+    margin-bottom 20px
+    border-bottom 1px solid #c5c5c5
+    text-align right
+
+  &__list
+    max-height 221px
+    display flex
+    flex-flow row-reverse wrap
+    direction rtl
+    writing-mode vertical-lr
+
+  &__item
+    writing-mode horizontal-tb
+    margin 3px 5px
+
+  &__link
+    font-size 14px
+    line-height 22px
+    color secondary
+    transition all .3s
+
+  @media desktop
+    &__link
+      &:hover
+        color #525252

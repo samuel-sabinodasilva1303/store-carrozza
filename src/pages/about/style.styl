@@ -1,0 +1,76 @@
+.page-quem-somos body
+  background-color #fafbfd
+
+.page-about
+  p,
+  li
+    font-size 14px
+    line-height 22px
+    color #555
+    margin-bottom 6px
+
+    b
+      font-size 16px
+
+  img
+    max-width 100%
+    background-repeat no-repeat
+    background-size cover
+    font-style italic
+    height auto
+    vertical-align middle
+
+  ul
+    list-style inside
+
+  &__container
+    padding 80px 15px 20px 15px
+    width calc(100% - 15px)
+    max-width 1048px
+    margin-inline auto
+    background-color #fff
+    box-shadow 0 4px 20px -10px rgba(0, 0, 0, 0.25)
+
+    @media mobile 
+      padding 40px 15px 20px 15px
+
+
+  &__title
+    font-size 18px
+    font-weight 700
+    line-height 20px
+    color #222
+    padding-bottom 20px
+    text-align center
+
+  &__content
+    margin-top 20px
+
+  &__gallery
+    margin-block 16px
+    display grid
+    grid-template-columns repeat(2, 1fr)
+    gap 16px
+    place-items center
+    width fit-content
+    margin-inline auto
+
+    ~/ &-img
+      width 100%
+      max-width 524px
+      object-fit cover
+      height 100%
+
+  &__figure
+    aspect-ratio 173 / 18
+    max-height 90px
+    width 100%
+    margin-bottom 16px
+
+    & > img
+      width 100%
+
+  &__iframe
+    aspect-ratio 560 / 315
+    width 100%
+    height auto

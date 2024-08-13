@@ -1,0 +1,90 @@
+.slick
+  &-arrow
+    height 48px
+    width 48px
+    display block
+    line-height 0
+    background rgba(0, 0, 0, 0)
+    position absolute
+    top 0
+    bottom 134px
+    margin auto 0
+    z-index 1
+    transition all 0.3s
+
+    > svg
+      fill primary
+
+  &-disabled
+    cursor default
+    opacity 0.4
+
+  &-dots
+    position absolute
+    bottom -27px
+    left 0
+    right 0
+    z-index 1
+    display flex
+    width fit-content
+    display flex
+    align-items flex-end
+    justify-content center
+    gap 10px
+    margin-inline auto
+
+    > li
+      cursor pointer
+      transition all 444ms linear
+      border none
+      border-radius 99px
+      height 13px
+      width 13px
+      display flex
+      align-items center
+      justify-content center
+      overflow hidden
+
+      &.slick-active
+        background #0066FF
+        
+      &::before
+        content ''
+
+
+      &.slick-active
+        & ^[0]-dot
+          height 6px
+          background-color #000000
+
+  &-dot
+    display flex
+    height 3px
+    width 20px
+    border-radius 2px
+    transition all 444ms linear
+    background-color #fff
+
+  @media desktop
+    &-prev
+      left -24px
+
+    &-next
+      right -24px
+
+    &-arrow:not(.slick-disabled):hover
+      opacity 0.7
+
+  @media (min-width 1275px)
+    &-prev
+      left 0px
+
+    &-next
+      right 0px
+
+  @media mobile
+    &-prev
+      left 0
+
+    &-next
+      right 0

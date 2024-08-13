@@ -1,0 +1,31 @@
+{% if settings.hottags_position == 1 and tags|length and settings.mostSearchedWordsShow %}
+
+    {% if pages.current in  ['product', 'home'] %} 
+
+        <div class="tagcloud">
+
+            <div class="tagcloud__container">
+
+                <h3 class="tagcloud__title">{{ Translation('tags_mais_buscadas') }}</h3>
+
+                <ul class="tagcloud__list">
+
+                    {% for tag in tags %}
+
+                        <li class="tagcloud__item">
+
+                            <a class="tagcloud__link" href="{{ tag.url }}" style="font-size: {{ tag.font_size }}%">{{ tag.word }}</a>
+
+                        </li>
+
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    {% endif %}
+    
+{% endif %}

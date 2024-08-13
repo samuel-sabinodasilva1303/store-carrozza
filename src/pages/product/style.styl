@@ -1,0 +1,1272 @@
+.page-product
+  .parc__container, .boleto__container
+    border 1px solid #E9EDF8
+    border-radius 8px
+    margin 10px 0
+    > li 
+      display block !important
+      > a
+        display none
+      > table 
+        > tbody
+          > tr
+            > td
+              color #A6B2D1
+              font-size 14px
+              font-style normal
+              font-weight 500
+              line-height 130% /* 18.2px */
+
+              &:first-of-type
+                width 50px !important
+
+  .pgto__topbar
+    background #E9EDF8
+    width 100%
+    height 41px
+    border-radius 8px
+    margin-bottom 30px
+    font-size 16px
+    font-weight 700
+    line-height 20.8px
+    color #292F3E
+    padding 10px
+
+  #formasPagto
+    li
+      list-style none
+      margin 0 40px
+  header
+    box-shadow 0 4px 14px rgba(0, 0, 0, 0.1)
+
+  .produto-imagem-grande.produto-video > .bloco
+    display contents
+
+    img
+      max-width 100%
+      max-height 100%
+
+  #imgView
+    width 100%
+    max-width 457px
+    max-height 632px
+
+  .produto-imagem.zoom-off
+    // pointer-events none
+    margin 0 auto
+    position relative
+
+    .produto-imagem-grande
+      > a
+        cursor default
+        display block
+
+      &.produto-video
+        cursor pointer
+        display flex
+        align-items center
+        justify-content center
+        height 100%
+
+  .produto-imagem.zoom-on
+    .produto-imagem-grande.produto-video
+      margin 0 auto
+      display flex
+      align-items center
+      justify-content center
+      z-index 4
+      cursor pointer
+
+  .produto-zoom-detalhe,
+  #economize,
+  #info,
+  #visualAbas,
+  #form_comprar br,
+  #add,
+  div[style*='clear:both']
+    display none
+
+  #produto_nao_disp
+    #nao_disp
+      display flex
+      margin-bottom 10px
+      position relative
+      margin-top 38px
+      
+      .blocoSucesso
+        font-size 14px
+        line-height 16px
+
+        > br
+          display block
+
+      label
+        font-size 0
+
+      #letMeKnow
+        display flex
+        align-items center
+        justify-content center
+        height 45px
+        width 100%
+        font-weight 700
+        font-size 14px
+        color #fff
+        background #005A99
+        border-radius 0px 8px 8px 0px
+
+        > img
+          display none
+
+        &:before
+          content 'avise-me'
+          display inline
+
+      .color
+        display none
+
+      #email_avise
+        border 1px solid #CBD2E4
+        width 268px
+        color secondary
+        padding 0 15px
+        border-radius 8px 0 0 8px
+
+        &:invalid,
+        &:-moz-ui-invalid
+          outline none
+          box-shadow none
+
+      #div_erro
+        font-size 13px
+        font-weight 400
+        color #f0506e
+        display inline-block
+        margin-top 10px
+      
+      &:before
+        content "Deixe seu e-mail para ser avisado quando o produto estiver disponível :)"
+        position absolute
+        top -44px
+        color: #515970;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 130%; 
+        width 100%
+
+
+    .botao-nao_indisponivel
+      margin-bottom 15px
+      display inline-block
+      background #E9EDF8
+      font-size 0
+      width 383px
+      height 42px
+      line-height 39px
+      border 0
+      text-align center
+      margin-top 24px
+
+      &:before
+        content 'Produto indisponível'
+        color #292F3E
+        display inline-block
+        font-size 14px
+        font-weight 700
+        text-transform initial
+  &__adrres
+    width 430px
+    padding 18px 40px
+    height auto
+    margin-bottom 3em
+    border 1px solid #3f3f3f
+    background #E9EDF8
+    > ul
+      display flex
+      align-items center
+      flex-wrap wrap
+      width 100%
+      justify-content space-between
+      gap 30px
+      > li 
+       > h3, span
+        display none
+      .title
+        color #3f3f3f
+        font-size 14px
+        font-style normal
+        font-weight 700
+        line-height 150%
+      .number
+        color #292F3E
+        font-size 14px
+        font-style normal
+        font-weight 500
+        line-height 150%
+        margin-top 6px
+
+  
+  &__content
+    position relative
+
+    &.bottom
+      padding-top 50px
+
+    &:before
+      content ''
+      display block
+      position absolute
+      width 100vw
+      height 100%
+      top 0
+      left calc(((100% - 100vw) / 2))
+
+      ^[-1].top:before
+        background-color #fff
+        box-shadow 0 4px 20px -10px rgba(0, 0, 0, 0.25)
+        z-index -1
+
+      ^[-1].bottom:before
+        background-color #fafbfd
+        z-index -2
+
+  &__thumbs
+    img
+      max-height 120px
+      margin auto
+
+    &--video
+      height 120px
+      display flex
+      align-items center
+      justify-content center
+
+      > svg
+        fill #525252
+
+  .produto-imagem-miniatura,
+  &__thumbs--link:not(&__thumbs--video)
+    display block
+    width 115px
+    margin 0 auto
+    height 120px
+
+  #product-priceBox
+    > .produto-preco
+      padding-bottom 13px
+
+  #produto_preco
+    display flex
+    flex-wrap wrap
+    align-items center
+    width 100%
+
+    .txt-por,
+    a.botao_tire_duvidas
+      display none !important
+
+    .color:has(.botao-sob-consulta)
+      width 100%
+      margin 24px 0
+
+    span.botao-sob-consulta
+      display flex
+      align-items center
+      justify-content center
+      height 42px
+      font-size 16px
+      width 100%
+      max-width 380px
+      font-size 0
+      text-align center
+      line-height 39px
+      background #E9EDF8
+
+      &:before
+        content 'Sob consulta'
+        display inline
+        color: #292F3E
+        font-size: 14px
+        font-weight: 700
+        line-height: 130%
+
+    #precoDe
+      flex 100%
+      font-size 14px
+      line-height 24px
+      font-weight 500
+      color #A6B2D1
+      text-decoration line-through
+
+    .color-tone-2:not(.PrecoPrincipal)
+      display block
+      flex 100%
+      margin-bottom 5px
+      display none
+
+    .PrecoPrincipal
+      flex 100%
+      font-size 24px
+      font-weight 700
+      line-height 31px
+      color primary
+      position relative
+      display flex
+      gap 8px
+      flex-wrap wrap
+      &:after 
+        content "à vista"
+        display block
+        font-size 20px
+
+    #info_preco
+      order 3
+      flex 100%
+      font-size 14px
+      line-height 18px
+      color gray-c
+
+      // .preco-avista.precoAvista,
+      // .txt-avista,
+      // .txt-com-desconto
+      //   display none
+
+      .txt-forma-pagamento
+        display none
+
+      .txt-corparcelas.txt-corparcelas .preco-parc2 .color:before
+        content 'em até'
+        font-weight normal
+        display inline-block
+
+  #cepbox
+    font-size 0
+    display flex
+    align-items center
+    flex-wrap wrap
+
+    label
+      display none
+
+  &__image,
+  &__info
+    min-width 0
+
+  &__gallery
+    position relative
+
+  &__image
+    #cloud-zoom-big,
+    #wrap
+      z-index 4 !important
+
+    #cloud-zoom-big
+      left 0 !important
+      top 0 !important
+      width 100% !important
+      height 100% !important
+      margin auto !important
+
+    #container_thumb
+      cursor move !important
+
+    #foto_p
+      margin-bottom 35px
+
+    #foto_a
+      display none
+
+      .icon-video
+        height 100%
+        display flex
+        align-items center
+        justify-content center
+
+        > svg
+          fill #525252
+
+  &__ref
+    font-size 12px
+    line-height 15px
+    color #858EA7
+
+  &__ranking
+    display flex
+    align-items center
+    justify-content space-between
+
+  &__brand
+    font-size 12px
+    line-height 15px
+    color tertiary
+    margin-top 5px
+
+  &__name
+    font-size 18px
+    font-weight bold
+    line-height 23px
+    color gray-c
+    margin-top 9px
+
+  &__labels
+    margin-top 16px
+    display flex
+    align-items center
+    gap 4px
+
+  &__shippingFree
+    display flex
+    width 516px
+    padding 10px 40px 11px 13px
+    align-items flex-start
+    border 1px solid #005A99
+    background #E9EDF8
+    gap 16px
+    &:hover 
+      cursor pointer
+      background #fff
+      transition all 1s
+    &--main 
+      padding-block 10px
+
+
+      .efpopuptext
+        width 516px
+        background-color #0199ff
+        color #fff
+        flex-wrap wrap
+        position absolute
+        z-index 1
+        text-align left
+        float left
+        margin 0
+        padding 19px 15px
+        list-style none
+        gap 3px
+        
+        > li  
+          float left
+          width 150px
+          margin 5px
+          font-size 12px
+          padding 0
+
+    &--free
+      display flex
+      gap 1em
+      align-items center
+
+    &--text
+      > h1
+        color #005A99
+        font-size 18.112px
+        font-style normal
+        font-weight 700
+        line-height 130%
+        text-transform uppercase
+
+      > p
+        color #595867
+        font-size 14px
+        font-style normal
+        font-weight 400
+        line-height 130%
+
+  &__pricing
+    transition all 333ms ease
+    
+    .price-product-content 
+      display flex
+      flex-direction column 
+      gap 5px
+      margin-bottom 20px
+
+    .price-product 
+      display flex
+      gap 5px
+      align-items baseline
+      
+      > h1
+       color #005a99
+
+      > strong
+        display flex
+        gap 5px
+        align-items baseline
+        
+      > span
+        color #515970
+        font-size 14px
+        font-family "Public Sans"
+        
+
+
+    &._lazy
+      opacity 0
+      visibility hidden
+
+  &__buttons
+    width fit-content 
+
+  &__fav
+    padding 0 0 27px 10px
+    margin-bottom 20px
+    border-bottom 1px solid #ededed
+
+    > svg
+      vertical-align middle
+      fill primary
+
+    #container-add-lista
+      display inline-block
+
+      .color
+        display inline-block
+        line-height 18px
+        font-weight 400
+        position relative
+        padding-left 26px
+        left -18px
+        color secondary
+        font-size 0
+
+        &:after
+          content 'Adicionar aos favoritos'
+          font-size 12px
+          display inline
+          text-decoration underline
+
+  &__variations
+    padding-block 10px
+
+    .varCont > .lista_radios > li
+      margin-bottom 10px
+
+      > span
+        display inline-block
+        margin-bottom 4px
+
+      > ul label
+        cursor pointer
+
+    .passo1:not(.show_size_and_color_type)
+      display inline-block
+      margin-bottom 15px
+
+      .varTit
+        margin-bottom 10px
+
+    #variation_second_select > select,
+    select#second_dropdown,
+    select#variation_first_select
+      appearance none
+      background-image arrow-down
+      background-size auto
+      background-position calc(100% - 14px) center
+      background-repeat no-repeat
+      font-size 13px
+      border-radius 8px
+      color tertiary
+      border 1px solid border-2
+      width auto
+      min-width 156px
+      min-height 38px
+      background-color #fff
+      padding-inline 16px
+
+    #cor_nome
+      display none
+
+    .varTit,
+    .texto_variacao h2
+      font-size 12px
+      line-height 18px
+      font-weight 400
+      margin-bottom 10px
+
+    .varTit:has(+ div:empty)
+      display none
+
+    .show_size_and_color_type
+      .lista_cor_variacao
+        display flex
+        align-items center
+        gap 11px
+        flex-wrap wrap
+        margin-bottom 20px
+
+        > li img
+          padding 1px
+          border-radius 3px
+          border 2px solid #e0e0e0
+          transition all 0.3s
+          width 35px
+          height 35px
+
+          &.cor_selecionada
+            border-color primary
+            padding 1px
+
+        > li > div
+          height 35px
+          min-width 35px
+          text-align center
+          background #fff
+          border 2px solid #e0e0e0
+          border-radius 3px
+          font-size 14px
+          line-height 34px
+          transition all 0.3s
+          color tertiary
+          padding-inline 6px
+
+          &.cor_selecionada
+            border-color primary
+            color primary
+
+  &__shipping
+    margin-top 30px
+    transition all 333ms
+
+    &._lazy
+      opacity 0
+      visibility hidden
+
+    .blocoAlerta
+      font-size 12px
+      line-height 18px
+      color #F0506E
+      display inline-block
+      margin-top 10px
+
+    &--link
+      color #2B6FF1
+      font-size 13px
+      font-weight 400
+      display inline-block
+      margin 13px 0
+      text-decoration underline
+
+    #cep1,
+    #cep2
+      height 42px
+      min-height 42px
+      border 1px solid #c5c5c5
+      font-size 17px
+      color secondary
+      letter-spacing 1px
+      display none
+
+    #fullcep
+      min-height 38px
+      border 1px solid border-2
+      color #858EA7
+      font-size 12px !important
+      letter-spacing 0px
+      border-radius 8px
+      border-top-right-radius unset
+      border-bottom-right-radius unset
+      width 160px
+      padding-inline 12px
+      text-align start
+
+    #cep1
+      border-right none
+      border-radius 0 0 0 0
+      width 90px
+      text-align right
+
+    #cep2
+      border-left none
+      border-radius 0 0 0 0
+      width 68px
+
+    .cepbox-text
+      flex 100%
+      margin-bottom 15px
+
+      &:before
+        content 'Consulte prazo e valor do frete'
+        font-size 14px
+        line-height 18px
+        color gray-c
+        font-weight bold
+        display inline-block
+
+    #shippingSimulatorButton
+      display inline-block
+      width 119px
+      height 38px
+      color #fff
+      background-color primary
+      border 1px solid primary
+      border-top-right-radius 8px
+      border-bottom-right-radius 8px
+      font-weight bold
+      display inline-flex
+      align-items center
+      justify-content center
+      font-size 0
+      margin-left -1px
+
+      &:before
+        content 'Calcular'
+        display inline-block
+        font-size 14px
+
+  &__links
+    display flex
+    padding-block 21px
+    gap 1em
+    > span
+      font-size 12px
+      font-style normal
+      font-weight 500
+      line-height 130%
+      &:hover
+        text-decoration underline
+      > a
+        color #515970
+        &:hover
+          color #2b6ff1
+
+  &__additional-info
+    .varCont
+      margin-bottom 20px
+
+      &:last-of-type
+        margin-bottom 35px
+
+    .varTit strong
+      font-size 12px
+      line-height 18px
+      font-weight 400
+      margin-bottom 10px
+
+    select,
+    input,
+    textarea
+      font-size 13px
+      color secondary
+      border 1px solid #ededed
+      width 172px
+      max-width 100%
+      background #fff
+
+    select,
+    input
+      height 42px
+      border-radius 21px
+      padding 0 8px
+
+    textarea
+      border-radius 5px
+      resize none
+      padding 8px
+
+    select
+      appearance none
+      background-image arrow-down
+      background-size 13px 17px
+      background-position calc(100% - 14px) center
+      background-repeat no-repeat
+
+  &__gift
+    margin-bottom 25px
+    padding-bottom 10px
+    border-bottom 1px solid #ededed
+
+    .brinde_produto
+      position relative
+
+      #brindes
+        width auto !important
+
+      #btmais,
+      #btmenos
+        display none !important
+        position absolute
+        width 20px
+        height 100%
+        z-index 1
+        display flex
+        align-items center
+        justify-content center
+        transition all 0.3s
+
+        > strong
+          display none
+
+      #btmais
+        right -20px
+
+      #btmenos
+        left -20px
+
+    #nomeBrinde
+      font-size 16px
+      color #000
+      font-weight 700
+
+    .brinde_produto_lista
+      // overflow hidden
+      margin-top 10px
+
+    .brinde_lista
+      // display flex
+      align-items center
+
+      > li
+        padding 5px
+
+        img
+          border-color #525252 !important
+
+  &__summary
+    &--text
+      font-size 14px
+      line-height 21px
+      font-weight 400
+
+    &--fadeout
+      height 30px
+      position relative
+      bottom 32px
+      background-image linear-gradient(rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%)
+
+    &--anchor
+      display block
+      text-align center
+      color #525252
+      font-size 16px
+      line-height 24px
+      font-weight 700
+      text-decoration underline
+
+  &__kits
+    padding-bottom 20px
+    margin-bottom 35px
+    border-bottom 1px solid #e0e0e0
+
+    .tray-kit
+      &-title
+        margin-bottom 25px
+      &-list 
+        height 420px
+        overflow auto
+
+        h3
+          font-size 24px
+          font-weight 700
+          line-height 36px
+          color primary
+          margin-bottom 10px
+
+        &:after
+          content ''
+          height 2px
+          width 43px
+          display block
+          background primary
+          margin-top 5px
+
+      &-item
+        padding 8px
+        border-radius 3px
+        border: 1px solid #F4F7FB
+
+        &:not(:first-of-type)
+          margin-top 15px
+
+        > div
+          display flex
+          flex-wrap wrap
+          gap 15px
+
+      &-unity
+        flex 100%
+        order -1
+        margin-bottom 5px
+
+      &-info,
+      &-image
+        flex 0 1 47%
+        min-width 0
+
+      &-name > a 
+        color #515970
+        font-size 14px
+        font-style normal
+        font-weight 500
+        line-height 130% /* 18.2px */
+
+      &-variation
+        .varTit
+          font-size 12px
+          line-height 18px
+          font-weight 400
+          margin-bottom 10px
+
+        select
+          appearance none
+          background-image arrow-down
+          background-size 13px 17px
+          background-position calc(100% - 14px) center
+          background-repeat no-repeat
+          font-size 13px
+          border-radius 21px
+          color secondary
+          border 1px solid #c5c5c5
+          width auto
+          min-width 156px
+          min-height 42px
+          background-color #fff
+          text-indent 16px
+
+  &__comments
+    display grid
+    place-items center
+
+    > br,
+    > h2.color
+      display none
+
+    &--title
+      margin-block 30px
+      font-size 18px
+      font-weight bold
+      line-height 23px
+      color gray-c
+      order -2
+
+    &--btn
+      font-size 16px
+
+    &--btn,
+    a[data-logged-user='false']
+      background-color primary
+      border-radius 8px
+      border 1px solid primary
+      color #fff
+      font-weight bold
+      display grid
+      place-items center
+      width 204px
+      height 38px
+      max-width 100%
+      margin-top 24px
+      transition all 333ms
+
+      @media (hover hover)
+        &:hover
+          background-color #fff
+          color primary
+
+    a[data-logged-user='false']
+      font-size 14px
+
+    #comentario_cliente
+      display none
+      order 1
+      padding 30px 8%
+      background-color #fff
+      border 1px solid border-2
+      border-radius 8px
+      width 100%
+      margin-top 25px
+
+      #div_erro
+        color tomato
+
+      #bt-submit-comments
+        display none
+
+      .rateBlock
+        .stars
+          display flex
+          align-items center
+          flex-wrap wrap
+          gap 15px 8px
+
+        .nota
+          flex 100%
+
+          > strong
+            color primary
+
+        .starn
+          background starEmpty no-repeat center / contain
+          width 25px
+          height 22px
+          cursor pointer
+
+          &.star-on
+            background-image starFilled
+
+      label
+        color gray-c
+
+        > input[type='text']
+          display block
+          background #fff
+          border-radius 8px
+          margin-top 5px
+          border 1px solid border-2
+          text-indent 16px
+          width 100%
+
+          &:disabled
+            opacity 0.2
+
+        > textarea
+          border-radius 8px
+          border 1px solid border-2
+          padding 10px
+          height 120px
+          resize none
+
+    .hreview-comentarios
+      order -1
+      margin-bottom 8px
+      border 1px solid border-2
+      background #fff
+      border-radius 8px
+      display flex
+      flex-wrap wrap
+      gap 16px 30px
+      align-items center
+      padding 24px 8% 50px
+      width 100%
+      min-height 170px
+
+      > .item
+        display none
+
+      > p
+        flex 100%
+        color tertiary
+        font-size 14px
+        line-height 18px
+
+    .reviewer
+      color gray-c
+      font-size 18px
+      line-height 23px
+      font-weight bold
+
+    .ranking
+      font-size 0
+      height auto
+      line-height 0
+      width 92px
+
+      .star1,
+      .star2,
+      .star3,
+      .star4,
+      .star5
+        background-image stars
+        background-repeat-y no-repeat
+        background-position-y center
+        background-size 200% 100%
+        height 17px
+        display block
+
+      .star1
+        background-position-x 80%
+
+      .star2
+        background-position-x 60%
+
+      .star3
+        background-position-x 40%
+
+      .star4
+        background-position-x 20%
+
+      .star5
+        background-position-x 0
+
+  &__comments-btn
+    height 42px
+    width 200px
+    max-width 100%
+    border-radius 8px
+    border 1px solid secondary
+    background-color secondary
+    color #fff
+    transition all 333ms
+    margin 15px 0
+  &__priceplus
+    &--main
+      display flex
+      align-items center
+      gap 1em
+    &--text
+      > a
+        color #005A99
+        cursor pointer
+        font-size 12px
+        font-style normal
+        font-weight 500
+        line-height 150%
+        text-decoration-line underline
+        &:hover
+          opacity 0.5
+    &--help
+      display inline-flex
+      cursor pointer
+      border-radius 8px
+      background #005A99
+      height 30px
+      padding 0px 6px
+      align-items center
+      gap 1px
+      &:hover
+        opacity 0.8
+      #ef_btn_chat_produto
+        display flex
+        align-items center
+        > span 
+          color #FFF
+          font-size 12px
+          font-style normal
+          font-weight 500
+          line-height 150%
+
+    @media (hover hover)
+      &:hover
+        background-color #fff
+        color secondary
+
+  @media desktop
+    #produto_nao_disp #nao_disp #letMeKnow
+      transition all 0.3s
+
+      &:hover
+        opacity .8
+
+    &__top
+      display flex
+      gap 20px
+
+    &__image
+      flex 58%
+
+    &__info
+      flex 42%
+
+    &__name,
+    &__labels,
+    &__form
+      max-width 380px
+    
+        
+    &__address
+      &-title
+        color #005A99
+        font-size 14px
+        font-style normal
+        font-weight 700
+        line-height 130%
+        padding-bottom 13px
+
+    &__variations
+      .show_size_and_color_type
+        .lista_cor_variacao > li
+          &:hover
+            > img
+              border-color primary
+
+        .lista_cor_variacao > li
+          &:hover
+            > div
+              border-color primary
+              color primary
+
+    &__fav
+      #bloco-add-lista
+        a.color
+          transition all 0.3s
+
+          &:hover
+            color #525252
+
+    &__shipping
+      &--link
+        transition all 0.3s
+
+        &:hover
+          color #525252
+
+      #fullcep
+        transition all 0.3s
+
+        &:focus,
+        &:focus-within
+          border-color primary
+
+      #shippingSimulatorButton
+        transition all 0.3s
+        .image
+          display none
+
+        &:hover
+          color primary
+          background #fff
+
+    &__summary
+      &--anchor
+        transition all 0.3s
+
+        &:hover
+          opacity 0.6
+
+    &__gift
+      .brinde_lista > li a
+        cursor pointer
+
+  @media mobile
+    .parc__container
+      overflow-x auto
+    .product-tabs__content tbody > tr
+      display flex
+      gap 2px
+    .product-tabs__content *
+      line-height 150%
+    .slick-track
+      margin-left 0 
+  
+    &__image
+      margin-bottom 35px
+
+    &__shippingFree
+      width 100%
+
+    &__shipping
+      #shippingSimulatorButton
+        max-width 172px
+        min-width 115px
+        width auto
+        > img
+          display none
+    &__adrres
+      width 100%
+      margin-top 1em
+      > ul
+        justify-content center 
+    &__gift
+      .brinde_produto
+        #btmais 
+          right -15px 
+
+        #btmenos
+          left -15px
+    #produto_nao_disp
+      .botao-nao_indisponivel
+        width 100%
+      #nao_disp #email_avise
+        width 220px
+      #nao_disp #letMeKnow
+        font-size 14px
+        width 100%

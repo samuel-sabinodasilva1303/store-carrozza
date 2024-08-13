@@ -1,0 +1,72 @@
+.paginate
+  width fit-content
+  display flex
+  align-items center
+  gap 7px
+  margin-inline auto
+  padding-bottom 50px
+  padding-top 2em
+
+  &__page
+    display grid
+    place-items center
+    border 1px solid border-2
+    border-radius 8px
+    width 36px
+    height 36px
+    transition all 333ms linear
+
+    a
+      display grid
+      place-items center
+      height 34px
+      width 34px
+
+    &--number
+      &,
+      > a
+        font-size 14px
+        color tertiary
+        transition all 333ms linear
+
+    &--first,
+    &--last,
+    &--next,
+    &--prev
+      > a
+        line-height 0
+
+        svg
+          fill #2B6FF1
+          margin-left 3px
+          transition all 333ms linear
+
+    &--current
+      background-color #2B6FF1
+      border-color #2B6FF1
+      color #fff
+      font-weight bold
+      font-size 16px
+
+  @media desktop
+    &__page
+      &--number:hover
+        border-color #2b6ff1
+        background-color #2b6ff1
+
+        &,
+        > a
+          font-size 16px
+          font-weight bold
+          color #fff
+
+      &--first,
+      &--last,
+      &--next,
+      &--prev
+        &:hover
+          background-color #2b6ff1
+          border-color #2b6ff1
+
+          > a svg
+            fill #fff

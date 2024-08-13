@@ -1,0 +1,15 @@
+{% if settings.testimonialsShow %}
+
+    <div class="reviews">
+        <h2 class="reviews__title">
+            Comentários de Clientes
+        </h2>
+
+        <div class="reviews__content">
+            
+            {% element 'CustomerReview.reviews' %}
+            
+        </div>
+    </div>
+
+{% endif %}

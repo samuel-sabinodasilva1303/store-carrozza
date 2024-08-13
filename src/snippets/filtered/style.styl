@@ -1,0 +1,41 @@
+.filtered
+  &__list
+    display flex
+    gap 5px
+    align-items center
+
+  &__item
+    cursor pointer
+    padding 8px 18px 8px 10px
+    border-radius 8px
+    border 1px solid #E7ECEF
+    box-shadow rgba(0, 0, 0, 0.04) 0 3px 5px
+    background-color #fff
+    display flex
+    align-items center
+
+    &,
+    > *
+      transition all 222ms
+
+    > span
+      color tertiary
+      font-size 12px
+      line-height 15px
+
+    > svg
+      fill #2B6FF1
+      margin-left 13px
+
+  @media desktop
+    &__item:hover
+      border-color tomato
+
+      > span
+        color tomato
+
+      > svg
+        fill tomato
+
+  @media mobile
+    margin-top 20px

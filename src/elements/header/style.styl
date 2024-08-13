@@ -1,0 +1,406 @@
+@media desktop  
+  .header
+    .popup
+      display none
+      border-radius 0 0 6px 6px
+      position absolute
+      background-color #009FE3
+      box-shadow 0 0 10px rgba(0, 0, 0, 0.1)
+      z-index 1000
+      max-height calc(100vh - 180px)
+      overflow auto
+      transition .2s ease-out
+    .more-categories-list
+        list-style none
+        padding 8px 0 8px 20px
+        margin 0
+
+    .menu__item--more-categories:hover .popup
+        display block
+    
+    .button-active
+      .close-menu
+        width 14px !important
+      > svg:first-child
+        width 0 !important
+    .scroll--active
+      opacity 1
+      width 249px !important
+      max-height 360px
+      height 100%
+    &__menu
+      &-item
+        .menu-nv-3
+          opacity 0
+          width 0
+          height 0
+          pointer-events none
+        &:hover  
+          .menu-nv-3
+              cursor pointer
+              pointer-events auto
+              position absolute
+              top 0
+              left 98%
+              width 249px
+              background #0000
+              opacity 1
+              height 100%
+              overflow scroll
+              transition-delay 100ms
+              transition-duration 0.4s
+              > li:first-child
+                padding-top 23px
+              > li
+                color #292f3e
+                font-weight 700
+                font-size 14px
+                padding 10px 20px
+                width 100%
+                white-space nowrap
+                background #fff
+                
+
+      &-scroll
+        opacity 0
+        width 0
+        height 0
+
+  body.scroll
+    .header
+      &__menu
+        margin-top -40px
+
+        &-item
+            display flex
+            align-items center
+            gap 10px
+            cursor pointer
+            &:hover
+              background #2B6FF1
+              .menu__icon
+                svg
+                  fill #2B6FF1 
+              > a
+                color #2B6FF1 !important
+        &-scroll
+          position relative
+          transition-delay 100ms
+          transition-duration 0.4s
+          width 0
+          background #2B6FF1
+          border-radius 0 0 8px 8px
+          &--wrapper
+            position absolute
+            top 85px
+            left 0
+        &-list
+          display flex
+          flex-direction column
+          overflow-y auto
+          height 100%
+          width 100%
+          overflow-x hidden
+          padding: 8px 0px 8px 15px;
+
+        &-item > a
+          color #FFFFFF
+          font-weight 700
+          font-size 14px
+          line-height 130%
+
+      &__button
+        visibility visible
+        opacity 1
+        pointer-events auto
+
+        > svg:first-child
+          transition-duration 0.4s
+
+        .close-menu
+          width 0
+          transition-delay 100ms
+          transition-duration 0.4s
+    
+        > svg
+          display inline
+          width 20px
+
+  body.show-menu
+    .header
+      &__menu
+        margin-top 0
+
+      &__button
+        &:after,
+        &:before
+          opacity 1
+          visibility visible
+
+        &:after
+          transform rotate3d(0, 0, 1, 45deg)
+
+        &:before
+          transform rotate3d(0, 0, -1, 45deg)
+
+        > svg
+          visibility hidden
+          opacity 0
+          width 0
+
+      &__logo .logo__link img
+        scale 1
+
+@media mobile
+  .header__menu-scroll--wrapper
+    display none
+  body.scroll
+    .header
+      &__search
+        visibility hidden
+        opacity 0
+        margin-top -48px
+        z-index -5
+
+      &__logo
+        scale 0.85
+
+.header
+  &__top
+    &-lane
+      background #0199FF
+      > .center
+          > ul
+            layout maxsize
+            display flex
+            gap 2em
+            padding-left 1em
+            > li
+              display flex
+              height 36px
+              padding 4px 15px
+              justify-content center
+              align-items center
+              gap 4px
+              flex-shrink 0
+            > li > a 
+              color #fff
+              display flex
+              align-items center
+              gap 8px
+              font-family 'Public Sans', sans-serif
+              font-size 13px
+              font-style normal
+              font-weight 700
+              line-height 22px /* 183.333% */
+
+  position fixed
+  top 0
+  left 0
+  width 100%
+  z-index 5
+  transition all 0.3s
+  background-color #F2F2F2
+  height 105px
+
+  &__button
+    width 45px
+    height 45px
+    opacity 0
+    visibility hidden
+    display flex
+    align-items center
+    justify-content center
+    background rgba(0, 0, 0, 0)
+    transition all 0.3s
+    position relative
+    z-index 1
+
+    svg
+      fill #fff
+      transition all 0.3s
+
+    &:after,
+    &:before
+      content ''
+      height 2px
+      width 20px
+      background #fff
+      position absolute
+      border-radius 1px
+      top 0
+      left 0
+      right 0
+      bottom 0
+      margin auto
+      opacity 0
+      visibility hidden
+      transition all 0.3s
+
+    &--mobile
+      display none
+
+  &__menu
+    flex 100%
+    transition all 0.3s
+    margin-bottom -9
+
+  &__link
+    font-size 12px
+    line-height 15px
+    color #fff
+
+  &__list
+    display flex
+    align-items center
+    gap 16px
+
+    ^[0]__link,
+    b
+      display block
+
+    svg
+      fill #fff
+
+  &__list,
+  &__customer,
+  &__cart
+    min-width 0
+    flex 0 1 auto
+    z-index 1
+
+  &__search
+    min-width 0
+    max-width 670px
+    flex 1
+
+  &__list
+    margin-left 20px
+
+  &__customer
+    margin-left 60px
+    align-self stretch
+
+  &__cart
+    margin-left 45px
+
+  &__container
+    layout maxsize
+    display flex
+    align-items center
+    justify-content space-between
+    z-index 1
+    position relative
+
+  &__bg-slice
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    overflow hidden
+    z-index -1
+
+    &:before
+      content ''
+      position absolute
+      top 0
+      display block
+      z-index -1
+
+  &__logo
+    flex-shrink 0
+
+  @media desktop
+    &__container
+      gap 82px
+      height 105px
+
+    &__wrapper
+      position relative
+      display flex
+      flex-wrap wrap
+      align-items center
+      gap 10px 0
+      transition all 333ms
+
+    &__link
+      &:hover
+        opacity 0.5
+
+    &__button
+      display none
+      &:hover
+        > svg
+          fill secondary
+
+        &:after,
+        &:before
+          background secondary
+
+  @media mobile
+    &:after
+      height 100%
+
+    &__container
+      width 100%
+      max-width 100% 
+      flex-wrap wrap
+      gap 10px
+      padding 0 15px
+    &__bg-slice
+      &:before
+        width 991px
+        height 166px
+        right 0
+        background-image linear-gradient(51deg, #fff 87.8%, #F2F2F2 87.9%)
+
+    &__wrapper
+      display contents
+
+    &__button
+      display none
+
+      &--mobile
+        height 48px
+        min-width 48px
+        margin-left -8px
+        border-radius 4px
+        display flex
+        align-items center
+        justify-content center
+        background rgba(0, 0, 0, 0)
+
+        svg
+          fill primary
+
+    &__customer,
+    &__list,
+    &__menu
+      display none
+
+    &__logo
+      transition all 333ms
+
+    &__search
+      order 1
+      flex 100%
+      transition all 0.3s 
+      margin-inline auto
+
+    &__cart
+      padding 14px 5px
+      margin-right -8px
+    .header 
+      &__top
+        &-lane
+          > .center
+              > ul
+                gap 0
+                margin 0
+                padding-left 0
+                > li 
+                  padding 4px 9px
+                  > a 
+                    font-size 9px
+              

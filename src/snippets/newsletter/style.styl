@@ -1,0 +1,149 @@
+.newsletter
+  layout maxsize
+  padding-block 25px
+  .newsletter__image
+    border-radius 6px
+    width 600px
+    height 140px
+    background-color #005A99
+    position relative
+    
+    .holder_nl_direita
+      display flex
+      .holder_image
+        > img 
+          position absolute
+          right 0
+
+      .holder_text
+        line-height 21px
+        padding 6px 15px
+
+        > h3
+            color #fff
+            display block
+            font-size 16px
+            font-style normal
+            font-weight 400
+        > a 
+          position absolute
+          bottom 0
+          padding 7px 0px
+          &:hover
+            opacity .5
+
+        .frase_1
+            color #FFC805
+            font-size 22px
+            font-style normal
+            font-weight 700
+
+        .know-more-jur
+            padding 8px 25px
+            border-radius 6px
+            background #009FE3
+            color #fff
+            outline none
+            text-align center
+
+  &__tips,
+  &__link
+    color #858EA7
+    font-size 12px
+    line-height 15px
+    margin-top 8px
+
+    > a:hover
+      color #292F3E
+  &__image
+    > a
+      cursor pointer
+      display flex
+      width 357px
+      &:hover 
+        transform scale(1.07)
+        opacity 0.5
+
+  &__link
+    text-decoration underline
+  &__flex
+      display flex 
+      align-items center
+      justify-content center
+      gap 1em
+
+  &__container
+    width 100%
+    background-color secondary
+    border-radius 8px
+    display flex 
+    align-items center
+    justify-content flex-end
+    gap 21px
+    padding-block 38px
+    background-image url('../img/beg-newsletter.png') 
+    background-repeat no-repeat
+    background-position center left
+    padding-inline 20px
+
+  &__title,
+  &__form
+    min-width 0
+    flex 1 auto
+
+  &__title
+    font-size 24px
+    line-height 31px
+    font-weight bold
+    color #fff
+    max-width 270px
+
+  &__form
+    display flex
+    gap 16px
+    max-width 400px
+
+  &__input,
+  &__button
+    min-height 44px
+    min-width 0
+    flex 1
+
+  &__input[type='email']
+    border-radius 8px
+    border 1px solid border-c
+    font-size 16px
+    color tertiary
+    width 366px
+    max-width 100%
+    text-indent 13px
+
+    &::placeholder
+      color #9d9d9d
+      font-size 15px
+
+  &__button
+    max-width 117px
+    font-weight bold
+    font-size 14px
+    color #fff
+    background-color #292F3E
+    border-radius 0 8px 8px 0
+    &:hover
+      opacity .55
+
+  @media mobile
+    &__tips
+      text-align center
+
+    &__container
+      flex-wrap wrap
+      justify-content center
+      background-size cover
+
+    &__title
+      color #515970
+    &__flex
+      display flex
+      flex-wrap wrap
+      justify-content flex-start

@@ -1,0 +1,40 @@
+.main__ruler
+  display flex
+  justify-content center
+  max-width 1051px
+  margin 0 auto
+.ruler
+  display flex
+  align-items center
+  justify-content space-around
+  padding 20px 20px
+  border 1px solid border-c
+  border-radius 5px
+  margin-block 25px
+  width 1200px
+
+  &__content
+    display flex
+    align-items center
+    gap 16px
+
+    > svg
+      fill primary
+      flex 0 auto
+
+  &__text
+    font-size 14px
+    line-height 18px
+    color gray-c
+
+  @media mobile
+    width 
+    max-width 100%
+    
+    &:not(.slick-initialized)
+      .ruler__item:not(:first-child)
+        display none
+
+    &__content
+      max-width fit-content
+      margin 0 auto

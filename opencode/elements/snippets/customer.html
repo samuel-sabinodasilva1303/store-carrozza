@@ -1,0 +1,33 @@
+{% if mobile %}
+    <div class="customer-mobile" data-tray-tst="saudacao">
+
+        <div class="tray-hide" data-logged-user="false">
+            <a href="{{ links.login }}" data-tray-tst="login" class="customer-mobile__link">Entrar</a>
+            <span class="customer-mobile__label">Cliente novo ?
+                <a href="{{ links.register }}" data-tray-tst="cadastro" class="customer-mobile__link">Cadastre-se !</a>
+            </span>
+        </div>
+
+        <div class="tray-hide" data-logged-user="true">
+            <a href="{{ links.central }}" class="customer-mobile__link customer-mobile__link--name">Olá, <span data-customer="name"></span></a>
+            <a href="{{ links.orders }}" class="customer-mobile__link" data-tray-tst="orders">Meus pedidos </a>
+            <a href="{{ links.logout }}" class="customer-mobile__link" data-tray-tst="logout">Sair</a>
+        </div>
+
+    </div>
+
+{% else %}
+    <div class="customer" data-tray-tst="saudacao">
+
+        {% if not customer.logged %}
+            <span class="customer__label" data-logged-user="false" >
+                <a href="{{ links.login }}" data-tray-tst="login" class="customer__link">Entre</a>
+                <a href="{{ links.register }}" data-tray-tst="cadastro" class="customer__link">Entrar / Cadastrar</a>
+            </span>
+        {% endif %}
+
+        <span class="customer__name tray-hide" data-logged-user="true">Ol�, <span data-customer="name" ></span></span>
+
+    </div>
+
+{% endif %}

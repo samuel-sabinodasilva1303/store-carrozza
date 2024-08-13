@@ -1,0 +1,23 @@
+<div aria-hidden="true" class="compare-popup">
+    <div class="compare-popup__header">
+
+        <div class="compare-popup__action">
+            <i class="compare-popup__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="10" heigh="12" viewBox="0 0 10 12"><path fill="#fff" fill-rule="evenodd" d="M5 11.75a.75.75 0 0 1-.75-.75V2.81L1.53 5.53A.75.75 0 0 1 .47 4.47l4-4a.75.75 0 0 1 1.06 0l4 4a.75.75 0 0 1-1.06 1.06L5.75 2.81V11a.75.75 0 0 1-.75.75Z" clip-rule="evenodd"/></svg>
+            </i>
+            <span class="compare-popup__label">Ver Produtos</span>
+            <span class="compare-popup__quant">0</span>
+        </div>
+
+        <a href="/loja/comparador.php?loja={{ store.id }}&IdDep={{ category.id }}" class="compare-popup__link">
+            <i class="compare-popup__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="20" viewBox="0 0 20 20"><path fill="" fill-rule="evenodd" d="M7.06 2 3.81 5.25h15.44v1.5H3.81L7.06 10 6 11.06.94 6 6 .94 7.06 2Zm7.44 6.94L19.56 14l-5.06 5.06L13.44 18l3.25-3.25H8.75v-1.5h7.94L13.44 10l1.06-1.06Z" clip-rule="evenodd"/></svg>
+            </i>
+            <span>Ver detalhes</span>
+        </a>
+    </div>
+
+    <div aria-expanded="false" class="compare-popup__main">
+        <ul class="compare-popup__list"></ul>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="seals">
+    <ul class="seals__list">
+        
+        <li class="seals__item">
+            <a href="https://transparencyreport.google.com/safe-browsing/search?url={{ store.url }}" rel="noopener" target="_blank" aria-label="Link google safe browsing" title="Google Safe Browsing" class="seals__link">
+                <img src="{{ asset('img/google-seal.svg')}}" alt="selo_google_safe_browsing" width="100" height="30" loading="lazy">
+            </a>
+        </li>
+
+        {% if seals.ebit or seals.hackersafe %}
+        
+            {% if seals.ebit %}
+                <li class="seals__item">{{ seals.ebit }}</li>
+            {% endif %}
+            
+            {% if seals.hackersafe %}
+                <li class="seals__item">{{seals.hackersafe}}</li>
+            {% endif %}
+
+        {% endif %}
+
+    </ul>
+</div>
+

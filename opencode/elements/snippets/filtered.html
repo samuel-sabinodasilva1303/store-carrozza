@@ -1,0 +1,42 @@
+{% set selecteds = [] %}
+
+{% for key, filtreds in filtered_options if filtreds is iterable %}
+    {% for key_2 ,item in filtreds %}
+        {% set selecteds = selecteds|merge({ (key ~ '-' ~ key_2): item }) %}
+    {% endfor %}
+{% endfor %}
+
+{% if selecteds %}
+
+    <div class="filtered">
+
+        <ul class="filtered__list">
+
+            {% for key, item in selecteds %}
+
+                {% set filtred = key|split('-')[0] in ['variant', 'propertie'] ? item|split('||')[0] : key|split('-')[0] %}
+
+                {% set item = key|split('-')[0] == 'price' ? settings.currency ~ '&nbsp;' ~ (item|split(',')[0]|currency) ~ ' - ' ~ settings.currency ~ '&nbsp;' ~ (item|split(',')[1]|currency) : item %}
+
+                {% set data_value = '||' in item ? (item|split('||')[0]| url_encode) ~ '||' ~ (item|split('||')[1]|url_encode) %}
+
+                {% if not data_value %}
+                    {% set data_value = [] %}
+                    {% for word in item|split(' ') %}
+                        {% set data_value = data_value|merge([word|url_encode]) %}
+                    {% endfor %}
+                    {% set data_value = data_value|join('+') %}
+                {% endif %}
+
+                <li data-filtered="{{ filtred }}" data-value="{{ data_value }}" class="filtered__item">
+                    <span>{{ '||' in item ? item|split('||')[1] : item }}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="10" height="10" viewBox="0 0 10 10"><path fill="" fill-rule="evenodd" d="M.47.47a.75.75 0 0 1 1.06 0L5 3.94 8.47.47a.75.75 0 0 1 1.06 1.06L6.06 5l3.47 3.47a.75.75 0 0 1-1.06 1.06L5 6.06 1.53 9.53A.75.75 0 1 1 .47 8.47L3.94 5 .47 1.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+                </li>
+
+            {% endfor %}
+
+        </ul>
+        
+    </div>
+
+{% endif %}

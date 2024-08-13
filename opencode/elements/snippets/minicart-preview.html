@@ -1,0 +1,35 @@
+<div aria-hidden="true" class="minicart">
+    <div class="minicart__content">
+        <div class="minicart__header">
+
+            <i class="minicart__icon">
+                <span class="minicart__count">0</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="33" height="27" viewBox="0 0 33 27"><path fill="" fill-rule="evenodd" d="M.25 1A.75.75 0 0 1 1 .25h4.53l6 17H30a.75.75 0 0 1 0 1.5H10.47l-6-17H1A.75.75 0 0 1 .25 1Zm31.513 4.298a.75.75 0 0 1 .44.965L29.02 14.75H14a.75.75 0 0 1 0-1.5h13.98l2.818-7.513a.75.75 0 0 1 .965-.44ZM13 21.75a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5ZM9.75 23.5a3.25 3.25 0 1 1 6.5 0 3.25 3.25 0 0 1-6.5 0ZM27 21.75a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5Zm-3.25 1.75a3.25 3.25 0 1 1 6.5 0 3.25 3.25 0 0 1-6.5 0Z" clip-rule="evenodd"/></svg>
+            </i>
+
+            <h2 class="minicart__title">Meu Carrinho</h2>
+
+            <button class="minicart__close minicart__close--header">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="12" height="10" viewBox="0 0 12 10"><path fill="" fill-rule="evenodd" d="M6.47.47a.75.75 0 0 1 1.06 0l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 0 1-1.06-1.06l2.72-2.72H1a.75.75 0 0 1 0-1.5h8.19L6.47 1.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+            </button>
+
+        </div>
+        
+        <div class="minicart__main"></div>
+
+        <div class="minicart__footer">
+            <p class="minicart__advice">* Calcule seu frete na página de finalização. </p> 
+            <p class="minicart__advice">* Insira seu cupom de desconto na página de finalização</p>
+
+            <div class="minicart__actions">
+                <a class="minicart__cotacao ef_btnorc" href="#">FINALIZAR COTAÇÃO </a>
+                <button type="button" onclick="window.location.href='{{ links.cart }}'" class="minicart__finished">Finalizar</button>
+
+                <button type="button" class="minicart__close minicart__close--footer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="6" height="10" viewBox="0 0 6 10"><path fill="" fill-rule="evenodd" d="M5.28.47a.75.75 0 0 1 0 1.06L2.06 4.75l3.22 3.22a.75.75 0 0 1-1.06 1.06L.47 5.28a.75.75 0 0 1 0-1.06L4.22.47a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
+                    <span>Continuar comprando</span>
+                </button>        
+            </div>
+        </div>
+    </div>
+</div>

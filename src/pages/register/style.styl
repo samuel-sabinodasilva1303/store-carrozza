@@ -1,0 +1,324 @@
+.page-register
+
+  body
+    background #E9EDF8
+
+  .main__container
+    p.blocoAlerta
+      text-align center
+      margin-bottom 25px
+
+      > a
+        text-decoration underline
+
+    .mandatoryField
+      font-size 0 !important
+      max-height unset !important
+      margin-top 0 !important
+      line-height normal !important
+    
+    .passwordsField
+      display flex
+      align-items flex-end
+      width 100%
+      > label
+        width 50% !important
+      > label:nth-last-child(2)
+        padding-left 4%
+
+
+    .mandatoryStar
+      color #DB1020
+
+    input:not([type='checkbox'])
+      display block
+      border-radius 5px
+      border none
+      padding 0 7px
+      width 100%
+
+      &:focus
+        border 2px solid #3f3f3f
+
+      &::placeholder
+        opacity .5
+
+      &.inputErro
+        border-color #f0506e
+    .halfField
+      width 50% !important
+    .halfField--right
+      padding-left 3%
+    .new__address
+      display flex
+      width 100%
+      margin-left -6px
+    input[type='checkbox']
+      vertical-align middle
+      margin-bottom 6px
+      margin-right 2%
+      &:before
+        content ''
+        font-size 20px
+        border 1px solid #D6DBE3
+        display flex
+        justify-content center
+        align-items center
+        width 15px
+        height 15px
+        background #FFF
+        border-radius 4px
+      &:checked
+        &:before
+          content '\2713'
+          font-size 20px
+          color #FFF
+          border none
+          display flex
+          justify-content center
+          align-items center
+          width 15px
+          height 15px
+          background #73E41D
+          border-radius 4px
+    .botao-prosseguir-cadastro 
+      display flex
+      flex-direction row
+      justify-content center
+      align-items center
+      padding 8px 25px
+      gap 10px
+      background #000000
+      border-radius 8px
+      width 164px
+      height 38px
+      transition 0.4s all
+      .botao-commerce-img
+        font-weight 600
+        color #fff
+        font-size 0
+        &:before
+          content 'Cadastrar'
+          font-size 14px
+      &:hover
+        opacity 0.7
+
+    #CadastroAbas
+      margin-bottom -1px
+
+      > ul
+        display flex
+
+        li
+          width 50%
+          background-color #f4f7fb
+          border 1px solid #D6DBE3
+          text-align center
+          transition all .3s
+          a
+            display block
+            padding 10px 25px
+            color #36383A
+            font-weight 500
+            line-height 130%
+            font-size 14px
+            font-family 'Inter', 'Open Sans'
+
+          &.aberta
+            border 1px solid #3f3f3f
+            background #3f3f3f
+            border-bottom-color rgba(0, 0, 0, 0)
+
+            a
+              color #FFF
+              font-weight 700
+
+    >.container3
+    .board
+      display flex
+      flex-direction column
+      justify-content center
+      align-items center
+      margin-top 2em
+      justify-content space-between
+    .container2
+    .board
+      > h1
+        display none
+    .adicionar_flex
+      display flex
+      align-items center
+      gap 2% 
+      h1
+        font-size 0 
+        text-align center
+
+    .termContainerRegister
+      flex-direction row
+      margin-top 1.3em
+      .termText
+        display none
+      > p
+        width 47%
+        justify-content space-between
+        font-size 13px
+        line-height 130%
+        color #515970
+        font-family 'Public Sans';
+        > span
+          color #292F3E
+          font-weight 600
+
+    > .container
+      width 552px
+      max-width 100%
+      margin 0 auto 40px auto
+      padding 15px
+
+      > .container2
+        display none
+        > p.board.color
+          text-align center
+          line-height 22px
+
+          > a
+            display block
+
+          .board.termContainerRegister
+            margin 25px 0
+            text-align center
+
+        .color.txt-dados-pessoais, .color.txt-dados-loja
+          display none
+
+        fieldset
+          border none
+          padding 0
+          font-size 0
+          display flex
+          flex-direction row
+          flex-wrap wrap
+
+          .active
+            display none
+
+          label:last-child
+            display flex 
+            align-items center
+            gap 3px
+            margin-left -6px
+
+    
+          .obriga.red:after
+            content ' vermelha'
+            display inline
+            color #F0506E
+          .alingItens
+            display flex
+
+          > strong
+            display block
+            text-align center
+            margin-top 30px
+
+          label
+            display block
+            font-size 14px
+            line-height 22px
+            margin-top 25px
+            max-height 70px
+            margin-left -6px
+            gap 1em
+            overflow hidden
+            font-weight 500
+            width 100%
+
+            > label
+              color #292F3E
+              font-size 14px
+              margin-left 0
+              font-style normal
+              font-weight 500
+              line-height 130% /* 18.2px */
+
+            .cadastro_nacional 
+              display flex !important
+              align-items center
+              gap 10px
+
+              input:first-child
+                width 77px 
+                height 27px
+              input:last-child
+                width 61px
+                height 27px
+          
+        .titleField
+          font-size 14px
+          span#seguranca_senha:not(:empty)
+            display block
+            background #fff
+            margin-top 5px
+            padding 8px
+            border-radius 4px
+            text-align center
+
+            > img
+              display inline-block
+              vertical-align middle
+
+            .sec_alta, .sec_baixa, .sec_media
+              font-weight 700
+
+            .sec_baixa
+              color #F0506E
+
+            .sec_media
+              color #FFA500
+
+            .sec_alta
+              color #00FF00
+
+          span.mensagensErro
+            font-size 10px
+            color #F0506E
+  #PessoaFisica
+    border-radius 5px 0px 0px 5px
+  #PessoaJuridica
+    border-radius 0px 5px 5px 0px
+  #fisica, #juridica
+    p
+      display flex
+      flex-wrap wrap
+
+  .cadastro_nacional
+    display flex 
+
+  @media desktop
+    .main__container
+      p.blocoAlerta > a:hover
+        color #f0506e
+
+  @media mobile
+    .main__container
+      > .container
+        padding 0
+
+        >.container2 fieldset span#seguranca_senha .sec_texto
+          display block
+          line-height 22px
+
+      #CadastroAbas > ul li
+        width 50%
+        text-align center
+        > a
+          font-size 11px
+      >.container>.container2 fieldset label
+        font-size 11px
+        > label
+          font-size 11px
+        &:last-child
+          &:after
+            font-size 11px
+      .termContainerRegister>p
+        font-size 11px

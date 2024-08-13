@@ -1,0 +1,238 @@
+<!--Inicio Zoom-->
+
+<script>
+    // Adicione um identificador único, por exemplo, a classe .image-container, a todos os elementos .gallery-image
+const imageContainers = document.querySelectorAll('.gallery-image');
+
+imageContainers.forEach((container) => {
+    // Adicione o evento de zoom a cada elemento .image-container
+    container.addEventListener('mousemove', zoom);
+    container.addEventListener('touchmove', zoom);
+});
+
+function zoom(e) {
+    var imageBack = e.currentTarget.querySelector("img");
+    if (imageBack) {
+        var imageZoom = imageBack.getAttribute('src');
+        var zoomer = e.currentTarget;
+        e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX;
+        e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX;
+        x = offsetX / zoomer.offsetWidth * 100;
+        y = offsetY / zoomer.offsetHeight * 100;
+        zoomer.style.backgroundPosition = x + '% ' + y + '%';
+        zoomer.style.backgroundImage = `url('${imageZoom}')`;
+        imageBack.addEventListener("mouseout", function () {
+            zoomer.removeAttribute("style");
+        });
+    }
+}
+</script>
+<!--Fim Zoom-->
+
+<section class="page-product__content top">
+
+    {% element 'snippets/schema' %}
+
+    {% element 'snippets/breadcrumb' %}
+
+    <div class="page-product__top">
+
+        <div data-thumbnail="{{ asset('img/thumbnail.png')}}" data-width="{{ settings.default_image_zoom_width }}" data-height="{{ settings.default_image_zoom_height }}" class="page-product__image">
+
+            {% if product.images %}
+    
+                {% element 'snippets/gallery' %}
+    
+            {% else %}
+
+                <div class="page-produtc__gallery page-produtc__gallery--no-image">
+                    
+                    <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada">
+                    
+                </div>
+                
+            {% endif %}
+
+        </div>
+
+        <div class="page-product__info">
+
+            <div class="page-product__ranking">
+
+                {% element 'snippets/ranking' {'ranking': product.ranking} %}
+
+                {% if product.reference %}
+                    <span class="page-product__ref">(Cod.{{ product.reference }})</span>
+                {% endif %}
+
+            </div>
+
+            <h1 class="page-product__name">{{ product.name }}</h1>
+
+            {% if product.brand %}
+                <p class="page-product__brand">Marca: {{ product.brand }}</p>
+            {% endif %}
+
+          
+
+            <form class="page-product__form" id="form_comprar" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
+
+            {% element 'snippets/product-payment'  %}
+        
+                
+                <div class="page-product__variations">
+                    {{ productHelper.variants() }}
+                </div>
+
+                {% if product.stock == 0 and product.price != 0 %}
+                    <h1 class="page-product__address-title" >Ou confira o estoque de uma das nossas lojas físicas:</h1>
+                    <div class="page-product__adrres">
+                        <ul>
+                            <li>{{ Translation('ag_endereco_1') }}</li>
+                            <li>{{ Translation('ag_endereco_2') }}</li>
+                            <li>{{ Translation('ag_endereco_1') }}</li>
+                            <li>{{ Translation('ag_endereco_4') }}</li>
+                            <li>{{ Translation('ag_endereco_5') }}</li>
+                        </ul>
+                    </div>
+                {% elseif product.stock != 0 and product.price == 0 %}
+                    <h1 class="page-product__address-title" >Ou confira o estoque de uma das nossas lojas físicas:</h1>
+                    <div class="page-product__adrres">
+                        <ul>
+                            <li>{{ Translation('ag_endereco_1') }}</li>
+                            <li>{{ Translation('ag_endereco_2') }}</li>
+                            <li>{{ Translation('ag_endereco_1') }}</li>
+                            <li>{{ Translation('ag_endereco_4') }}</li>
+                            <li>{{ Translation('ag_endereco_5') }}</li>
+                        </ul>
+                    </div>
+                {% endif %}
+
+                {% if productHelper.kit() %}
+
+                    <div class="page-product__kits">
+
+                        {{ productHelper.kit() }}
+                        
+                    </div>
+
+                {% endif %}
+
+                {% if productHelper.gifts() %}
+
+                    <div class="page-product__gift">
+
+                        {{ productHelper.gifts() }}
+                        
+                    </div>
+
+                {% endif %}
+
+                {% if product.additional_information %}
+
+                    <div class="page-product__additional-info">
+
+                        {{ product.additional_information }}
+                    
+                    </div>
+
+                {% endif %}
+
+                <div class="page-product__buttons">
+
+                    {% element 'snippets/buy-button' %}
+
+                </div>
+
+                {% if not product.upon_request and product.available and productHelper.wishlist %}
+
+                    <div class="page-product__fav">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="18" height="16" viewBox="0 0 18 16">
+                            <path fill="" d="M9 16l-.32-.27C1.85 10.07 0 8.08 0 4.85 0 2.15 2.12 0 4.76 0 6.94 0 8.16 1.24 9 2.2c.85-.96 2.06-2.2 4.24-2.2A4.79 4.79 0 0118 4.85c0 3.23-1.85 5.22-8.68 10.88L9 16zM4.76 1.08a3.72 3.72 0 00-3.7 3.77c0 2.75 1.7 4.58 7.94 9.75 6.25-5.17 7.94-7 7.94-9.75 0-2.1-1.64-3.77-3.7-3.77-1.86 0-2.86 1.13-3.66 2.04l-.58.7-.58-.7c-.8-.91-1.8-2.04-3.66-2.04z"/>
+                        </svg>
+
+                        {{ productHelper.wishlist() }}
+
+                    </div>
+
+                {% endif %}
+
+                {% if productHelper.shipping() %}
+
+                    <div class="page-product__shipping _lazy">
+
+                            {{ productHelper.shipping() }}
+
+                            <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/default.cfm" rel="noopener" target="_blank" class="page-product__shipping--link">Não sei meu CEP</a>
+
+                    </div>
+                    <div class="page-product__links">
+                        <span class="produto-recommend">
+                            <a href="#" data-url="{{ links.product_recommend }}&IdProd={{ product.id }}" data-title="{{ product.name }}" class="botao_indique_amigo" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">{{ Translation('indique_amigo') }}</a>
+                        </span>
+                        |
+                        <span class="product-question">
+                            <a href="#" data-url="{{ links.product_question }}&IdProd={{ product.id }}" data-title="{{ product.name }}" class="botao_tire_duvidas" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">{{ Translation('tire_duvidas') }}</a>
+                        </span> 
+                    </div>
+                {% endif %}
+
+
+                {% if not product.additional_message %}
+
+                    <div class="additional-message">
+
+                        {{ product.additional_message }}
+
+                    </div>
+
+                {% endif %}
+
+            </form>
+
+        </div>
+
+    </div>
+
+    {% element 'snippets/buy-together' %}
+
+</section>
+
+<section class="page-product__content bottom">
+
+    {% element 'snippets/product-tabs' %}
+
+    <section class="page-product__comments">
+            
+        <h3 class="page-product__comments--title">Avaliações</h3>
+
+        {% element 'product/comments' %}
+
+        <button data-logged-user="true"  class="tray-hide page-product__comments--btn">Deixe sua avaliação</button>
+
+    </section>
+</section>
+ 
+{% if product.related_products %}
+
+    <section class="products-related">
+        <h3 class="products-related__title">Produtos Relacionados</h3>
+        
+        <div data-carrosel="true" class="showcase__list showcase__list--related">
+
+            {% for product_related in product.related_products %}
+
+                <div class="showcase__item">
+
+                    {% element 'snippets/product' {'product': product_related } %}
+
+                </div>
+
+            {% endfor %}
+            
+        </div>
+
+    </section>
+
+{% endif %}

@@ -1,0 +1,116 @@
+.page-contact
+  .main__container
+    .Mapa
+      display none
+
+    span
+      line-height 26px
+
+    a#btn_submit, input#imagem
+      display none
+
+    button#btn_submit, button#imagem
+      width 225px
+      height 42px
+      line-height 41px
+      background #525252
+      text-align center
+      color tertiary
+      font-size 16px
+      border-radius 21px
+      font-weight 700
+      transition all .3s
+      border 1px solid primary
+      display block
+      margin 0 auto
+
+    .obriga-barra.red:after
+      content ' vermelha'
+      display inline
+      color #F0506E
+
+    input, textarea
+      display block
+      width 100%
+      border-radius 3px
+      border 1px solid #ededed
+
+      &::placeholder
+        opacity .5
+
+      &.obriga
+        border-bottom 3px solid #F0506E
+
+      &.inputErro
+        border-color #f0506e
+
+    input:not([type='image'])
+      padding 0 7px
+
+    textarea[name='mensagem_contato']
+      height 90px
+      resize none
+      padding 7px
+
+    label.block
+      display block
+      margin-bottom 25px
+      border 1px solid #ededed
+      padding 15px 10px
+      background #f7f7f7
+      border-radius 2px
+
+      span:not(.block)
+        font-size 10px
+
+      span.block
+        margin-bottom 5px
+        display inline-block
+
+      span.mensagensErro
+        color #F0506E
+
+    > .container3
+      > .container2
+        width 552px
+        max-width 100%
+        margin 35px auto 0 auto
+
+        > .board, .tit-contato.block
+          text-align center
+
+      .board
+        margin-bottom 25px
+
+        span.msg-obriga.block
+          display block
+          text-align center
+          margin-bottom 20px
+
+        .email-texto > a
+          display block
+
+        h1
+          text-align center
+          font-size 30px
+          color primary
+          margin 40px 0
+          font-weight 700
+
+        h3
+          font-weight 700
+          font-size 18px
+          color primary
+          line-height 26px
+
+    > .board p
+      font-size 14px
+      line-height 22px
+      text-align center
+
+  @media desktop
+    button#btn_submit, button#imagem
+      &:hover
+        border-color #525252
+        background rgba(0, 0, 0, 0)
+        color #525252

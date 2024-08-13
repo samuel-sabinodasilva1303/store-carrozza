@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/*alter section*/
+.loja_ativa
+  background #fff !important
+  > a
+    color #0199ff !important
+    > svg
+      > path
+        fill #0199ff !important
+/* Define a grid */
+layout(args...)
+  width args
+  margin 0 auto
+
+  @media (max-width (args + gutter / 2))
+    max-width 'calc(100% - %s)' % gutter
+
+/* Usado quando os campos input textarea select com autocomplete mostrar cores diferentes das atribuidas */
+autoCompleteColor(args...)
+  &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active
+    -webkit-text-fill-color args
+
+  &:-internal-autofill-selected
+    color args !important
+
+// End Mixins
+
+// Media queries
+desktop = 'screen and (min-width: 992px)'
+mobile = 'screen and (max-width: 991px)' 
+// End Media queries
+
+// Variables
+primary = #F2F2F2
+secondary = #F2F2F2
+tertiary = #515970
+border-c = #E9EDF8
+border-2 = #cbd2e4
+gray-c = #292F3E
+maxsize = 1266px
+gutter = 30px
+stars = var(--stars)
+arrow-down = url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' with='12' height='7' viewBox='0 0 12 7'%3E%3Cpath fill='%232B6FF1' fill-rule='evenodd' d='M11.53.47a.75.75 0 0 1 0 1.06l-5 5a.75.75 0 0 1-1.06 0l-5-5A.75.75 0 0 1 1.53.47L6 4.94 10.47.47a.75.75 0 0 1 1.06 0Z' clip-rule='evenodd'/%3E%3C/svg%3E%0A")
+starFilled = var(--starFilled)
+starEmpty = var(--starEmpty)
+min = var(--min)
+max = var(--max)
+tmb = var(--thumb)

@@ -1,0 +1,37 @@
+{% set sep = '|' %}
+
+<div class="breadcrumb{{ pages.current ? ' breadcrumb--' ~ pages.current }}">
+
+    <span class="breadcrumb__row">
+
+        <a href="/" class="breadcrumb__link--home">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14" height="15" viewBox="0 0 14 15"><path fill="" fill-rule="evenodd" d="M6.937 1.566 1.5 6.51v6.23h3V9.552A1.312 1.312 0 0 1 5.812 8.24h2.25a1.312 1.312 0 0 1 1.313 1.312v3.188h3V6.51L6.937 1.566ZM6.054.34a1.312 1.312 0 0 1 1.766 0l5.625 5.115a1.313 1.313 0 0 1 .43.97v6.502a1.314 1.314 0 0 1-1.313 1.312H9.187a1.312 1.312 0 0 1-1.312-1.313V9.74H6v3.187a1.313 1.313 0 0 1-1.313 1.313H1.313A1.312 1.312 0 0 1 0 12.928V6.427a1.313 1.313 0 0 1 .43-.971l.504.554-.504-.554L6.054.34Z" clip-rule="evenodd"/></svg>
+        </a>
+
+        <span class="breadcrumb__sep">{{ sep }}</span>
+
+        {% if breadcrumb %}
+
+            {% for item in breadcrumb %}
+
+                <a href="{{ item.link }}" class="breadcrumb__link">{{ item.name }}</a>
+                
+                {% if not product.name and not loop.last  %}
+                    <span class="breadcrumb__sep">{{ sep }}</span>
+                {% endif %}
+
+            {% endfor %}
+            
+        {% endif%}
+
+        {% if category.name %}   
+            <span class="breadcrumb__label">{{ category.name }}</span> 
+        {% endif %}
+
+        {% if pages.current == 'search' %}
+            <span class="breadcrumb__label">{{ search.word ? 'Busca - ' ~ search.word : 'Todos os Produtos' }} </span>
+        {% endif %}
+
+    </span>
+
+</div>

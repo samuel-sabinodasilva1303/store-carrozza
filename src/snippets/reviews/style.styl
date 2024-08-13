@@ -1,0 +1,63 @@
+.reviews
+  padding 46px 0 51px 0
+
+  &__title
+    font-wight 700
+    font-size 32px
+    line-height 48px
+    color #000
+    text-align center
+    margin-bottom 70px
+
+  &__content
+    .dep
+      &_data, &_nota, &_link
+        display none
+
+      &_msg, &_nome
+        > span
+          display none
+
+      &_item
+        max-width 100%
+
+      &_nome
+        font-size 22px
+        line-height 16px
+        font-wight 700
+        color #525252
+        margin-bottom 11px
+
+      &_msg
+        font-weight 400
+        font-size 14px
+        line-height 21px
+        color secondary
+        height 63px
+
+      &_dados
+        text-align center
+        padding 45px 40px
+        border 1px solid #c4c4c4
+        border-radius 20px
+        width 362px
+        max-width 100%
+        margin 0 auto
+
+      &_lista
+        &:not(.slick-initialized)
+          display flex
+
+          .dep
+            &_item:nth-child(n+4)
+              display none
+
+            @media mobile
+              &_item:not(:first-child)
+                display none
+
+  @media (max-width maxsize)
+    &__content
+      .dep
+        &_dados
+          padding 30px

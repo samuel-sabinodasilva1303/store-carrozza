@@ -1,0 +1,6 @@
+<div class="_ranking {% if spot %}_ranking--spot{% endif %}">
+    <a href="#comments" data-stars="{{ ranking.rating }}" class="_ranking__stars _ranking__link"></a>
+    {% if not spot %}
+        <a href="#comments" class="_ranking__link">Avalie agora!</a>
+    {% endif %}
+</div>

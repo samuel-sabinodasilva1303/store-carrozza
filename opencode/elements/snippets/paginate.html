@@ -1,0 +1,28 @@
+<div class="paginate _lazy">
+
+    {% set quantModulus = utils.is_mobile ? 3 ? 5 %}
+
+    {% if paginate.params.pageCount > 1 %}
+
+        {{ paginate.first('', {'class': 'paginate__page paginate__page--first'}) }}
+    
+        {% if paginate.hasPrev %}
+            {{ paginate.prev('', {'class': 'paginate__page paginate__page--prev'}) }}
+        {% endif %}
+    
+        {{ paginate.numbers({
+            'modulus': 4,
+            'separator': false,
+            'class': 'paginate__page paginate__page--number',
+            'currentClass': 'paginate__page--current'
+        }) }}
+    
+        {% if paginate.hasNext %}
+            {{ paginate.next('',{'class': 'paginate__page paginate__page--next'}) }}
+        {% endif %}
+    
+        {{ paginate.last('', {'class': 'paginate__page paginate__page--last'}) }}
+
+    {% endif %}
+
+</div>

@@ -1,0 +1,114 @@
+.products-visited
+  padding 25px 0
+
+  &__container
+    layout maxsize
+
+  &__title
+    color #000
+
+  #visitados_prod
+    display flex
+    flex-wrap wrap
+    justify-content flex-end
+    align-items center
+    grid-gap 5px
+
+    .clearVisiteds
+      display block
+      height 22px
+      background #525252
+      border-radius unset
+      line-height 22px
+      padding 0 10px
+      color #fff
+      font-size 12px
+      font-weight 700
+      text-transform uppercase
+      margin-left 25px
+
+    .paginacao_ajax
+      font-size 12px
+
+      #paginacao_ajax_prod
+        margin-left 12px
+
+      #linksPag
+        > a
+          display inline-block
+          width 18px
+          height 18px
+          border 1px solid #ededed
+          border-radius unset
+          line-height 15px
+          text-align center
+          color secondary
+
+          &.pageON
+            background #525252
+            border-color #525252
+            color #fff
+            cursor default
+            pointer-events none
+
+  .visitados_itens
+    display none
+
+  #produtos
+    display flex
+    flex 100%
+
+    > ul
+      flex 1
+      min-width 0
+
+      > li
+        display grid
+        grid-template-areas 'img name' 'img price'
+        grid-template-columns auto 1fr
+
+        a.FotoLista
+          grid-area img
+
+        h3
+          grid-area name
+          max-height 40px
+          overflow hidden
+          align-self flex-end
+
+          a.NomeProdLista
+            font-size 13px
+            font-weight 400
+            color #000
+
+        span.ValoresLista
+          grid-area price
+
+          .precoAvista
+            color #525252
+            font-weight 700
+            font-size 14px
+
+          .txt-corparcelas, .preco-de, .txt-cadaparcelas, .operadora
+            color #000
+            font-size 12px
+
+          .txt-por
+            display none
+
+  @media mobile
+    #visitados_prod .paginacao_ajax #paginacao_ajax_prod
+      display block
+
+    &__title
+      margin-bottom 15px
+      text-align center
+
+    #produtos
+      flex-wrap wrap
+
+      > ul
+        flex 100%
+
+        > li
+          margin-bottom 8px

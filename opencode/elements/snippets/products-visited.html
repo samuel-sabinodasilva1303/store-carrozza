@@ -1,0 +1,17 @@
+{% if settings.history_position and settings.visitedProductsShow %}
+
+    {% if pages.current in  ['product', 'home'] %} 
+
+        <section class="products-visited">
+            <div class="products-visited__container">
+                
+                <h3 class="products-visited__title">{{ Translation('produtos_visitados') }}</h3>
+
+                {% element 'snippets/history' { 'store.id': store.id, 'pages.current':pages.current, 'category.id': category.id } %}
+
+            </div>
+        </section>
+
+    {% endif %} 
+
+{% endif %}

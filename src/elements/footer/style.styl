@@ -1,0 +1,161 @@
+.footer
+  padding-top 25px
+  &__address
+    padding-block 25px
+    color #fff
+    background #ffffff
+    > ul
+      layout maxsize
+      display flex
+      justify-content space-evenly
+      > li
+        font-size 14px
+        font-style normal
+        font-weight 400
+        line-height 170% /* 21px */
+        > h3
+          font-size 18px
+          font-style normal
+          font-weight 700
+          line-height 130% /* 23.4px */
+        > a
+          color #fff
+          align-items center
+          display flex
+          &:hover
+            text-decoration underline
+            color #3f3f3f
+  &__top
+    padding-top 40px
+    background-color primary
+    display flex
+    flex-direction column
+    align-items center
+
+  &__container
+    layout maxsize
+    display flex
+    align-items flex-start
+    margin 0 5em auto !important
+    gap 25px
+
+  &__title
+    font-size 14px
+    line-height 18px
+    font-weight bold
+    color #fff
+    margin-bottom 15px
+
+  &__item
+    font-size 12px
+    line-height 15px
+    color #fff
+    font-weight 500
+    margin-bottom 15px
+    display: flex;
+    align-items: center;
+    > a 
+      color #fff
+      &:hover
+        text-decoration underline
+        color  #3f3f3f
+    > svg
+      margin-right 5px
+  &__links
+    margin-top 40px
+    padding 12px
+    display inline-flex
+    gap 12px
+    align-items center
+    > a  
+      &:hover
+        text-decoration underline
+        color  #3f3f3f
+
+  &__link,
+  &__pipe
+    font-size 12px
+    line-height 15px
+    color #fff
+    &:hover
+      text-decoration underline
+      color  #3f3f3f
+      
+    &--bold,
+    ^[0]__pipe
+      font-weight bold
+
+  &__copyright
+    layout maxsize
+    margin 0 auto
+    border-top 1px solid #3f3f3f
+    flex 100%
+
+  &__dev
+    padding-block 10px
+    display flex
+    align-items center
+    justify-content center
+    gap 16px
+
+  &__label
+    font-size 12px
+    line-height 15px
+    color primary
+  @media desktop
+    &__address
+      > ul
+        justify-content space-between
+    &__container
+      justify-content space-between !important
+      .social
+        margin 0 auto
+  @media mobile
+      &__address
+        > ul
+          display flex
+          flex-wrap wrap
+          justify-content flex-start
+          gap 2em
+          > li
+            width 43%
+     .payments__list
+        display flex
+        flex-wrap wrap
+        align-items center
+    &__links
+      margin-top 10px
+      flex-wrap wrap
+    &__box
+      display flex
+      flex-direction column
+      justify-content center
+      width 266px
+      &:nth-child(2)
+        width 140px
+
+      &:nth-child(3)
+        width 240px
+
+      &:nth-child(5)
+        width 140px
+    .social
+      align-items center
+
+    .seals
+      ul
+        .container
+          display flex
+          align-items center
+          justify-content space-between
+          margin-top 10px
+  
+    &__links
+      display flex
+      color #fff
+      justify-content center
+      
+    &__container
+      flex-wrap wrap
+      margin inherit !important
+      justify-content center

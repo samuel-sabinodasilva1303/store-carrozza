@@ -1,0 +1,36 @@
+.breadcrumb
+  padding 15px 0
+
+  &__row
+    display inline-flex
+    align-items center
+    gap 4px
+
+  &__sep,
+  &__label,
+  &__link
+    color tertiary
+    font-size 12px
+    line-height 15px
+    display inline-block
+
+  &--product &__link:last-of-type,
+  &__label
+    margin-left 9px
+    font-weight bold
+
+  &__link
+    &--home
+      line-height 0
+      display grid
+      place-items center
+      width 28px
+      height 28px
+      margin-right 8px
+
+      > svg
+        fill tertiary
+
+  @media mobile
+    &__row
+      flex-wrap wrap

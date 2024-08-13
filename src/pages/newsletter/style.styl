@@ -1,0 +1,60 @@
+.page-newsletter
+  .newsletterBTimg
+    border-radius 8px    
+  .botao-commerce-img
+    background #000000
+    width 204px
+    display flex
+    justify-content center
+    align-items center
+    height 38px
+    color #fff
+    font-size 14px
+    font-weight 700
+    line-height 130%
+    border-radius 8px
+    transition 0.4s all
+    &:hover
+      background #000000
+    
+  .main__container
+    padding 45px 0
+
+    h1.color
+      font-size 36px
+      line-height 40px
+      color primary
+      text-align center
+      margin-bottom 25px
+
+    >.board > p > strong
+      color #333
+
+    #formulario-newsletter
+      text-align center
+
+      > p
+        line-height 18px
+
+        > strong
+          color #333
+
+        > button.newsletterBTimg
+          width 172px
+          height 42px
+          background #525252
+          color #fff
+          border 1px solid rgba(0, 0, 0, 0)
+          border-radius 21px
+          font-weight 700
+
+  @media desktop
+    .main__container
+      #formulario-newsletter
+        > p > button.newsletterBTimg
+          transition all .3s
+
+          &:hover
+            border-color #525252
+            color #525252
+            background rgba(0, 0, 0, 0)

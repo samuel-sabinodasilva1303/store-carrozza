@@ -1,0 +1,44 @@
+<header id="header" class="header">
+    <div class="header__top-lane"> 
+        <div class="center">
+        </div>
+    </div>
+    
+    <div class="header__container">
+        <i class="header__bg-slice"></i>
+        <button
+            data-hidden-id="#menu-mobile"
+            type="button"
+            aria-label="Abre o menu"
+            class="header__button--mobile"
+        >
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="16" viewBox="0 0 20 16"><path fill="" fill-rule="evenodd" d="M.25 1A.75.75 0 0 1 1 .25h18a.75.75 0 0 1 0 1.5H1A.75.75 0 0 1 .25 1Zm0 7A.75.75 0 0 1 1 7.25h12a.75.75 0 0 1 0 1.5H1A.75.75 0 0 1 .25 8Zm0 7a.75.75 0 0 1 .75-.75h18a.75.75 0 0 1 0 1.5H1A.75.75 0 0 1 .25 15Z" clip-rule="evenodd"/></svg>
+
+        </button>
+
+        <div class="header__logo">{% element 'snippets/logo' %}</div>
+
+        <div class="header__wrapper">
+
+            {% for category in categories  %}
+                {% if category.id == 1 %}
+                    <button type="button" aria-label="Mostrar o menu" class="header__button" >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="16" viewBox="0 0 20 16"><path fill="" fill-rule="evenodd" d="M.25 1A.75.75 0 0 1 1 .25h18a.75.75 0 0 1 0 1.5H1A.75.75 0 0 1 .25 1Zm0 7A.75.75 0 0 1 1 7.25h12a.75.75 0 0 1 0 1.5H1A.75.75 0 0 1 .25 8Zm0 7a.75.75 0 0 1 .75-.75h18a.75.75 0 0 1 0 1.5H1A.75.75 0 0 1 .25 15Z" clip-rule="evenodd"/></svg>
+                        <svg class="close-menu" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L15 15M15 1L1 15" stroke="#ffff" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </button>
+                {% endif %}
+            {% endfor %}
+
+            <div class="header__customer">{% element 'snippets/customer' %}</div>
+
+            <div class="header__cart">{% element 'snippets/cart' %}</div>
+        </div>
+
+        <div class="header-translation">{% element 'snippets/translate' %}</div>
+        
+    </div>
+
+    {% element 'snippets/menu-mobile' %}
+
+</header>

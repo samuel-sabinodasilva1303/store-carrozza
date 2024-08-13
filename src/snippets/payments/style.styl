@@ -1,0 +1,31 @@
+.payments
+  display flex
+  justify-content space-between
+
+  &__order
+    margin-right 50px
+
+  &__title
+    font-size 13px
+    margin-bottom 10px
+    font-weight 400
+
+  &__list
+    display grid
+    grid-template-columns repeat(5, max-content)
+    gap 8px
+
+  &__item
+    line-height 0
+
+    > img
+      width 44px
+      height 30px
+      object-fit none
+
+  @media (max-width 991px)
+    flex-wrap wrap
+
+    > div
+      flex 1 100%
+      margin 0 0 15px

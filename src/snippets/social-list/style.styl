@@ -1,0 +1,26 @@
+.social
+  &__item
+    display inline-block
+
+    &:not(:last-child)
+      margin-right 14px
+
+  &__link
+    display block
+    line-height 0
+
+    > svg
+      transition all .3s
+      fill #333
+
+  @media desktop
+    &__link
+      &:hover
+        > svg
+          fill #525252
+
+  @media mobile
+    &__link
+      display flex
+      line-height 0
+      justify-content center

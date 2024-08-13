@@ -1,0 +1,141 @@
+.home
+  &__banner
+    &-double
+      display flex
+      align-items center
+      gap 20px
+    &,
+    &-center
+      display flex
+      justify-content center
+      margin 40px
+      > img
+        transition 1s all
+        &:hover 
+          scale 1.03
+          cursor pointer
+    &-brands
+      display flex
+      justify-content center
+      align-items center
+      padding-block 20px
+      margin 0 auto
+      max-width 1105px
+
+      &-title
+        > h1
+          margin-bottom 8px
+          color #36383A
+          font-family 'Inter', sans-serif
+          font-size 32px
+          font-style normal
+          font-weight 700
+          line-height 130%
+      &-border
+        border-bottom 8px solid #3E6E8C
+        width 60%
+        
+    &-width
+      width 920px
+   
+    &-double
+      padding-block 25px
+    &-information
+      display flex 
+      justify-content center
+      gap 1em
+      max-width 1051px
+      margin 0 auto
+
+    &-imagem 
+      padding: 0 15px 0 0;
+      transition 0.3s all
+      &:hover
+        scale 1.03
+        cursor pointer
+
+
+.banner_brands
+  .slick
+    &-prev
+      left 0 !important
+    &-next
+      right 0 !important
+@media mobile
+  .home__banner-brands
+    display block
+    padding 0
+    padding-block 0
+  .banner_brands
+    .slick
+      &-next
+        right 40em !important
+  .home__banner-center
+    margin 0
+    padding-block 50px
+
+  .home__banner-information
+    flex-wrap wrap
+  &-width
+    width auto
+
+.banners
+  &__center
+    &--content
+      padding-block 57px
+      height 790px
+  
+    &--container
+        display flex
+        gap 5px
+        justify-content center
+        margin 0 auto
+
+    &--imagens
+      height 100%
+      width 100%
+
+      > img
+        width 934px
+        height 686px
+        flex-shrink 0
+        border-radius 20px
+    
+    &--absolute
+      position relative
+      padding 0 20px
+      bottom 20em
+      transform translate(0%, -60%)
+      color #FFF
+      text-align center
+      font-family 'Montserrat', sans-serif
+      font-style normal
+      line-height normal
+
+      > span 
+        font-size 40px
+        font-weight 700
+        > strong 
+          color #06F
+      
+      > p 
+        font-size 20px
+        font-weight 400
+        padding-block 30px
+      
+      > a 
+        display flex
+        width 485.235px
+        height 45px
+        flex-direction column
+        justify-content center
+        flex-shrink 0
+        color #000
+        font-size 24px
+        font-weight 500
+        border-radius 58.5px
+        background #D9D9D9
+        margin 0 auto
+        cursor pointer 
+
+

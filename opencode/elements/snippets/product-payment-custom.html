@@ -1,0 +1,28 @@
+
+{% set orders = ['credit_card', 'pix'] %}
+{% set card = [] %}
+{% set pix = [] %}
+
+{% for option in options %}
+    {% if option.type == 'credit_card' %}
+        {% set card = card | merge([option]) %}
+    {% elseif option.type == 'pix' %}
+        {% set pix = pix | merge([option]) %}
+    {% endif %}
+{% endfor %}
+
+
+{# default displayed #}
+
+{% for option in options %}
+    {% if option.type == 'credit_card' %}
+        <p class="product-payment__card">
+            <b>ou em ate {{ option.plots }}x </b> de <b>{{ settings.currency }} {{ option.value | currency }}</b> {{ option.tax == '0.00' ? 'sem juros': 'com juros' }}
+        </p>
+    {% elseif option.type == 'pix' %}
+        <p class="product-payment__pix">
+            <b>{{ settings.currency }} {{ option.value | currency  }}</b> à vista
+        </p>
+    {% endif %}
+
+{% endfor %}

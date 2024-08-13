@@ -1,0 +1,32 @@
+{% if not categories_all %}{% set categories_all = categories %}{% endif %}
+
+{% if not child %}
+    <div class="categories">
+        
+        <h3 class="categories__title">Todas as Categorias</h3>
+
+        <ul class="categories__list">
+            {% endif %}
+
+            {% for category in categories_all %}
+            
+                {% if loop.index > 5 %}
+                    <li class="categories__item">
+                        <a href="{{ category.link }}" class="categories__link">
+                            <span class="categories__label">{{ category.name }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {# 
+                {% if category.children %}
+                    {% element 'snippets/categories_all' {categories_all: category.children, child: true } %}
+                {% endif %}
+                #}
+
+            {% endfor %}
+            
+            {% if not child %}
+        </ul>
+    </div>
+{% endif %}

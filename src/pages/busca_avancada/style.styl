@@ -1,0 +1,81 @@
+.page-search
+  .main__container
+    #vitrine-catalogo
+      max-width 100%
+      width 552px
+      margin 0 auto
+
+      > div
+        margin-bottom 30px
+
+        > .container
+          display none
+
+      h1.color
+        text-align center
+        font-size 30px
+        color primary
+        margin 35px 0
+
+      input
+        &[type='text']
+          display block
+          width 100%
+          border 1px solid #ededed
+          border-radius 4px
+          padding 0 7px
+
+      select
+        display block
+        width 100%
+        border 1px solid #ededed
+        border-radius 4px
+        padding 0 7px
+
+    #div_erro
+      margin-bottom 25px
+
+      p.blocoAlerta
+        color #F0506E
+        text-align center
+        font-size 14px
+
+      center a h3
+        font-weight 400
+        transition all .3s
+
+        @media desktop
+          &:hover
+            opacity .5
+            text-decoration underline
+
+    #Vitrine
+      fieldset
+        border 1px solid #ededed
+        padding 15px
+        background #f7f7f7
+        margin 0
+
+        > p
+          margin 25px 0
+
+        > button
+          display block
+          width 225px
+          height 42px
+          line-height 41px
+          background #525252
+          text-align center
+          color tertiary
+          font-size 16px
+          border-radius unset
+          font-weight 700
+          transition all .3s
+          border 1px solid rgba(0, 0, 0, 0)
+          margin 0 auto
+
+          @media desktop
+            &:hover
+              border-color #525252
+              background rgba(0, 0, 0, 0)
+              color #525252

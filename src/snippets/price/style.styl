@@ -1,0 +1,52 @@
+.price
+  margin-bottom 16px
+
+  &__content
+    display flex
+    flex-direction column
+
+  &__de,
+  &__por
+    display inline-block
+    white-space wrap
+
+  &__content
+    &:not(&--other)
+      &:before
+        content ''
+        height 14px
+        display block
+
+  &__starting-at
+    display block
+
+  &__upon-request,
+  &__sold-out,
+  &__unavailable
+    color #000
+    margin-top 18px
+
+  &__starting-at
+    font-size 14px
+    margin-right 7px
+
+  &__de
+    text-decoration line-through
+    font-size 12px
+    line-height 16px
+    color tertiary
+    margin-bottom 4px
+
+  &__por
+    color #515970
+    font-weight 300
+
+  @media desktop
+    &__por
+      line-height 13px
+      font-size 12px
+
+  @media mobile
+    &__por
+      font-size 12px 
+      line-height 21px

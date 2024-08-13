@@ -1,0 +1,76 @@
+.flags
+  &:not(&--product)
+    position absolute
+    bottom -35px
+    left 0
+
+  &__discount
+    &--product
+      height 18px
+      display flex
+      align-items center
+      justify-content center
+      padding-inline 6px
+      background-color gray-c
+      width fit-content
+      border-radius 2px
+
+      & ^[1]--label
+        font-size 13px
+        color #fff
+        font-weight bold
+        text-transform uppercase
+
+    &:not(&--product)
+      position absolute
+      top 0
+      right 0
+      background-color #FECF03
+      padding 2px 6px
+      border-radius 2px
+
+      & ^[1]--label
+        font-weight bold
+        color #36383A
+        font-size 10px
+        line-height 13px
+        text-transform uppercase
+
+  &__label
+    font-size 10px
+    color #fff
+    font-weight bold
+    text-transform uppercase
+    line-height 1
+
+    ^[0]--product &
+      font-size 13px
+
+  &__list
+    display flex
+    align-items center
+    flex-wrap wrap
+    height 18px
+    overflow hidden
+    gap 4px
+
+  &__item
+    height 18px
+    padding-inline 6px
+    width fit-content
+    border-radius 2px
+    display flex
+    justify-content center
+    align-items center
+
+    &--shipping
+      background-color #2B6FF1
+
+    &--new
+      background-color #ffffff
+
+    &--featured
+      background-color #2ABC27
+
+    &--extra
+      background-color #DB1020

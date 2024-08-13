@@ -1,0 +1,91 @@
+{% set porcentagemDesconto = 100 - ( product.price_offer / product.price ) * 100 %}
+
+{% if porcentagemDesconto < 100 %}
+
+    <p class="flags__discount{{ class ? ' flags__discount--' ~ class }}">
+
+        {% set label_text = class == 'product' ? porcentagemDesconto|number_format ~ '% Off' : '-'~ porcentagemDesconto|number_format ~'%' %}
+
+        <span class="flags__discount--label">{{ label_text }}</span>
+
+    </p>
+
+{% endif %} 
+
+<div class="flags{% if class %} flags--{{class}}{% endif %}">
+    <ul class="flags__list">
+
+        {% if product.free_shipping %}
+
+            <li class="flags__item flags__item--shipping">
+
+                {% if Image('free_shipping') %}
+
+                    {{ Image('free_shipping') }}
+
+                {% else %}
+
+                    <span class="flags__label">Frete Grátis</span>
+
+                {% endif %}
+
+            </li>
+
+        {% endif %}
+
+        {% if product.featured %}
+
+            <li class="flags__item flags__item--featured">
+
+                {% if Image('featured') %}
+
+                    {{ Image('featured') }}
+
+                {% else %}
+
+                    <span class="flags__label">Mais Vendido</span>
+
+                {% endif %}
+       
+            </li>
+
+        {% endif %}
+
+        {% if product.new %}
+
+            <li class="flags__item flags__item--new">
+
+                {% if  Image('new') %}
+
+                    {{ Image('new') }}
+
+                {% else %}
+
+                    <span class="flags__label">Lançamento</span>
+
+                {% endif %}
+
+            </li>
+
+        {% endif %}
+
+        {% if product.onPromotion %}
+
+            <li class="flags__item flags__item--extra">
+
+                {% if Image('additional_button') %}
+
+                    {{ Image('additional_button') }}
+
+                {% else %}
+
+                    <span class="flags__label">Oferta</span>
+
+                {% endif %}
+            
+            </li>
+
+        {% endif %}
+
+    </ul>
+</div>

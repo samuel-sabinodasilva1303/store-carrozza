@@ -1,0 +1,30 @@
+{% if product.available and product.stock > 0 and not product.upon_request %}
+
+    <div class="buy-button">
+        
+        <span id="span_erro_carrinho" class="buy-button__qty--alert blocoAlerta" style="display:none;">Selecione uma opção para variação do produto</span>
+        
+        <label class="buy-button__qty--label">Quantidade:</label>      
+
+        <div data-app="product.quantity" id="quantidade" class="buy-button__qty">
+
+            <button class="buy-button__qty--button" aria-label="Aumentar quantidade" type="button" id="minus"  onclick="process(-1)">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="12" height="2" viewBox="0 0 12 2"><path fill="" fill-rule="evenodd" d="M.25 1C.25.59.59.25 1 .25h10a.75.75 0 0 1 0 1.5H1A.75.75 0 0 1 .25 1Z" clip-rule="evenodd"/></svg>
+            </button>
+            
+            <input class="buy-button__qty--value" id="quant" aria-label="Quantidade" name="quant" class="text" size="1" type="text" value="1" maxlength="5" />
+
+            <button class="buy-button__qty--button" aria-label="Diminuir quantidade" type="button" id="plus"  onclick="process(1)">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="12" height="12" viewBox="0 0 12 12"><path fill=" fill-rule="evenodd" d="M6 .25c.41 0 .75.34.75.75v4.25H11a.75.75 0 0 1 0 1.5H6.75V11a.75.75 0 0 1-1.5 0V6.75H1a.75.75 0 0 1 0-1.5h4.25V1c0-.41.34-.75.75-.75Z" clip-rule="evenodd"/></svg>
+            </button>  
+
+        </div>
+
+        <button class="buy-button__submit" type="submit">Comprar</button>
+        <div id='ef_btn_orc_produto' class="notextselect" data-product-id="{{ product.id }}">
+           SOLICITAR ORÇAMENTO 
+        </div>
+
+    </div>
+
+{% endif %}

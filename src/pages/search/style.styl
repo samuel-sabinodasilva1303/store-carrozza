@@ -1,0 +1,187 @@
+.page-search
+  &__word
+    color gray-c
+    font-size 24px
+    line-height 31px
+
+    > span
+      font-weight normal
+
+  &__main
+    min-width 0
+    flex 1 auto
+    background-color #FAFBFD
+    position relative
+
+    &:before
+      content ''
+      display block
+      position absolute
+      top 0
+      height 100%
+      background-color inherit
+      z-index -1
+
+  &__name
+    font-weight bold
+    font-size 24px
+    line-height 31px
+    margin-bottom 10px
+    color gray-c
+
+  &__info
+    display flex
+    align-items center
+    justify-content space-between
+
+  &__quant-products
+    color #858EA7
+    font-size 12px
+    line-height 15px
+
+  &__sort
+    select
+      appearance none
+      border none
+      background-color transparent
+      font-size 12px
+      line-height 15px
+      font-weight bold
+      color tertiary
+      padding-inline 13px
+      background arrow-down no-repeat calc(100% - 13px) center
+      cursor pointer
+
+    .filtro-ordem
+      font-size 0
+      display flex
+      align-items center 
+
+    .filtros:not(.filtro-ordem),
+    #filtrar_categoria
+      display none
+
+  &__filtered
+    margin-block 12px 0
+
+  &__showcase
+    margin-bottom 31px
+
+  @media desktop
+    &__content
+      display flex
+      gap 30px 0
+
+      @media (max-width 'calc(%s + 40px)' % maxsize)
+        margin-inline 0
+
+    &__main
+      padding-left 20px
+
+      &:before
+        left 100%
+        width calc(((100vw - 100%) / 2))
+
+    &__filter
+      min-width 215px
+      flex 1 auto
+      position relative
+      margin-left -15px
+
+      @media (max-width 1296px)
+        margin-left unset
+
+      &-header
+        display none
+
+      &-title
+        color gray-c
+        font-size 16px
+        line-height 20px
+        font-weight bold
+        text-transform uppercase
+        margin-block 20px
+
+    &__info
+      border-bottom 1px solid border-2
+      margin-bottom 24px
+    &__sort .select
+      font-size 12px !important
+    &__sort .filtro-ordem:before
+      content 'Classificar por:'
+      color tertiary
+      font-size 12px !important
+      line-height 15px
+      width 123px
+
+  @media mobile
+    &__word
+      text-align center
+      margin-bottom 10px
+
+    &__main
+      &:before
+        left -15px
+        width calc(100% + 30px)
+
+    &__quant-products
+      display none
+
+    &__filter
+      background #f3f3f3
+      position fixed
+      top 0
+      left -100%
+      height 100%
+      width 100%
+      z-index 8
+      padding 20px
+      overflow-y auto
+      transition all 333ms
+
+      &-header
+        background #fff
+        height 60px
+        display flex
+        padding 20px 24px
+        margin -20px -20px 15px
+
+      &-btn
+        display flex
+        align-items center
+        gap 0 23px
+        background #fff
+        font-weight 600
+        font-size 16px
+        line-height 20px
+        color #000
+
+      &-title
+        text-align center
+        font-weight bold
+        font-size 16px
+        color secondary
+        text-transform uppercase
+        margin-bottom 8px
+
+    &__info
+      gap 0 15px
+      padding-block 10px 20px
+
+    &__sort
+      flex 0 1 50%
+      text-align center
+
+    &__btn
+      &--filter
+        height 50px
+        background tertiary
+        border-radius 5px
+        flex 0 1 50%
+        display flex
+        align-items center
+        justify-content center
+        gap 0 8px
+        color #fff
+        font-size 14px
+        font-weight 600

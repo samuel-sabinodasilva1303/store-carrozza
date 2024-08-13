@@ -1,0 +1,96 @@
+.buy-button
+  display flex
+  align-items center
+  gap 8px
+  #ef_btn_orc_produto
+    display flex
+    background #131311
+    border-radius 8px
+    cursor:pointer;
+    width 230px
+    height 38px
+    justify-content center
+    align-items center
+    gap 10px
+    font-size 14px
+    font-style normal
+    font-weight 700
+    line-height 140% /* 19.6px */
+    text-transform uppercase
+    color #fff
+    &:hover 
+      background #fff
+      color #131311
+      border 1px solid #131311
+      transition all 0.3s
+ 
+  &__submit
+    display inline-block
+    width 161px
+    height 38px
+    text-transform uppercase
+    background-color #2ABC27
+    color #fff
+    border 1px solid #2ABC27
+    border-radius 8px
+    text-align center
+    font-size 14px
+    font-weight bold
+    transition all 0.3s
+
+  &__qty
+    width 132px
+    height 38px
+    border 1px solid border-2
+    border-radius 8px
+    overflow hidden
+    display inline-flex
+    align-items center
+    justify-content space-between
+
+    &--alert
+      font-size 13px
+      color #f0506e
+      line-height 17px
+      display block
+      margin-bottom 8px
+
+    &--label
+      display none
+
+    &--button
+      display inline-block
+      height 100%
+      width 45px
+      background rgba(0, 0, 0, 0)
+      display flex
+      align-items center
+      justify-content center
+
+      svg
+        transition all 0.3s
+        fill primary
+
+    &--value
+      width 100%
+      border none
+      text-align center
+      font-size 16px
+      font-weight bold
+      color gray-c
+
+  @media desktop
+    &__submit
+      &:hover
+        background #fff
+        color #2ABC27
+
+    &__qty
+      &--button
+        &:hover
+          svg
+            opacity 0.6
+
+  @media mobile
+    display flex
+    flex-wrap wrap

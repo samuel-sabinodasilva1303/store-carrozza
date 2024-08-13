@@ -1,0 +1,40 @@
+._ranking
+  display flex
+  align-items center
+  gap 12px
+
+  &--spot
+    width 60px
+    height 10px
+
+  &__link
+    font-size 12px
+    line-height 15px
+    font-weight bold
+    color tertiary
+
+  &__stars
+    background-repeat no-repeat
+    background-image stars
+    background-position-y center
+    background-size 202% 100%
+    width 95px
+    height 17px
+
+    &[data-stars='0']
+      background-position-x 100%
+
+    &[data-stars='1']
+      background-position-x 80%
+
+    &[data-stars='2']
+      background-position-x 60%
+
+    &[data-stars='3']
+      background-position-x 40%
+
+    &[data-stars='4']
+      background-position-x 20%
+
+    &[data-stars='5']
+      background-position-x 0

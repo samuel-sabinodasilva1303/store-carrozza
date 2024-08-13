@@ -1,0 +1,241 @@
+.segmentation
+  padding 37px 0 32px 0
+  display flex
+  justify-content center
+  flex-wrap wrap
+  width 100%
+  max-width 1051px
+  margin 0 auto
+
+  .behindOn
+    opacity 1
+    scale 0.9
+    transform rotateY(0)
+
+  &__containeres
+    width 100%
+    max-width 1200px
+  &__title
+    font-family 'Public Sans', sans-serif
+    font-size 24px
+    font-style normal
+    font-weight 700
+    line-height 130% /* 31.2px */
+    color #292F3E
+    margin-bottom 30px
+    max-width calc(100% - 16px)
+    margin-left auto
+  &__list
+    display flex
+    align-items center
+    justify-content center
+    .slick-prev
+      top unset
+      bottom unset 
+      left -6px
+    .slick-next
+      top unset
+      bottom unset 
+      right -6px
+
+  &__list:not(.slick-initialized)
+    display flex
+    justify-content space-evenly
+    align-items center
+
+    .segmentation__item:nth-child(n+5)
+      display none
+
+  &__item
+    max-width 100%
+
+    &.slick-slide
+      margin 0 10px
+
+  &__link
+    line-height 0
+    display block
+    min-height 140px 
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    justify-content space-between
+    position relative
+
+  &__figure
+    margin 0 auto
+    display flex
+    justify-content center
+    align-items center
+    position relative
+
+    img
+      margin 0 auto
+      transition all .5s
+      width 94px
+      height 102px
+      object-fit contain
+
+  &__name
+    white-space pre
+    text-align center
+    font-style normal
+    font-weight 600
+    font-size 14px
+    line-height 130%
+    color #292F3E
+
+  @media (min-width 1200px)
+    .slick-prev
+      left -80px
+    .slick-next
+      right -80px
+
+
+  @media desktop
+    &__link:hover
+      img
+        transform scale(1.07)
+        opacity 0.5
+
+  @media mobile
+    &__list:not(.slick-initialized)
+      display flex
+
+      .segmentation__item:nth-child(n+3)
+        display none
+    .segmentation__list
+      .slick-next
+        left 26em
+      .slick-prev
+        right 26em
+        left unset
+  @media (max-width 460px)
+    &__list:not(.slick-initialized)
+      display flex
+
+      .segmentation__item:nth-child(n+3)
+        display none
+    .segmentation__list
+      .slick-next
+        right  0
+        left unset
+      .slick-prev
+        left 0
+
+.history
+
+  &__main
+
+    &--text
+
+      > h2
+        display flex
+        width 898px
+        height 77px
+        flex-direction column
+        justify-content center
+        flex-shrink 0
+        color #1F1E1E
+        text-align center
+        font-family 'Montserrat', sans-serif
+        font-size 36px
+        font-style normal
+        font-weight 600
+        line-height normal
+        margin 0 auto
+        border-radius 37.5px
+        border 1px solid #717171
+        background #ffffff
+
+    &--line
+      position: relative
+      top 40px
+      border-bottom 1px solid
+      z-index -1
+
+    &--video
+      > iframe
+        border-radius 10px
+        width 705px
+        height 390px
+    
+    &--content
+      padding-block 106px
+      display flex
+      gap 1em
+      justify-content center
+
+    &--container
+      font-family 'Montserrat', sans-serif
+      color #1F1E1E
+      font-style normal
+      line-height normal
+
+      > span
+          font-size 28px
+          font-weight 700
+          
+      > p 
+          font-size 20px
+          font-weight 400
+          padding-block 30px
+      > a 
+        font-size 24px
+        font-weight 500
+        display flex
+        width 485px
+        height 45px
+        flex-direction column
+        justify-content center
+        flex-shrink 0
+        color #000
+        text-align center
+        
+    &--segmentation
+        height 322px
+        flex-shrink 0
+        background #161616
+        display flex
+
+        &-container
+          display flex
+          justify-content center
+          align-items center
+          gap 172px
+
+        &-content
+          font-family 'Montserrat', sans-serif
+          color #fff
+          font-style normal
+          line-height normal
+
+          > span 
+            font-size 32px
+            font-weight 700
+          
+          > p
+            font-size 20px
+            font-weight 400
+.endorsserments
+
+  &__main
+    > h2
+      display flex
+      width 898px
+      height 77px
+      flex-direction column
+      justify-content center
+      flex-shrink 0
+      color #1F1E1E
+      text-align center
+      font-family 'Montserrat', sans-serif
+      font-size 36px
+      font-style normal
+      font-weight 600
+      line-height normal
+      margin 0 auto
+      border-radius 37.5px
+      border 1px solid #717171
+      background #ffffff

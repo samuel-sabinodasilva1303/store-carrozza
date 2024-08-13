@@ -1,0 +1,71 @@
+.lojas
+    &__main
+        layout maxsize
+        > h1 
+            color #005A99
+            padding-block 42px
+            font-size 32px
+            font-style normal
+            font-weight 700
+            line-height 110% /* 35.2px */
+            
+    &__container
+        > h2 
+            color #005A99
+            margin-top 1em
+            gap 10px
+            font-size 32px
+            font-style normal
+            font-weight 700
+            line-height 45.299px /* 141.558% */
+            display flex
+            align-items center
+            justify-content center
+
+    &__endereco
+        &-first,
+        &-second,
+        &-third,
+        &-fourth
+            > span 
+                color  #292F3E
+                font-size 24px
+                padding-block 30px
+                font-style normal
+                display flex
+                justify-content center
+                font-weight 700
+                line-height 130% /* 31.2px */
+            > ul 
+                > li 
+                    color #005A99
+                    text-align center
+                    font-size 16px
+                    font-style normal
+                    padding-block 4px
+                    font-weight 400
+                    line-height 150% /* 24px */
+    &__maps
+        width 100%
+        display flex
+        gap 1em
+        margin-top 2em
+        @media mobile
+            display grid
+            justify-items center
+
+        &-imagem
+            display flex
+            flex-wrap wrap
+            width 100%
+            height max-content
+            gap 1em
+            > img
+                &:hover
+                    scale 1.1 
+            @media mobile
+                justify-content center
+
+    &__iframe
+        width 90%
+        height 420px

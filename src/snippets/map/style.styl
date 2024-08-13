@@ -1,0 +1,39 @@
+.map
+    &__main
+        max-width  100%
+
+    &__container
+        display flex
+        padding-block 12px
+        justify-content center
+        align-items center
+
+    &__img
+        > img
+            @media mobile
+                opacity 0.4
+
+    &__title
+        > h1
+            color #005A99
+            width 50%
+            padding-block 13px
+            font-size 32px
+            font-style normal
+            font-weight 700
+            line-height 110%
+
+        @media mobile
+            position absolute
+            padding-block 30px
+            padding-inline 16px
+
+
+        > ul
+            > li
+                color #005A99
+                padding-block 4px
+                font-size 14px
+                font-style normal
+                font-weight 400
+                line-height 150%

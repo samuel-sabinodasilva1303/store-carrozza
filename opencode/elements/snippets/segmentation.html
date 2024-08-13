@@ -1,0 +1,29 @@
+
+{% set segmentationIdx = '' %}
+{% set segmentationItems = settings.segmentation_items|split(",") %}
+
+
+<div class="segmentation">
+
+    <div class="segmentation__containeres">
+        <h2 class="segmentation__title">Navegue por departamentos</h3>
+            <ul class="segmentation__list">
+
+                {% for category in categories %}
+                    {% if category.images %}
+                        <li class="segmentation__item">
+                            <a href="{{ category.link }}" aria-label="link para categoria {{ category.name }}"
+                                class="segmentation__link">
+                                <figure class="segmentation__figure">
+                                    <img  class="segmentation__initial" src="{{category.images[0]}}" width="120" height="120"
+                                        alt="imagem categoria {{ category.name }} ">
+                                </figure>
+                                <h3 class="segmentation__name">{{ category.name }}</h3>
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+    </div>
+</div>

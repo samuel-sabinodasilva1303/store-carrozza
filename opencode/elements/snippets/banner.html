@@ -1,0 +1,26 @@
+{% if name %}
+    {% set src = banners[name].src %}
+    {% set link = banners[name].link %}
+    {% set alt = banners[name].alt %}
+    {% set width = banners[name].width %}
+    {% set height = banners[name].height %}
+    {% set target = banners[name].target %}
+    {% if utils.is_mobile and settings.bannerMobileShow %}{% set extraMobile = 'true' %}{% endif %}
+
+    <div class="banner banner--{{ name }}">
+
+        {% if link %}<a href="{{ link }}" aria-label="banner {{ alt }}" title="{{ alt }}" target="{{ target }}" {% if target == '_blank' %}rel="noopener"{% endif %} >{% endif %}
+
+            <figure class="banner__figure">
+                <img src="{{ src }}" width="{{ width }}" height="{{ height }}" alt="{{ alt }}" loading="lazy">
+            </figure>
+
+        {% if link %}</a>{% endif %}
+
+    </div>
+
+{% else %}
+
+    <pre>{{dump('snippet sem o parametro "name"')}}</pre>
+
+{% endif %}

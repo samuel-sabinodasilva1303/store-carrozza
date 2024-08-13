@@ -1,0 +1,275 @@
+.modal
+  z-index 6
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  transition all 0.3s
+  color #878787
+  #div_atualiza
+    > p
+      padding-block 10px
+
+  #modal-form-content
+    > p
+      padding-block 10px
+  #recommend-form
+    > fieldset
+      height 440px
+      overflow auto
+      font-size 13px
+      border 0
+      margin 10px 0
+      padding 0
+      color #c6c6c6
+      > p 
+        margin-top 1em
+  #form1
+    > fieldset
+      height 440px
+      overflow auto
+      font-size 13px
+      border 0
+      margin 10px 0
+      padding 0
+      color #c6c6c6
+      > p 
+        margin-top 1em
+        > label
+          > input, select
+            margin-bottom 1em
+  #modal-close-button
+    height 45px
+    width 45px
+    position relative
+    background rgba(0, 0, 0, 0)
+
+    > span
+      display none
+
+    &:after,
+    &:before
+      content ''
+      height 4px
+      width 30px
+      border-radius 2px
+      background secondary
+      display block
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      margin auto
+
+    &:after
+      transform rotate3d(0, 0, 1, 45deg)
+
+    &:before
+      transform rotate3d(0, 0, -1, 45deg)
+
+  &-header
+    display flex
+    align-items center
+    justify-content space-between
+    flex-flow row-reverse
+    color #333
+    border-bottom 1px solid #ededed
+
+  &-title
+    font-weight 700
+    font-size 16px
+    text-transform uppercase
+
+  &-dialog
+    &:not(.cart-preview-dialog)
+      // width 1000px !important
+      max-width 60%
+
+    &-center
+      position absolute
+      top 50%
+      left 50%
+      transform translate(-50%, -50%)
+      margin 0 !important
+
+  &-content
+    background #fff
+    border-radius 5px
+    padding 10px
+    border 1px solid #ededed
+
+  &.cart-preview
+    .block
+      display block
+
+  .cart-preview-body
+    overflow auto
+
+  .cart-preview-table
+    padding 20px 10px 10px
+    width 100%
+
+  .cart-preview-item
+    display flex
+    align-items center
+
+    &:not(:first-child)
+      margin-top 20px
+
+  .cart-preview-item-image-space-box
+    padding 5px
+
+    img
+      max-width 60px
+      max-height 60px
+
+  .cart-preview-item-name-box
+    flex 1 0
+    min-width 0
+    padding 5px
+
+    small
+      font-size 10px
+
+  .cart-preview-item-price-box
+    flex 0 0 110px
+    padding 5px
+
+  .cart-preview-item-delete-box
+    padding 8px
+
+  .cart-preview-item-delete
+    color #f0506e
+    cursor pointer
+
+  table,
+  tbody
+    font-size 13px
+    line-height 16px
+
+  .cart-preview-item-image-quantity-box
+    position relative
+
+  .cart-preview-quantity-tag-box
+    position absolute
+    width 20px
+    height 20px
+    border-radius 50%
+    background secondary
+    color #fff
+    font-weight 700
+    top -5px
+    left -5px
+    text-align center
+
+  .cart-preview-quantity-tag
+    vertical-align middle
+
+  .cart-preview-item-price-box b,
+  .cart-preview-item-name,
+  &.cart-preview small b
+    font-weight 700
+    text-transform uppercase
+    color #3d3d3d
+
+  .cart-preview-item-error
+    color #f0506e
+    font-size 10px
+    line-height 11px
+    margin-top 5px
+
+    > b
+      display block
+
+  .cart-preview-footer
+    margin-top 10px
+    padding-top 15px
+    display flex
+    flex-wrap wrap
+    border-top 1px solid #ededed
+
+  .cart-preview-loading
+    margin 15px auto 7px
+
+  .cart-preview-subtotal
+    flex 100%
+    margin-bottom 15px
+    text-align right
+
+  .botao-continuar-comprando,
+  .botao-prosseguir-compra
+    height 35px
+    padding 0 15px
+    border 1px solid
+    border-radius 17.5px
+    color #fff
+    font-weight 700
+    line-height 31px
+    transition all 0.3s
+
+    > img
+      display none
+
+  .botao-continuar-comprando
+    background #FF891D
+    border-color #fff
+
+  .botao-prosseguir-compra
+    background #F2F2F2
+    margin-left auto
+
+  &#modal-form
+    .modal-dialog 
+      width auto
+      min-width 320px 
+      max-width calc(100% - 15px)
+
+      .detalhesBrinde
+        h3
+          color #333
+          margin 15px 0
+          font-weight 700
+          text-align center
+
+        img
+          margin 0 auto
+
+      .botao
+        text-align center
+        margin-top 15px
+
+        > button
+          padding 7px 15px
+          background #525252
+          color #fff
+          border-radius 15px
+          border 1px solid rgba(0, 0, 0, 0)
+          transition all 0.3s
+
+  @media desktop
+    .botao-prosseguir-compra
+      cursor pointer
+
+      &:hover
+        background #2B6FF1
+        color #fff
+
+    .botao-continuar-comprando 
+      cursor pointer
+
+      &:hover
+        background #FEB934 
+        color #fff 
+
+    &#modal-form .modal-dialog .botao > button
+      &:hover
+        background rgba(0, 0, 0, 0)
+        border-color #525252 
+        color #525252
+
+  @media mobile
+    &-dialog:not(.cart-preview-dialog)
+      width auto !important
+      max-width 100% 

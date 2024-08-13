@@ -1,0 +1,32 @@
+.cart
+  &__link
+    display block
+    white-space nowrap
+    cursor pointer
+    position relative
+
+    > svg
+      fill #000
+
+  &__info,
+  svg
+    display inline-block
+    vertical-align middle
+    transition all 0.3s
+
+  &__info
+    position absolute
+    color #fff
+    top -3px
+    right 9px
+
+  @media desktop
+    &__link
+      margin-right 27.5px
+
+      &:hover
+        & ^[0]__info
+          color secondary
+
+        > svg
+          fill secondary
