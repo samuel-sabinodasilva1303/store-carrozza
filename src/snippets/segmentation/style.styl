@@ -192,7 +192,9 @@
         flex-shrink 0
         color #000
         text-align center
-        
+        border-radius 50px
+        background #cbc9c9
+          
     &--segmentation
         height 322px
         flex-shrink 0
@@ -221,6 +223,7 @@
 .endorsserments
 
   &__main
+
     > h2
       display flex
       width 898px
@@ -239,3 +242,87 @@
       border-radius 37.5px
       border 1px solid #717171
       background #ffffff
+
+    &--video
+
+      > iframe 
+        width 705px
+        height 396px
+        flex-shrink 0
+        border-radius 10px
+
+      &-text
+        color #000
+        font-family 'Montserrat', sans-serif
+        font-style normal
+        line-height normal
+
+        > h3 
+          font-size 32px
+          font-weight 600
+          margin-bottom 14px
+
+        > h4 
+          font-size 32px
+          font-weight 400
+          margin-bottom 14px
+
+        > p
+          font-size 20px
+          font-weight 400
+          margin-bottom 41px
+
+        > span 
+          font-size 20px
+          font-style italic
+          font-weight 300
+          line-height normal
+              
+    &--content
+      padding-block 90px
+
+      > a
+        display flex
+        height 45px
+        width 46%
+        justify-content center
+        color #FFF
+        font-family 'Montserrat', sans-serif
+        font-size 24px
+        font-style normal
+        font-weight 500
+        line-height normal
+        align-items center
+        text-align center
+        background #06f
+        border-radius 50px
+        margin 0 auto
+  
+    &--video
+      display flex
+      padding-block 99px
+      gap 70px
+      align-items end
+    
+    &--imagens
+      display flex
+      justify-content space-between
+      margin-bottom 3em
+
+      &-persona1, &-persona2, &-persona3, &-persona4
+        display flex
+        align-items center
+        cursor pointer
+        gap 20px
+      
+      &-infos
+        color #000
+        font-family 'Montserrat', sans-serif
+        font-style normal
+        line-height normal
+        font-size 18px
+
+        > p
+          font-weight 600
+        > span 
+          font-weight 400

@@ -126,7 +126,6 @@
         display none
 
       #email_avise
-        border 1px solid #CBD2E4
         width 268px
         color secondary
         padding 0 15px
@@ -208,6 +207,8 @@
   
   &__content
     position relative
+    background #E1E1E1
+    padding-top 90px
 
     &.bottom
       padding-top 50px
@@ -276,7 +277,6 @@
       height 42px
       font-size 16px
       width 100%
-      max-width 380px
       font-size 0
       text-align center
       line-height 39px
@@ -402,9 +402,9 @@
     margin-top 5px
 
   &__name
-    font-size 18px
-    font-weight bold
-    line-height 23px
+    font-size 40px
+    font-weight 600
+    line-height 52px
     color gray-c
     margin-top 9px
 
@@ -1156,7 +1156,6 @@
     &__info
       flex 42%
 
-    &__name,
     &__labels,
     &__form
       max-width 380px
@@ -1270,3 +1269,48 @@
       #nao_disp #letMeKnow
         font-size 14px
         width 100%
+
+.products
+  &-video
+    background #161616
+
+    &--main
+      padding 50px
+
+      > iframe
+        display flex
+        justify-content center
+        margin 0 auto
+        align-items center
+        border-radius 42px
+        width 100%
+
+      > p
+        color #FFF
+        text-align center
+        font-family 'Montserrat', sans-serif
+        font-size 40px
+        font-style normal
+        font-weight 600
+        line-height normal
+        padding-bottom 2em
+
+  &-description
+    background #e1e1e1
+    padding-top 90px
+    padding-bottom 90px
+
+
+    &--infos
+      color: #1F1E1E;
+      font-family 'Montserrat', sans-serif
+      font-style: normal;
+      line-height: normal;
+      margin-bottom: 3em
+
+      > h2
+        font-weight: 600;
+        font-size: 40px;
+      > p
+        font-weight: 400;
+        font-size: 24px;

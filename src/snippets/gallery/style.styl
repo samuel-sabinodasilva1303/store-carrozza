@@ -2,7 +2,7 @@
   min-width 0
 
   &__content
-    display flex
+    display block
 
   &__nav
     min-width 0
@@ -48,6 +48,8 @@
 
     > img
       margin auto
+      width 225px
+      height 234px
 
     &--frame
       > img
@@ -61,6 +63,7 @@
         transition: opacity .5s;
         display: block;
         width: calc(100% - 2px);
+        height: auto
         &:hover 
           opacity 0
       @media (max-width: 780px) 
@@ -111,8 +114,9 @@
       gap 8px
 
     &__nav
-      margin-top -4px
-      width 87px
+        display flex
+        gap 1em
+        justify-content center
 
       .slick
         &-arrow

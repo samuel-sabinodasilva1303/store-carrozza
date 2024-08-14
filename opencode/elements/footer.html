@@ -1,0 +1,111 @@
+{% set email = Translation('ag_email_1') %}
+{% set whatsappNumber = Translation('ag_telefone_3') %}
+{% set phone = Translation('ag_telefone_1') %}
+{% set phone2 = Translation('ag_telefone_2') %}
+{% set more_quantity = 6 %}
+
+{% if categories | length > more_quantity %}
+    {% set show_categories = categories | slice(0, more_quantity) %}
+    {% set more_categories = categories | slice(more_quantity) %}
+{% else %}
+    {% set show_categories = categories %}
+    {% set more_categories = null %}
+{% endif %}
+
+<footer class="footer ">
+    <div class="footer__line">
+        <div class="main__container">
+            <div class="cols container">
+                <div class="container flex justify-between f-wrap">
+
+                    <div class="box logo-box">
+
+                        {% set logoStore = Image('logo_loja') %}
+                        {% if logoStore %}
+                            <a class="logo" href="{{ store.url }}" title="{{ store.name }}" aria-label="{{ store.name }}">
+                                {{ logoStore | replace({'src=': 'width="222" height="36" src='}) }}
+                            </a>
+                        {% else %}
+                            <a class="logo" href="{{ store.url }}" title="{{ store.name }}">
+                                <span class="title-store">{{ store.name }}</span>
+                            </a>
+                        {% endif %}
+                        
+                        <div class="box box-infos">
+                            <div class="title" style="margin-top: 8px;">Endereço</div>
+                            
+                            Rua Gaudêncio Guacelli, 105 Vila Assis CEP: 17210-130 Jaú/SP
+                            
+                            
+                            <div class="title" style="margin-top: 14px;">Contato</div>
+                            <div class="overflow">
+                                <ul class="list"> 
+            
+                                    {% if phone %}
+                                    {% set link = phone | replace({'(': '', ')': '', '-': '', ' ': ''}) %}
+                                    <li>
+                                        <a href="tel:{{ link }}" title="Telefone: {{ phone }}">
+                                            <span style="text-color: #fffff; font-weight: bold;">Telefone +55 14 3621 4663</span>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                    {% if phone2 %}
+                                    {% set link = phone2 | replace({'(': '', ')': '', '-': '', ' ': ''}) %}
+                                    <li>
+                                        <a href="tel:{{ link }}" title="Telefone: {{ phone2 }}">
+                                            <i class="icon icon-phone v-align-middle"></i>
+                                            {{ phone2 }}
+                                        </a>
+                                    </li>
+                                    {% endif %}
+            
+                                    {% if whatsappNumber %}
+                                    <li>
+                                        {% element 'snippets/whatsapp' { 'number': whatsappNumber, 'include_text' : false } %}
+                                    </li>
+                                    {% endif %}
+                                    
+                                    {% if email %}
+                                    <li>
+                                        <a href="mailto:{{ email }}" title="Email: {{ email }}">
+                                            <span style="text-color: #fffff; font-weight: bold;">Email:</span>
+                                            {{ email }}
+                                        </a>
+                                    </li>
+                                    {% endif %}
+            
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box box-infos">
+                        <div class="title">Produtos</div>
+                        <div class="overflow" style="border-top: 2px solid white;">
+                            <ul class="list"> 
+                                {% for category in show_categories %}
+                                    <li>
+                                        <a href="{{ category.link }}" title="{{ custom.name }}">{{ category.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copy">
+                <div class="container flex align-center flex-column">
+                    
+                    <div class="text">{{ Translation('ag_mensagem_rodape') }}</div>
+
+                    <div class="tray">
+                        <p>2024 Alexandre Carrozza & Cia Ltda Todos os direitos reservados | <a>Políticas de privacidade</a></p>
+                        <a>Desenvolvido pela agência Algoritmux</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

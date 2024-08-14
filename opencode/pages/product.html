@@ -1,11 +1,9 @@
 <!--Inicio Zoom-->
 
 <script>
-    // Adicione um identificador único, por exemplo, a classe .image-container, a todos os elementos .gallery-image
 const imageContainers = document.querySelectorAll('.gallery-image');
 
 imageContainers.forEach((container) => {
-    // Adicione o evento de zoom a cada elemento .image-container
     container.addEventListener('mousemove', zoom);
     container.addEventListener('touchmove', zoom);
 });
@@ -28,14 +26,15 @@ function zoom(e) {
 }
 </script>
 <!--Fim Zoom-->
-
+<div class="page-product--return main__container">
+    <a href="/">voltar</a>
+</div>
 <section class="page-product__content top">
 
     {% element 'snippets/schema' %}
 
-    {% element 'snippets/breadcrumb' %}
 
-    <div class="page-product__top">
+    <div class="page-product__top main__container">
 
         <div data-thumbnail="{{ asset('img/thumbnail.png')}}" data-width="{{ settings.default_image_zoom_width }}" data-height="{{ settings.default_image_zoom_height }}" class="page-product__image">
 
@@ -59,12 +58,6 @@ function zoom(e) {
 
             <div class="page-product__ranking">
 
-                {% element 'snippets/ranking' {'ranking': product.ranking} %}
-
-                {% if product.reference %}
-                    <span class="page-product__ref">(Cod.{{ product.reference }})</span>
-                {% endif %}
-
             </div>
 
             <h1 class="page-product__name">{{ product.name }}</h1>
@@ -83,40 +76,6 @@ function zoom(e) {
                 <div class="page-product__variations">
                     {{ productHelper.variants() }}
                 </div>
-
-                {% if product.stock == 0 and product.price != 0 %}
-                    <h1 class="page-product__address-title" >Ou confira o estoque de uma das nossas lojas físicas:</h1>
-                    <div class="page-product__adrres">
-                        <ul>
-                            <li>{{ Translation('ag_endereco_1') }}</li>
-                            <li>{{ Translation('ag_endereco_2') }}</li>
-                            <li>{{ Translation('ag_endereco_1') }}</li>
-                            <li>{{ Translation('ag_endereco_4') }}</li>
-                            <li>{{ Translation('ag_endereco_5') }}</li>
-                        </ul>
-                    </div>
-                {% elseif product.stock != 0 and product.price == 0 %}
-                    <h1 class="page-product__address-title" >Ou confira o estoque de uma das nossas lojas físicas:</h1>
-                    <div class="page-product__adrres">
-                        <ul>
-                            <li>{{ Translation('ag_endereco_1') }}</li>
-                            <li>{{ Translation('ag_endereco_2') }}</li>
-                            <li>{{ Translation('ag_endereco_1') }}</li>
-                            <li>{{ Translation('ag_endereco_4') }}</li>
-                            <li>{{ Translation('ag_endereco_5') }}</li>
-                        </ul>
-                    </div>
-                {% endif %}
-
-                {% if productHelper.kit() %}
-
-                    <div class="page-product__kits">
-
-                        {{ productHelper.kit() }}
-                        
-                    </div>
-
-                {% endif %}
 
                 {% if productHelper.gifts() %}
 
@@ -198,32 +157,48 @@ function zoom(e) {
     {% element 'snippets/buy-together' %}
 
 </section>
-
-<section class="page-product__content bottom">
-
-    {% element 'snippets/product-tabs' %}
-
-    <section class="page-product__comments">
-            
-        <h3 class="page-product__comments--title">Avaliações</h3>
-
-        {% element 'product/comments' %}
-
-        <button data-logged-user="true"  class="tray-hide page-product__comments--btn">Deixe sua avaliação</button>
-
+{% if product.description %}
+    <section class="products-description">
+        <div class="main__container">
+            <div class="products-description--infos">
+                <h2>{{ product.name }}</h2>
+                <p>Marca: {{ product.brand }}</p>
+                <p>Disponibilidade: {{ product.availability }}</p>
+            </div>
+            {{product.description}}
+        </div>        
     </section>
-</section>
+{% endif %}
+    <section>
+        {{ productHelper.bundle() }}
+    </section>
+    {% if product.video %}
+        <section class="products-video">
+
+            <div class="products-video--main main__container">
+                <p>Veja uma review</p>
+                <iframe 
+                src="{{product.video}}"
+                width="560" 
+                height="698px" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+            </div>
+        </section>
+    {% endif %}
  
 {% if product.related_products %}
 
-    <section class="products-related">
-        <h3 class="products-related__title">Produtos Relacionados</h3>
+    <section class="products-related ">
+        <h3 class="products-related__title">Veja também</h3>
         
-        <div data-carrosel="true" class="showcase__list showcase__list--related">
+        <div data-carrosel="true" class="showcase__list showcase__list--related  main__container ">
 
             {% for product_related in product.related_products %}
 
-                <div class="showcase__item">
+                <div class="showcase__item related">
 
                     {% element 'snippets/product' {'product': product_related } %}
 
