@@ -17,7 +17,7 @@
         > figure 
           > img 
             width: 100%;
-            object-fit: unset;
+            object-fit: fill;
             height: 100%;
       .product
         &__name
@@ -29,7 +29,7 @@
             font-style normal
             font-weight 700
             line-height normal
-            height 80px
+            height 110px
             display flex
             align-items baseline
 
@@ -73,6 +73,11 @@
     aspect-ratio 280/350
     overflow visible
     width 444px
+
+    &.colorblack
+      filter grayscale(100%)
+      width 100%
+      height 400px
 
     img
       object-fit contain
@@ -122,7 +127,7 @@
     color #000000
     position absolute
     bottom 0
-    transform translate(62%)
+    transform translate(36%)
 
     &:hover
       background-color #30302f
@@ -144,12 +149,12 @@
   @media mobile
     &__buttons
       height 38px
-      width calc(100% - 20px)
+      width 10%
       margin 0 auto
     &__button
       opacity 1
       visibility visible
-      width 100%
+      width 70%
     &__name,
     &__price
       padding-inline 10px

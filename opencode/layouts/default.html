@@ -86,8 +86,15 @@
                 <main id="main" class="main">
                         <!-- Layout -->
                         {{ content_for_layout }}
+                        {% if pages.current == 'a-fabrica' %}
+                            {% element 'snippets/fabrica' %}
+                        {% elseif pages.current == 'custom' %}
+                            {% element 'snippets/custom' %}
+
+                        {% endif %}
+
                 </main>
-                
+            
             <!--Overlay-->
             <div id="overlay"></div>
             <!-- Tray modal -->

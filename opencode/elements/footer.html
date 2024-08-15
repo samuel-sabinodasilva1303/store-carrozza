@@ -16,9 +16,8 @@
     <div class="footer__line">
         <div class="main__container">
             <div class="cols container">
-                <div class="container flex justify-between f-wrap">
-
-                    <div class="box logo-box">
+                <div class="logo-box---main">
+                    <div class="logo-box">
 
                         {% set logoStore = Image('logo_loja') %}
                         {% if logoStore %}
@@ -30,66 +29,77 @@
                                 <span class="title-store">{{ store.name }}</span>
                             </a>
                         {% endif %}
-                        
-                        <div class="box box-infos">
-                            <div class="title" style="margin-top: 8px;">Endereço</div>
-                            
-                            Rua Gaudêncio Guacelli, 105 Vila Assis CEP: 17210-130 Jaú/SP
-                            
-                            
-                            <div class="title" style="margin-top: 14px;">Contato</div>
-                            <div class="overflow">
-                                <ul class="list"> 
-            
-                                    {% if phone %}
-                                    {% set link = phone | replace({'(': '', ')': '', '-': '', ' ': ''}) %}
-                                    <li>
-                                        <a href="tel:{{ link }}" title="Telefone: {{ phone }}">
-                                            <span style="text-color: #fffff; font-weight: bold;">Telefone +55 14 3621 4663</span>
-                                        </a>
-                                    </li>
-                                    {% endif %}
-                                    {% if phone2 %}
-                                    {% set link = phone2 | replace({'(': '', ')': '', '-': '', ' ': ''}) %}
-                                    <li>
-                                        <a href="tel:{{ link }}" title="Telefone: {{ phone2 }}">
-                                            <i class="icon icon-phone v-align-middle"></i>
-                                            {{ phone2 }}
-                                        </a>
-                                    </li>
-                                    {% endif %}
-            
-                                    {% if whatsappNumber %}
-                                    <li>
-                                        {% element 'snippets/whatsapp' { 'number': whatsappNumber, 'include_text' : false } %}
-                                    </li>
-                                    {% endif %}
-                                    
-                                    {% if email %}
-                                    <li>
-                                        <a href="mailto:{{ email }}" title="Email: {{ email }}">
-                                            <span style="text-color: #fffff; font-weight: bold;">Email:</span>
-                                            {{ email }}
-                                        </a>
-                                    </li>
-                                    {% endif %}
-            
-                                </ul>
-                            </div>
+                        <div class="logo-box--media">
+                            <a href="https://api.whatsapp.com/send/?phone=5514998809530&text&type=phone_number&app_absent=0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                                    <g clip-path="url(#clip0_137_6)">
+                                    <path d="M17.5 8.05322C12.2895 8.05322 8.05188 12.2908 8.05188 17.5001C8.05188 19.4723 8.65537 21.3616 9.79662 22.967L9.97543 23.2195L9.0393 26.0055L11.6965 24.9602L11.966 25.1562C13.5846 26.329 15.4976 26.9495 17.5 26.9495C22.7106 26.9495 26.9482 22.7119 26.9482 17.5014C26.9482 12.2908 22.7106 8.05454 17.5 8.05454V8.05322ZM23.5402 20.5175C23.4206 21.2959 22.7395 24.149 19.3092 22.9355C15.3543 21.5378 12.4972 19.0778 11.5808 15.7974C10.6657 12.5196 13.3058 11.6505 13.8594 11.8438C14.4142 12.0358 15.7882 14.4721 15.5962 15.0019C15.4029 15.5331 14.4747 16.0393 14.5036 16.5994C14.5299 17.0741 18.0299 20.5596 19.0265 20.2822C19.7089 20.0915 19.7786 19.0358 20.4544 18.9135C21.0697 18.8043 22.8329 19.5222 23.4285 20.1507C23.5205 20.248 23.56 20.3821 23.5402 20.5162V20.5175Z" fill="white"/>
+                                    <path d="M28.2485 0H6.7515C3.02273 0 0 3.02273 0 6.7515V28.2485C0 31.9773 3.02273 35 6.7515 35H28.2485C31.9773 35 35 31.9773 35 28.2485V6.7515C35 3.02273 31.9773 0 28.2485 0ZM25.0391 25.0404C23.0261 27.0533 20.3479 28.163 17.5 28.163C15.3569 28.163 13.294 27.5306 11.5269 26.3315L7.05654 28.0894L8.62904 23.414C7.45623 21.66 6.83696 19.6168 6.83696 17.5C6.83696 14.6521 7.94666 11.9739 9.96093 9.96093C11.9739 7.94666 14.6521 6.83696 17.5 6.83696C20.3479 6.83696 23.0261 7.94666 25.0391 9.96093C27.0533 11.9739 28.163 14.6521 28.163 17.5C28.163 20.3479 27.0533 23.0261 25.0391 25.0404Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_137_6">
+                                    <rect width="35" height="35" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/carrozzaguitars/">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="35" viewBox="0 0 36 35" fill="none">
+                                    <g clip-path="url(#clip0_137_4)">
+                                    <path d="M18 14.1854C16.1202 14.1854 14.5907 15.6724 14.5907 17.5C14.5907 19.3276 16.1202 20.812 18 20.812C19.8798 20.812 21.4066 19.3276 21.4066 17.5C21.4066 15.6724 19.8771 14.1854 18 14.1854ZM18 14.1854C16.1202 14.1854 14.5907 15.6724 14.5907 17.5C14.5907 19.3276 16.1202 20.812 18 20.812C19.8798 20.812 21.4066 19.3276 21.4066 17.5C21.4066 15.6724 19.8771 14.1854 18 14.1854ZM29.0529 0H6.9444C3.10909 0 0 3.02273 0 6.7515V28.2485C0 31.9773 3.10909 35 6.9444 35H29.0529C32.8882 35 35.9986 31.9773 35.9986 28.2485V6.7515C35.9986 3.02273 32.8882 0 29.0529 0ZM28.9745 21.5772C28.9745 25.2139 25.933 28.1709 22.1937 28.1709H13.805C10.067 28.1709 7.02419 25.2139 7.02419 21.5772V13.4215C7.02419 9.78738 10.0657 6.82908 13.805 6.82908H22.1937C25.9316 6.82908 28.9745 9.78606 28.9745 13.4215V21.5772ZM22.1937 9.20887H13.805C11.4153 9.20887 9.47062 11.0982 9.47062 13.4215V21.5772C9.47062 23.9018 11.4153 25.7911 13.805 25.7911H22.1937C24.5833 25.7911 26.528 23.9018 26.528 21.5772V13.4215C26.528 11.0982 24.5833 9.20887 22.1937 9.20887ZM18 22.9538C14.9071 22.9538 12.389 20.507 12.389 17.5C12.389 14.4931 14.9071 12.0462 18 12.0462C21.0929 12.0462 23.6096 14.4931 23.6096 17.5C23.6096 20.507 21.0929 22.9538 18 22.9538ZM23.8936 12.651C23.3702 12.651 22.9443 12.2382 22.9443 11.728C22.9443 11.2179 23.3689 10.805 23.8936 10.805C24.4183 10.805 24.8403 11.2179 24.8403 11.728C24.8403 12.2382 24.417 12.651 23.8936 12.651ZM18 14.1854C16.1202 14.1854 14.5907 15.6724 14.5907 17.5C14.5907 19.3276 16.1202 20.812 18 20.812C19.8798 20.812 21.4066 19.3276 21.4066 17.5C21.4066 15.6724 19.8771 14.1854 18 14.1854Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_137_4">
+                                    <rect width="36" height="35" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/CarrozzaLuthieria?locale=pt_BR">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                    <g clip-path="url(#clip0_137_2)">
+                                    <path d="M29.0556 0H6.9444C3.10909 0 0 3.10909 0 6.9444V29.0556C0 32.8909 3.10909 36 6.9444 36H29.0556C32.8909 36 36 32.8909 36 29.0556V6.9444C36 3.10909 32.8909 0 29.0556 0ZM23.6664 10.6404C23.6664 10.6404 21.5784 10.6215 21.0523 10.6215C20.2639 10.6215 19.7378 11.3044 19.7378 12.0023V14.9085H23.6651L23.2174 18.8655H19.6918V28.9609H15.7023V18.9101H12.3322V14.8612H15.7483V11.0421C15.7483 8.91345 18.1204 7.03907 19.7689 7.03907C20.0164 7.03907 23.6651 7.07288 23.6651 7.07288V10.6404H23.6664Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_137_2">
+                                    <rect width="36" height="36" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                            <a href="https://www.youtube.com/@carrozzaguitarscustom">
+                                <img src="{{ asset('img/youtube.png') }}" height="36" width="36" alt="Primeira imagem" />
+
+                            </a>
                         </div>
                     </div>
-
-                    <div class="box box-infos">
-                        <div class="title">Produtos</div>
-                        <div class="overflow" style="border-top: 2px solid white;">
-                            <ul class="list"> 
-                                {% for category in show_categories %}
-                                    <li>
-                                        <a href="{{ category.link }}" title="{{ custom.name }}">{{ category.name }}</a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
+                    <div class="logo-box-infos">
+                        <div class="box-infos--links">
+                            <a href="/" target="_blank">Página Inicial</a>
+                            <a href="/a-fabrica" target="_blank">A fábrica</a>
+                            <a href="">Produtos</a>
+                            <a href="/contato" target="_blank">contato</a>
                         </div>
+                        <div class="logo-box-infos--line"></div>
+                        <div class="logo-box-infos--address">
+                            <div class="box-infos--address-rua"> 
+                                <p>Rua Gaudêncio Guacelli, 105 Vila Assis CEP: 17210-130 Jaú/SP</p>
+                                <a href="https://api.whatsapp.com/send/?phone=5514998809530&text&type=phone_number&app_absent=0">Telefone +55 14 3621 4663</a>
+                            </div>
+                            <div class="logo-box-infos--address-inscricao">
+                                <p>CNPJ: 73.034.050/0001-63 </p>
+                                <p>Insc. Est.: 401.211.649.119</p>
+                            </div>
+                            <div class="logo-box-infos--address-razao">
+                                <p>Razão Social: Alexandre</p>
+                                <p>Carrozza & Cia Ltda - ME</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="logo-box-infos--maps">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.606915876287!2d-48.55081702569467!3d-22.292875316217383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c75808adb64db3%3A0xdd9e03974ad75236!2sGaud%C3%AAncio%20Guacelli%2C%20105%20-%20Vila%20Assis%2C%20Ja%C3%BA%20-%20SP%2C%2017210-130!5e0!3m2!1spt-BR!2sbr!4v1723706709769!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

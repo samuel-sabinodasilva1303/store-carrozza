@@ -1,116 +1,226 @@
-.page-contact
-  .main__container
-    .Mapa
-      display none
+.page-contact .container3 .board {
+    border-bottom: none;
+}
 
-    span
-      line-height 26px
+.page-contact h1 {
+    border-bottom: 2px solid var(--c_general_main);
+    margin: 2.5rem 0;
+}
 
-    a#btn_submit, input#imagem
-      display none
+.page-contact .Mapa {
+    display: none;
+}
 
-    button#btn_submit, button#imagem
-      width 225px
-      height 42px
-      line-height 41px
-      background #525252
-      text-align center
-      color tertiary
-      font-size 16px
-      border-radius 21px
-      font-weight 700
-      transition all .3s
-      border 1px solid primary
-      display block
-      margin 0 auto
+.page-contact .contactUs {
+    margin-top: 10px;
+    height: 70px;
+}
 
-    .obriga-barra.red:after
-      content ' vermelha'
-      display inline
-      color #F0506E
+.page-contact .contactUs-description {
+    margin-bottom: 4rem;
+    font-family: Arial, sans-serif; 
+    font-size: 1rem; 
+}
 
-    input, textarea
-      display block
-      width 100%
-      border-radius 3px
-      border 1px solid #ededed
+.page-contact .contactUs-phone,
+.page-contact .contactUs-whats,
+.page-contact .contactUs-email {
+    display: none; 
+    align-items: center;
+    margin-bottom: 1rem;
+    height: 4rem;
+    position: relative;
+}
 
-      &::placeholder
-        opacity .5
+.page-contact .contactUs-phone:before,
+.page-contact .contactUs-whats:before,
+.page-contact .contactUs-email:before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--c_general_main);
+    border-radius: 50%;
+    color: #FFF;
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+}
 
-      &.obriga
-        border-bottom 3px solid #F0506E
+.page-contact .contactUs-phone h3,
+.page-contact .contactUs-whats h3,
+.page-contact .contactUs-email h3,
+.page-contact .contactUs-phone a,
+.page-contact .contactUs-whats a,
+.page-contact .contactUs-email a {
+    line-height: 1.3;
+    margin-left: 5.5rem;
+}
 
-      &.inputErro
-        border-color #f0506e
+.page-contact .contactUs-phone a,
+.page-contact .contactUs-whats a,
+.page-contact .contactUs-email a {
+    opacity: 1;
+    transition: all 0.3s ease-in-out; 
+}
 
-    input:not([type='image'])
-      padding 0 7px
+.page-contact .contactUs-phone a:hover,
+.page-contact .contactUs-whats a:hover,
+.page-contact .contactUs-email a:hover {
+    opacity: 0.6;
+}
 
-    textarea[name='mensagem_contato']
-      height 90px
-      resize none
-      padding 7px
+.page-contact .contactUs-phone span,
+.page-contact .contactUs-whats span,
+.page-contact .contactUs-email span,
+.page-contact .contactUs-phone a,
+.page-contact .contactUs-whats a,
+.page-contact .contactUs-email a {
+    font-family: Arial, sans-serif; 
+    font-size: 1rem; 
+}
 
-    label.block
-      display block
-      margin-bottom 25px
-      border 1px solid #ededed
-      padding 15px 10px
-      background #f7f7f7
-      border-radius 2px
+.page-contact .contactUs-phone {
+    background-image: url('icon-phone.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
-      span:not(.block)
-        font-size 10px
+.page-contact .contactUs-whats {
+    background-image: url('icon-whatsapp.svg'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
-      span.block
-        margin-bottom 5px
-        display inline-block
+.page-contact .contactUs-email {
+    background-image: url('icon-email.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
-      span.mensagensErro
-        color #F0506E
+.page-contact .board p:not(.blocoSucesso) {
+    display: none;
+}
 
-    > .container3
-      > .container2
-        width 552px
-        max-width 100%
-        margin 35px auto 0 auto
+.page-contact .board p.blocoSucesso {
+    background-color: #EDFFED;
+    color: #54AC2D;
+    text-align: center;
+    padding-block: 7px;
+    margin-bottom: 15px;
+}
 
-        > .board, .tit-contato.block
-          text-align center
+.page-contact .board h1 {
+    display: none;
+}
 
-      .board
-        margin-bottom 25px
+.page-contact .board .email-texto {
+    font-size: 0;
+}
 
-        span.msg-obriga.block
-          display block
-          text-align center
-          margin-bottom 20px
+.page-contact .board .email-texto a {
+    font-size: 0.97rem;
+}
 
-        .email-texto > a
-          display block
+.page-contact .board .btn_submit.button2 {
+    border-radius: 0.25rem; 
+    width: fit-content;
+    color: var(--c_default_button_text);
+    background-color: var(--c_default_button_bg);
+    transition: 0.3s all;
+}
 
-        h1
-          text-align center
-          font-size 30px
-          color primary
-          margin 40px 0
-          font-weight 700
+.page-contact .board .btn_submit.button2:hover {
+    color: var(--c_default_button_text_hover);
+    background-color: var(--c_default_button_bg_hover);
+}
 
-        h3
-          font-weight 700
-          font-size 18px
-          color primary
-          line-height 26px
+.page-contact .board h3 {
+    font-size: 2rem; 
+    font-weight: bold;
+    color: #000;
+}
 
-    > .board p
-      font-size 14px
-      line-height 22px
-      text-align center
+.page-contact .board span,
+.page-contact .board a:not(.button2) {
+    font-family: Arial, sans-serif; 
+    font-size: 1rem; 
+}
 
-  @media desktop
-    button#btn_submit, button#imagem
-      &:hover
-        border-color #525252
-        background rgba(0, 0, 0, 0)
-        color #525252
+.page-contact .board span.error-block {
+    color: red; 
+    font-weight: 600;
+}
+
+.page-contact .container2 {
+    padding-bottom: 40px;
+}
+
+.page-contact .container2 .board:nth-child(n + 3) {
+    display: flex; 
+    flex-direction: column;
+}
+
+.page-contact .container2 div:nth-of-type(4) h3,
+.page-contact .container2 div:nth-of-type(5) h3 {
+    font-size: 0;
+}
+
+.page-contact .container2 .board {
+    background-color: #f6f6f6;
+    border-radius: 0.5rem;
+    margin-bottom: 5rem;
+    padding: 2.5rem;
+}
+
+.page-contact .container2 .board h3 {
+    padding-bottom: 2rem;
+    color: #000;
+}
+
+.page-contact .msg-obriga {
+    display: block;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+.page-contact .formulario-contato input {
+    background-color: #ffffff;
+    font-weight: 400;
+    height: 3rem;
+    line-height: 1.2;
+    padding: 0 1.5rem;
+    width: calc(100% - 3rem);
+}
+
+.page-contact .formulario-contato input:focus {
+    box-shadow: inset 0 0 4px #7A7A7A;
+}
+
+.page-contact .formulario-contato label.block {
+    display: block;
+    line-height: 2.3;
+    margin-bottom: 1.5rem;
+}
+
+.page-contact .formulario-contato label.block span:last-child {
+    display: none;
+}
+
+.page-contact .formulario-contato .textarea,
+.page-contact .formulario-contato textarea.text {
+    border: unset;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.page-contact .formulario-contato .textarea:focus,
+.page-contact .formulario-contato textarea.text:focus {
+    box-shadow: inset 0 0 4px #7A7A7A;
+    outline: 0;
+}
+
+.page-contact .formulario-contato .button2 {
+    width: 12.5rem;
+    text-align: center;
+}

@@ -1,6 +1,22 @@
 @media desktop  
   .header
-    .popup
+    &__links
+      display flex
+      align-items center
+      color #1F1E1E
+      text-align center
+      font-family 'Montserrat', sans-serif
+      font-size 24px
+      font-style normal
+      font-weight 500
+      line-height normal
+      gap 1em
+      > a  
+          &:hover
+            text-decoration underline
+            opacity 0.7
+
+    .popupo
       display none
       border-radius 0 0 6px 6px
       position absolute
@@ -166,6 +182,10 @@
         scale 0.85
 
 .header
+  &__links
+    @media mobile
+      display: none
+
   &__top
     &-lane
       background #0199FF
@@ -246,7 +266,7 @@
     margin-bottom -9
 
   &__link
-    font-size 12px
+    font-size 24px
     line-height 15px
     color #fff
 
@@ -351,7 +371,6 @@
     &__bg-slice
       &:before
         width 991px
-        height 166px
         right 0
         background-image linear-gradient(51deg, #fff 87.8%, #F2F2F2 87.9%)
 
@@ -372,7 +391,7 @@
         background rgba(0, 0, 0, 0)
 
         svg
-          fill primary
+          fill #000
 
     &__customer,
     &__list,
@@ -403,4 +422,49 @@
                   padding 4px 9px
                   > a 
                     font-size 9px
-              
+        
+.overflow {
+    display: none;
+    position: absolute;
+    background-color: #d5d5d5e3;
+    padding: 10px;
+    top: 42px;
+    z-index: 1000;
+    transform: translate(123%);
+    border-radius: 8px;
+}
+
+.products-itens:hover + .overflow,
+.overflow:hover {
+  display: block;
+}
+
+/* Estilização adicional para o menu */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  margin: 5px 0;
+}
+
+.list li a {
+  display: flex;
+  align-items: center;
+  color: #1f1e1e;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  gap: 1em;
+  padding: 10px;
+  text-transform: lowercase;
+}
+
+.list li a:hover {
+  text-decoration: underline;
+}

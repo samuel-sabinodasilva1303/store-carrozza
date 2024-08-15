@@ -1,0 +1,70 @@
+<div class="page__custom--main">
+    <div class="page__custom--container main__container">
+        <div class="page__custom--content">
+            <img src="{{ asset('img/custom.png') }}" height="478" width="1200" alt="Primeira imagem" />
+
+            <h1>Além de sermos uma fábrica de construir seu instrumento,
+                nós construímos sonhos!
+            </h1>
+            <h2>Descreva no formulário abaixo e nossa equipe entrará em contato!</h2>
+
+            <form action="/submit-form" method="POST">
+                <div class="page__custom--content-name">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="page__custom--content-phone">
+                    <label for="contact">Telefone ou e-mail:</label>
+                    <input type="text" id="contact" name="contact" required>
+                </div>
+                <div class="page__custom--content-question">
+                    <label for="item">Seu item é uma:</label>
+                    <select id="item" name="item" required>
+                        <option value="guitarra">Guitarra</option>
+                        <option value="baixo">Baixo</option>
+                    </select>
+                </div>
+                <div class="page__custom--content-instrument">
+                    <label for="handedness">O instrumento será:</label>
+                    <select id="handedness" name="handedness" required>
+                        <option value="destro">Destro</option>
+                        <option value="canhoto">Canhoto</option>
+                    </select>
+                </div>
+                
+                <div class="page__custom--content-description">
+                    <label for="body-neck">Descreva o corpo e o braço do instrumento:</label>
+                    <textarea id="body-neck" name="body-neck" rows="4" required></textarea>
+                </div>
+                <div class="page__custom--content-style">
+                    <label for="bridge">Qual é a ponte mais adequada para seu estilo?</label>
+                    <input type="text" id="bridge" name="bridge" required>
+                </div>
+                <div class="page__custom--content-who">
+                    <label for="scale">Como a escala deve ser produzida?</label>
+                    <input type="text" id="scale" name="scale" required>
+                </div>
+                <div class="page__custom--content-instrumento">
+                    <label for="pickup">Qual é o captador adequado para seu instrumento?</label>
+                    <input type="text" id="pickup" name="pickup" required>
+                </div>
+                <div class="page__custom--content-component">
+                    <label for="components">Descreva os outros componentes:</label>
+                    <textarea id="components" name="components" rows="4" required></textarea>
+                </div>
+                <div class="page__custom--content-detail">
+                    <label for="colors-finish">Cores e acabamento:</label>
+                    <input type="text" id="colors-finish" name="colors-finish" required>
+                </div>
+                <div class="page__custom--content-colection">
+                    <label for="collector">Você é colecionador ou entusiasta? Nos conte um pouco mais sobre seus outros equipamentos se possuir:</label>
+                    <textarea id="collector" name="collector" rows="4"></textarea>
+                </div>
+                <div class="page__custom--content-button">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

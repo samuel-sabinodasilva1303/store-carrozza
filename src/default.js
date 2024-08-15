@@ -1,3 +1,84 @@
+$(document).ready(function(){
+  if ($(".paginate").length > 0) {
+    let first =
+        '<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="13" height="12" viewBox="0 0 13 12"><path fill="" fill-rule="evenodd" d="M12.28 11.28a.75.75 0 0 1-1.06 0l-5-5a.75.75 0 0 1 0-1.06l5-5a.75.75 0 1 1 1.06 1.06L7.81 5.75l4.47 4.47a.75.75 0 0 1 0 1.06Zm-6 0a.75.75 0 0 1-1.06 0l-5-5a.75.75 0 0 1 0-1.06l5-5a.75.75 0 1 1 1.06 1.06L1.81 5.75l4.47 4.47a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"/></svg>',
+      prev =
+        '<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="7" height="12" viewBox="0 0 7 12"><path fill="" fill-rule="evenodd" d="M6.28 11.28a.75.75 0 0 1-1.06 0l-5-5a.75.75 0 0 1 0-1.06l5-5a.75.75 0 1 1 1.06 1.06L1.81 5.75l4.47 4.47a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"/></svg>',
+      next =
+        '<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="7" height="12" viewBox="0 0 7 12"><path fill="" fill-rule="evenodd" d="M.47.47a.75.75 0 0 1 1.06 0l5 5a.75.75 0 0 1 0 1.06l-5 5a.75.75 0 0 1-1.06-1.06L4.94 6 .47 1.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>',
+      last =
+        '<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="13" height="12" viewBox="0 0 13 12"><path fill="" fill-rule="evenodd" d="M.22.22a.75.75 0 0 1 1.06 0l5 5a.75.75 0 0 1 0 1.06l-5 5a.75.75 0 0 1-1.06-1.06l4.47-4.47L.22 1.28a.75.75 0 0 1 0-1.06Zm6 0a.75.75 0 0 1 1.06 0l5 5a.75.75 0 0 1 0 1.06l-5 5a.75.75 0 0 1-1.06-1.06l4.47-4.47-4.47-4.47a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>';
+  
+    $(".paginate__page--first > a").html(first);
+    $(".paginate__page--prev > a").html(prev);
+    $(".paginate__page--next > a").html(next);
+    $(".paginate__page--last > a").html(last);
+  }
+  
+    const textPageContact = $('.page-contact .default-content > .container');
+    const buttonPageContact = $('.page-contact #btn_submit img.image');
+    const inputTelPageContact = $('.page-contact #telefone_contato');
+    const textEmailPageContact = $('.page-contact .email-texto');
+    const tel01PageContact = $('.page-contact .contato-telefones .block:nth-child(1)');
+    const tel02PageContact = $('.page-contact .contato-telefones .block:nth-child(2)');
+    
+    textPageContact.prepend(`
+        <h1>Fale conosco</h1>
+        <p class="contactUs-description">Precisa falar com a gente? Utilize uma das opções abaixo para entrar em contato conosco.</p>
+    `);
+    buttonPageContact.parent().text('Enviar Mensagem').addClass('button2').children().remove();
+    inputTelPageContact.removeAttr('onkeypress maxlength').addClass('mask-phone');
+    textEmailPageContact.parent().wrap('<div class="contactUs-email"></div>');
+    
+    // Manipula os telefones
+    if (tel01PageContact.length) {
+        let phoneNumberFormatted = tel01PageContact.text();
+        let phoneNumber = phoneNumberFormatted.replace(/\D/g, '');
+    
+        tel01PageContact.unwrap().parent().addClass('contactUs-phone')
+            .html(`<h3>Central de Atendimento ao Cliente</h3>
+            <a href="tel:${phoneNumber}" title="Ligue para nós">${phoneNumberFormatted}</a>`);
+    }
+    
+    if (tel02PageContact.length) {
+        let phoneNumberFormatted = tel02PageContact.text();
+        let phoneNumber = phoneNumberFormatted.replace(/\D/g, '');
+    
+        tel02PageContact
+            .wrap('<div class="contactUs-whats"></div>')
+            .parent()
+            .insertAfter('.page-contact .contactUs-phone').html(`<h3>WhatsApp</h3>
+                <a target="_blank" tray-wp rel="noopener noreferrer" href="https://api.whatsapp.com/send?l=pt&phone=55${phoneNumber}" title="Fale conosco no WhatsApp">${phoneNumberFormatted}</a>`);
+    }
+    
+    // Remove os outros elementos indesejados
+    $('.page-contact .board:not(:has(#form1))').remove();
+    
+  
+  if ($(window).width() < 768) {
+    $('.showcase__list--related').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: true
+    });
+    $('.banners__center--container').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      arrows: false,
+      autoplay: false,
+      autoplaySpeed: 3000,
+    });
+    $('.history__main--segmentation-container').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+    });
+  }
+});
 if ($(".gallery").length > 0) {
 
   /* Variables */
@@ -140,6 +221,19 @@ if ($(".gallery").length > 0) {
   }
 }
 
+$('.slick-carousel').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+      {
+          breakpoint: 768,
+          settings: {
+              slidesToShow: 1
+          }
+      }
+  ]
+});
 //Carroussel de produtos
 if ($(".showcase").length > 0 && !window.matchMedia("(max-width: 767px)").matches) {
   $('.showcase[data-carousel="true"] .showcase__list').each(function () {
@@ -241,4 +335,4 @@ $(document).ready(function () {
      $('[data-persona="' + personaId + '"]').hide();
  });
 
- 
+

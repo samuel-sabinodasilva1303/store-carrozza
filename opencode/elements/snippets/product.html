@@ -18,7 +18,14 @@
         {% element 'snippets/schema' {'product': product} %}
 
         <a href="{{ product.link }}" aria-label="Link para pagina do produto {{ product.name }}"  data-tray-tst="vitrine_produto_link_imagem" class="product__link product__link--image">
-            <figure class="product__image">
+            {% if pages.current == 'product' or pages.current == 'catalog' %}
+
+                <figure class="product__image colorblack">
+
+            {% else %}
+
+                <figure class="product__image">
+            {% endif %}
 
                 {% if product.images %}
                     <img src="{{ product.images[0].full }}" width="234" height="234" alt="{{ product.name }}" loading="lazy" >

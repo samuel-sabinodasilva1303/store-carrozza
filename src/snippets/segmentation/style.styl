@@ -148,6 +148,9 @@
         border-radius 37.5px
         border 1px solid #717171
         background #ffffff
+        @media mobile
+          width 98%
+          font-size 19px
 
     &--line
       position: relative
@@ -156,10 +159,14 @@
       z-index -1
 
     &--video
+      @media mobile 
+        width 100%
       > iframe
         border-radius 10px
         width 705px
         height 390px
+        @media mobile 
+          width 100%
     
     &--content
       padding-block 106px
@@ -167,11 +174,17 @@
       gap 1em
       justify-content center
 
+      @media mobile
+        flex-wrap wrap
+
     &--container
       font-family 'Montserrat', sans-serif
       color #1F1E1E
       font-style normal
       line-height normal
+      
+      @media mobile 
+        width 100%
 
       > span
           font-size 28px
@@ -194,6 +207,13 @@
         text-align center
         border-radius 50px
         background #cbc9c9
+
+        &:hover
+          opacity 0.7
+          transform scale(1.2)
+
+        @media mobile 
+          width 100%
           
     &--segmentation
         height 322px
@@ -242,6 +262,8 @@
       border-radius 37.5px
       border 1px solid #717171
       background #ffffff
+      @media mobile
+        width 98%
 
     &--video
 
@@ -250,6 +272,10 @@
         height 396px
         flex-shrink 0
         border-radius 10px
+
+        @media mobile
+          width 100%
+          height 450px
 
       &-text
         color #000
@@ -297,17 +323,33 @@
         background #06f
         border-radius 50px
         margin 0 auto
+
+        &:hover
+          opacity 0.7
+          transform scale(1.2)
+
+        @media mobile
+          width 100%
+          font-size 22px
   
     &--video
       display flex
       padding-block 99px
       gap 70px
       align-items end
+
+      @media mobile
+        height 526px
     
     &--imagens
       display flex
       justify-content space-between
       margin-bottom 3em
+
+      @media mobile 
+        flex-wrap wrap
+        gap 3em
+
 
       &-persona1, &-persona2, &-persona3, &-persona4
         display flex

@@ -5,8 +5,8 @@
 
   &__line
     border 1px solid #fff
-    padding 14px 0
-    max-width 1316px
+    padding 50px 0
+    max-width 1330px
     margin 0 auto
 
   &__address
@@ -168,3 +168,87 @@
       flex-wrap wrap
       margin inherit !important
       justify-content center
+
+.logo-box---main
+  display flex
+  justify-content center
+  gap 10px
+  @media mobile
+    flex-wrap: wrap
+
+.logo-box-infos--maps
+  @media mobile
+    width 100%
+  > iframe 
+    width: 505px;
+    height: 263px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    @media mobile
+      width 100%
+.logo-box-infos
+  display: flex;
+  gap: 10px;
+  align-content: center;
+  @media mobile
+    justify-content: center;
+
+.box-infos--links
+  display: grid;
+.box-infos--links a
+  color: #FFF;
+  text-align: right;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  &:hover
+    text-decoration: underline;
+    opacity: 0.8;
+  @media mobile
+    font-size 12px
+.logo-box--media
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  @media mobile
+    justify-content: center;
+    margin-bottom: 2em;
+
+.logo-box-infos--line
+  border-left: 2px solid #fff;
+  height: 89%
+
+.logo-box-infos--address
+  display: grid;
+  color: #FFF;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  @media mobile
+    font-size 12px
+.box-infos--address-rua a
+    color: #FFF;
+.logo-box
+  width 30%
+  @media mobile
+    width 100%
+.tray, .tray a
+    margin-top: 3em;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    @media mobile
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;

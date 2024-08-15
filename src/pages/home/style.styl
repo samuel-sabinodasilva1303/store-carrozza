@@ -90,6 +90,9 @@
         gap 5px
         justify-content center
         margin 0 auto
+        .slick-track
+          @media mobile
+            height 700px
 
     &--imagens
       height 100%
@@ -122,6 +125,10 @@
         font-size 20px
         font-weight 400
         padding-block 30px
+        height 200px
+
+        @media mobile
+          height auto
       
       > a 
         display flex
@@ -136,6 +143,12 @@
         border-radius 58.5px
         background #D9D9D9
         margin 0 auto
-        cursor pointer 
+        cursor pointer
+        &:hover
+          opacity 0.7
+          transform scale(1.2)
+
+        @media mobile
+          width 100%
 
 

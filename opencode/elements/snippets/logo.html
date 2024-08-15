@@ -1,6 +1,8 @@
+{% set logoHeader = Image('logo_loja') %}
+
 <div class="logo">
     <a href="{{ link.home }}" title="{{ store.name }}"  aria-label="logo da loja link vai para pagina inicial" data-tray-tst="logotipo_loja" class="logo__link">
-        {{ Image('logo') }}
+        {{ logoHeader | replace({'src=': 'width="150" height="150" src='}) }}
     </a>
     {% if pages.current == 'home' %}<h1 class="logo__h1">{{ store.name }}</h1>{% endif %}
 </div>

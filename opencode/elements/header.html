@@ -20,15 +20,22 @@
         <div class="header__logo">{% element 'snippets/logo' %}</div>
 
         <div class="header__wrapper">
-
-            {% for category in categories  %}
-                {% if category.id == 1 %}
-                    <button type="button" aria-label="Mostrar o menu" class="header__button" >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="16" viewBox="0 0 20 16"><path fill="" fill-rule="evenodd" d="M.25 1A.75.75 0 0 1 1 .25h18a.75.75 0 0 1 0 1.5H1A.75.75 0 0 1 .25 1Zm0 7A.75.75 0 0 1 1 7.25h12a.75.75 0 0 1 0 1.5H1A.75.75 0 0 1 .25 8Zm0 7a.75.75 0 0 1 .75-.75h18a.75.75 0 0 1 0 1.5H1A.75.75 0 0 1 .25 15Z" clip-rule="evenodd"/></svg>
-                        <svg class="close-menu" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L15 15M15 1L1 15" stroke="#ffff" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </button>
-                {% endif %}
-            {% endfor %}
+            <div class="header__links">
+                <a href="/a-fabrica" target="_blank">A fábrica</a>
+                <a href="/custom" target="_blank">Custom</a>
+                <a class="products-itens">Produtos</a> 
+                <div class="overflow">
+                    <ul class="list"> 
+                        {% for categoria in categories %}
+                            <li>
+                                <a href="{{ categoria.link }}">{{ categoria.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <a href="/contato" target="_blank">Contato</a>
+    
+            </div>
 
             <div class="header__customer">{% element 'snippets/customer' %}</div>
 
